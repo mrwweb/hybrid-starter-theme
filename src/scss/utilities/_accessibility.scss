@@ -1,0 +1,36 @@
+/* Text meant only for screen readers. */
+.screen-reader-text {
+	@include screen-reader-text;
+}
+
+/* Do not show the outline on the skip link target. */
+#primary[tabindex="-1"]:focus {
+	outline: 0;
+}
+
+/* Strong default focus styles */
+:focus {
+	outline-style: double !important;
+	outline-width: .1875rem !important;
+	outline-color: currentColor !important;
+	outline-color: var(--outline-color, currentColor) !important;
+}
+
+:focus:not(:focus-visible) {
+	outline: 0 !important;
+}
+
+/* Honor Reduced Motion Requests */
+@media (prefers-reduced-motion: reduce), (update: slow) {
+	*,
+	*::before,
+	*::after {
+	    animation-delay: -1ms !important;
+	    animation-duration: 1ms !important;
+	    animation-iteration-count: 1 !important;
+	    background-attachment: initial !important;
+	    scroll-behavior: auto !important;
+	    transition-duration: 0s !important;
+	    transition-delay: 0s !important;
+	}
+}
