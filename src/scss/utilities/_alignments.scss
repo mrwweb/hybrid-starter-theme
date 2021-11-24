@@ -1,25 +1,25 @@
-.alignleft {
-	/*rtl:ignore*/
-	float: left;
-
-	/*rtl:ignore*/
-	margin-right: 1.5em;
-	margin-bottom: 1.5em;
-}
-
+.aligncenter,
+.alignleft,
 .alignright {
-	/*rtl:ignore*/
-	float: right;
-
-	/*rtl:ignore*/
-	margin-left: 1.5em;
-	margin-bottom: 1.5em;
+	clear: both;
+	margin-left: auto;
+	margin-right: auto;
 }
 
-.aligncenter {
-	clear: both;
+@media( min-width: 37.5em ) {
+	.alignleft,
+	.alignright {
+		max-width: 45%;
+	}
+	.alignleft {
+		float: left;
+		margin-right: 1.5em;
+		margin-bottom: 1.5em;
+	}
 
-	@include center-block;
-
-	margin-bottom: 1.5em;
+	.alignright {
+		float: right;
+		margin-left: 1.5em;
+		margin-bottom: 1.5em;
+	}
 }

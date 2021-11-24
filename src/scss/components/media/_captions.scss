@@ -3,8 +3,7 @@
 	max-width: 100%;
 
 	img[class*="wp-image-"] {
-
-		@include center-block;
+		margin-inline: auto;
 	}
 
 	.wp-caption-text {
