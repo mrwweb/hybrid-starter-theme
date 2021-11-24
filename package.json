@@ -1,7 +1,7 @@
 {
   "name": "underscores",
   "version": "1.0.0",
-  "description": "Custom theme made for… ",
+  "description": "Custom theme made for…",
   "author": "Mark Root-Wiley, MRW Web Design",
   "license": "GPL-2.0-or-later",
   "devDependencies": {
@@ -19,5 +19,5 @@
     "gulp-sourcemaps": "^2.6.4",
     "gulp-uglify": "^3.0.2",
     "postcss": "^7.0.32"
-  },
+  }
 }
