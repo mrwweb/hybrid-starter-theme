@@ -6,6 +6,16 @@
 	margin-right: auto;
 }
 
+:root .alignwide {
+	@include alignwide;
+}
+
+:root .alignfull {
+	max-width: none;
+	margin-left: 0;
+	margin-right: 0;
+}
+
 @media( min-width: 37.5em ) {
 	.alignleft,
 	.alignright {
