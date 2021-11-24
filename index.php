@@ -24,6 +24,10 @@ get_header();
 				?>
 				<header>
 					<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
+					<?php if( is_home() ) {
+						echo '<div class="archive-description">' . apply_filters( 'the_content', get_the_content( null, false, (int) $posts_page ) ) . '</div>';
+					}
+					?>
 				</header>
 				<?php
 			endif;
@@ -32,11 +36,6 @@ get_header();
 			while ( have_posts() ) :
 				the_post();
 
-				/*
-				 * Include the Post-Type-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
-				 */
 				get_template_part( 'template-parts/content', get_post_type() );
 
 			endwhile;

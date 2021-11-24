@@ -97,6 +97,24 @@ function enqueue_assets() {
 }
 add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\enqueue_assets' );
 
+add_filter( 'replace_editor', __NAMESPACE__ . '\make_blog_editable', 10, 2 );
+/**
+ * Simulate non-empty content to enable Gutenberg editor
+ *
+ * @param bool    $replace Whether to replace the editor.
+ * @param WP_Post $post    Post object.
+ * @return bool
+ */
+function make_blog_editable( $replace, $post ) {
+
+	if ( ! $replace && absint( get_option( 'page_for_posts' ) ) === $post->ID && empty( $post->post_content ) ) {
+		$post->post_content = '<!--non-empty-content-->';
+	}
+
+	return $replace;
+
+}
+
 /**
  * Configure the Block Editor
  */
