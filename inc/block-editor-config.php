@@ -4,12 +4,12 @@ namespace _S_NAMESPACE\Theme;
 /**
  * @see https://make.wordpress.org/core/2021/06/16/introducing-the-template-editor-in-wordpress-5-8/
  */
-add_action( 'after_setup_theme', __NAMESPACE__ . 'disable_template_editor' );
+add_action( 'after_setup_theme', __NAMESPACE__ . '\disable_template_editor' );
 function disable_template_editor() {
 	remove_theme_support( 'block-templates' );
 }
 
-add_action( 'enqueue_block_editor_assets', __NAMESPACE__ . 'editor_assets' );
+add_action( 'enqueue_block_editor_assets', __NAMESPACE__ . '\editor_assets' );
 function editor_assets() {
 
 	wp_enqueue_style(
@@ -28,7 +28,7 @@ function editor_assets() {
 
 }
 
-//add_filter( 'mrw_hidden_blocks', __NAMESPACE__ . 'unhide_blocks' );
+//add_filter( 'mrw_hidden_blocks', __NAMESPACE__ . '\unhide_blocks' );
 function unhide_blocks( $blocks ) {
 
 	$blocks = array_diff( $blocks, array( 'core/spacer', 'core/table' ) );
@@ -37,11 +37,10 @@ function unhide_blocks( $blocks ) {
 
 }
 
-add_filter( 'after_setup_theme', __NAMESPACE__ . 'add_font_sizes', 11 );
+add_filter( 'after_setup_theme', __NAMESPACE__ . '\add_font_sizes', 11 );
 function add_font_sizes() {
 
-	$existing_sizes = get_theme_support( 'editor-font-sizes' );
-	$new_sizes = array(
+	$font_sizes = array(
 		array(
 			'name'      => _x( 'Extra-Large', 'Name of the extra large font size in Gutenberg', '_s' ),
 			'shortName' => _x( 'XXL', 'Short name of the extra large font size in the Gutenberg editor.', '_s' ),
@@ -56,11 +55,11 @@ function add_font_sizes() {
 		)
 	);
 
-	add_theme_support( 'editor-font-sizes', array_merge($existing_sizes[0],$new_sizes));
+	add_theme_support( 'editor-font-sizes', $font_sizes );
 
 }
 
-add_filter( 'after_setup_theme', __NAMESPACE__ . 'register_color_palette', 999 );
+add_filter( 'after_setup_theme', __NAMESPACE__ . '\register_color_palette', 999 );
 function register_color_palette() {
 
 	add_theme_support(
@@ -70,7 +69,7 @@ function register_color_palette() {
 			[
 				'name' => __( 'Black', '_s' ),
 				'slug' => 'black',
-				'color' => '#000',
+				'color' => '#111',
 			],
 			[
 				'name' => __( 'White', '_s' ),
@@ -82,7 +81,7 @@ function register_color_palette() {
 
 }
 
-//add_filter( 'after_setup_theme', __NAMESPACE__ . 'register_block_styles', 999 );
+//add_filter( 'after_setup_theme', __NAMESPACE__ . '\register_block_styles', 999 );
 function register_block_styles() {
 
 	/* Paragraphs */
@@ -105,23 +104,23 @@ function replace_theme_uri( $markup ) {
 	return str_replace( '{{theme_uri}}', get_stylesheet_directory_uri(), $markup );
 }
 
-// add_action( 'after_setup_theme', __NAMESPACE__ . 'block_patterns', 9 );
+// add_action( 'after_setup_theme', __NAMESPACE__ . '\block_patterns', 9 );
 function block_patterns() {
 
 	/*
 	 * HEADERS
 	 */
 	register_block_pattern_category(
-		'cs-headers',
-		[ 'label' => 'BIPOC EDs: Page Headers' ],
+		'category-name',
+		[ 'label' => 'Category Name' ],
 	);
 
 	register_block_pattern(
-		'civilsurvival/full-screen-intro-banner',
+		'theme/pattern',
 		[
-			'title' => 'Full-screen Page Intro',
-			'content' => replace_theme_uri( file_get_contents( get_theme_file_path( 'block-patterns/full-screen-page-intro.html' ) ) ),
-			'categories' => [ 'cs-headers' ],
+			'title' => 'Pattern Name',
+			'content' => replace_theme_uri( file_get_contents( get_theme_file_path( 'block-patterns/file.html' ) ) ),
+			'categories' => [ 'category-name' ],
 			'viewportWidth' => 1200,
 		]
 	);
