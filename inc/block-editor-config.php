@@ -2,33 +2,35 @@
 namespace _S_NAMESPACE\Theme;
 
 /**
+ * Remove Block Templates that are automatically enabled by theme.json
+ * 
  * @see https://make.wordpress.org/core/2021/06/16/introducing-the-template-editor-in-wordpress-5-8/
  */
-add_action( 'after_setup_theme', __NAMESPACE__ . '\disable_template_editor' );
+add_action( 'after_setup_theme', __NAMESPACE__ . 'disable_template_editor' );
 function disable_template_editor() {
 	remove_theme_support( 'block-templates' );
 }
 
-add_action( 'enqueue_block_editor_assets', __NAMESPACE__ . '\editor_assets' );
+add_action( 'enqueue_block_editor_assets', __NAMESPACE__ . 'editor_assets' );
 function editor_assets() {
 
 	wp_enqueue_style(
-		'cs-block-editor',
+		'block-editor',
 		get_theme_file_uri( 'css/block-editor-styles.css' ),
 		[],
 		filemtime( get_theme_file_path( 'css/block-editor-styles.css' ) )
 	);
 
 	wp_enqueue_script(
-		'cs-block-editor',
-		get_theme_file_uri( 'js/cs-editor.min.js' ),
+		'block-editor',
+		get_theme_file_uri( 'js/editor.min.js' ),
 		[],
-		filemtime( get_theme_file_path( 'js/cs-editor.min.js' ) )
+		filemtime( get_theme_file_path( 'js/editor.min.js' ) )
 	);
 
 }
 
-//add_filter( 'mrw_hidden_blocks', __NAMESPACE__ . '\unhide_blocks' );
+//add_filter( 'mrw_hidden_blocks', __NAMESPACE__ . 'unhide_blocks' );
 function unhide_blocks( $blocks ) {
 
 	$blocks = array_diff( $blocks, array( 'core/spacer', 'core/table' ) );
@@ -37,51 +39,7 @@ function unhide_blocks( $blocks ) {
 
 }
 
-add_filter( 'after_setup_theme', __NAMESPACE__ . '\add_font_sizes', 11 );
-function add_font_sizes() {
-
-	$font_sizes = array(
-		array(
-			'name'      => _x( 'Extra-Large', 'Name of the extra large font size in Gutenberg', '_s' ),
-			'shortName' => _x( 'XXL', 'Short name of the extra large font size in the Gutenberg editor.', '_s' ),
-			'size'      => 50,
-			'slug'      => 'xxl',
-		),
-		array(
-			'name'      => _x( 'Extra-Extra Large', 'Name of the extra extra large font size in Gutenberg', '_s' ),
-			'shortName' => _x( 'XXXL', 'Short name of the extra extra large font size in the Gutenberg editor.', '_s' ),
-			'size'      => 72,
-			'slug'      => 'xxxl',
-		)
-	);
-
-	add_theme_support( 'editor-font-sizes', $font_sizes );
-
-}
-
-add_filter( 'after_setup_theme', __NAMESPACE__ . '\register_color_palette', 999 );
-function register_color_palette() {
-
-	add_theme_support(
-		'editor-color-palette',
-		[
-			/* Black & White */
-			[
-				'name' => __( 'Black', '_s' ),
-				'slug' => 'black',
-				'color' => '#111',
-			],
-			[
-				'name' => __( 'White', '_s' ),
-				'slug' => 'white',
-				'color' => '#fff',
-			],
-		]
-	);
-
-}
-
-//add_filter( 'after_setup_theme', __NAMESPACE__ . '\register_block_styles', 999 );
+//add_filter( 'after_setup_theme', __NAMESPACE__ . 'register_block_styles', 999 );
 function register_block_styles() {
 
 	/* Paragraphs */
@@ -104,23 +62,23 @@ function replace_theme_uri( $markup ) {
 	return str_replace( '{{theme_uri}}', get_stylesheet_directory_uri(), $markup );
 }
 
-// add_action( 'after_setup_theme', __NAMESPACE__ . '\block_patterns', 9 );
+// add_action( 'after_setup_theme', __NAMESPACE__ . 'block_patterns', 9 );
 function block_patterns() {
 
 	/*
 	 * HEADERS
 	 */
 	register_block_pattern_category(
-		'category-name',
-		[ 'label' => 'Category Name' ],
+		'cs-headers',
+		[ 'label' => 'BIPOC EDs: Page Headers' ],
 	);
 
 	register_block_pattern(
-		'theme/pattern',
+		'civilsurvival/full-screen-intro-banner',
 		[
-			'title' => 'Pattern Name',
-			'content' => replace_theme_uri( file_get_contents( get_theme_file_path( 'block-patterns/file.html' ) ) ),
-			'categories' => [ 'category-name' ],
+			'title' => 'Full-screen Page Intro',
+			'content' => replace_theme_uri( file_get_contents( get_theme_file_path( 'block-patterns/full-screen-page-intro.html' ) ) ),
+			'categories' => [ 'cs-headers' ],
 			'viewportWidth' => 1200,
 		]
 	);
