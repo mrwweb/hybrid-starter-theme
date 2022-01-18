@@ -1,6 +1,7 @@
 /*
  * Selectors reference: https://github.com/mrwweb/wordpress-block-editor-theme-support-starter/blob/master/block-editor-styles.css
  */
+@import "abstracts/abstracts";
 
 :root .editor-styles-wrapper {
     @import "base/base";
