@@ -1,8 +1,8 @@
 /*
  * Selectors reference: https://github.com/mrwweb/wordpress-block-editor-theme-support-starter/blob/master/block-editor-styles.css
  */
+
 :root .editor-styles-wrapper {
-    @import "abstracts/abstracts";
     @import "base/base";
     @import "components/blocks/index";
 }
