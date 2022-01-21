@@ -69,16 +69,16 @@ function block_patterns() {
 	 * HEADERS
 	 */
 	register_block_pattern_category(
-		'cs-headers',
-		[ 'label' => 'BIPOC EDs: Page Headers' ],
+		'theme-headers',
+		[ 'label' => 'Page Headers' ],
 	);
 
 	register_block_pattern(
-		'civilsurvival/full-screen-intro-banner',
+		'theme/full-screen-intro-banner',
 		[
 			'title' => 'Full-screen Page Intro',
 			'content' => replace_theme_uri( file_get_contents( get_theme_file_path( 'block-patterns/full-screen-page-intro.html' ) ) ),
-			'categories' => [ 'cs-headers' ],
+			'categories' => [ 'theme-headers' ],
 			'viewportWidth' => 1200,
 		]
 	);
