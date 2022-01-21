@@ -3,5 +3,5 @@ body {
 }
 
 .entry-content * + * {
-	@include flow();
+	@include flow;
 }
