@@ -11,7 +11,9 @@
 	word-wrap: normal !important; // Many screen reader and browser combinations announce broken words as they would appear visually.
 
 	@if $focus {
+
 		&:focus {
+
 			@include button;
 
 			clip: auto !important;
@@ -22,12 +24,17 @@
 			width: auto;
 			z-index: 100000; // Above WP toolbar.
 		}
+
 	}
+
 }
 
 @mixin mq( $breakpoint ) {
+
 	@media screen and (min-width: $breakpoint / 16 * 1em) {
+
 		@content;
+
 	}
 }
 
@@ -35,12 +42,20 @@
 	max-width: $width--wide;
 
 	@include mq( $bp--full ) {
-		/*margin-left: $margin--lg;
-		margin-right: $margin--lg;*/
+		/* margin-left: $margin--lg;
+		margin-right: $margin--lg; */
 	}
 
 	@include mq( $bp--large + 80 ) { // 80 = $margin * 2 in px
 		margin-left: auto !important;
 		margin-right: auto !important;
 	}
+}
+
+@mixin flow( $size: 1.4em ) {
+
+	> * + * {
+		margin-top: $size;
+	}
+
 }
