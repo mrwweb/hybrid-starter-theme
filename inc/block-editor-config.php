@@ -6,12 +6,12 @@ namespace _S_NAMESPACE\Theme;
  * 
  * @see https://make.wordpress.org/core/2021/06/16/introducing-the-template-editor-in-wordpress-5-8/
  */
-add_action( 'after_setup_theme', __NAMESPACE__ . 'disable_template_editor' );
+add_action( 'after_setup_theme', __NAMESPACE__ . '\disable_template_editor' );
 function disable_template_editor() {
 	remove_theme_support( 'block-templates' );
 }
 
-add_action( 'enqueue_block_editor_assets', __NAMESPACE__ . 'editor_assets' );
+add_action( 'enqueue_block_editor_assets', __NAMESPACE__ . '\editor_assets' );
 function editor_assets() {
 
 	wp_enqueue_style(
