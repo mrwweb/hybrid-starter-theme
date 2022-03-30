@@ -16,9 +16,9 @@ function editor_assets() {
 
 	wp_enqueue_style(
 		'block-editor',
-		get_theme_file_uri( 'css/block-editor-styles.css' ),
+		get_theme_file_uri( 'css/editor-styles.css' ),
 		[],
-		filemtime( get_theme_file_path( 'css/block-editor-styles.css' ) )
+		filemtime( get_theme_file_path( 'css/editor-styles.css' ) )
 	);
 
 	wp_enqueue_script(
