@@ -4,21 +4,22 @@
   "description": "",
   "license": "GPL-2.0-or-later",
   "devDependencies": {
-    "@wordpress/eslint-plugin": "^9.3.0",
-    "@wordpress/scripts": "^19.2.2",
-    "node-sass": "^7.0.1",
     "@babel/core": "^7.11.1",
     "@babel/preset-env": "^7.11.0",
+    "@wordpress/eslint-plugin": "^9.3.0",
+    "@wordpress/scripts": "^19.2.2",
     "autoprefixer": "^9.8.6",
     "gulp": "^4.0.2",
     "gulp-babel": "^8.0.0",
     "gulp-concat": "^2.6.1",
     "gulp-livereload": "^4.0.2",
-    "gulp-postcss": "^8.0.0",
+    "gulp-postcss": "^9.0.0",
     "gulp-sass": "^4.1.0",
     "gulp-sourcemaps": "^2.6.4",
     "gulp-uglify": "^3.0.2",
-    "postcss": "^7.0.32"
+    "node-sass": "^7.0.1",
+    "postcss": "^8.0.0",
+    "postcss-logical": "^5.0.4"
   },
   "scripts": {
     "lint:scss": "wp-scripts lint-style 'src/scss/**/*.scss'",
