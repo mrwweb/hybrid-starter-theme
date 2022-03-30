@@ -54,13 +54,6 @@ add_action( 'after_setup_theme', __NAMESPACE__ . '\content_width', 0 );
  * Enqueue scripts and styles.
  */
 function scripts() {
-	wp_enqueue_style(
-		'clicky-menus',
-		get_theme_file_uri( 'vendor/clicky-menus/clicky-menus.css' ),
-		[],
-		filemtime( get_theme_file_path( 'vendor/clicky-menus/clicky-menus.css' ) )
-	);
-
 
 	wp_enqueue_style(
 		'theme-style',
@@ -70,7 +63,7 @@ function scripts() {
 	);
 
 	wp_enqueue_script(
-		'navigation',
+		'theme-navigation',
 		get_theme_file_uri( 'vendor/clicky-menus/clicky-menus.js' ),
 		[],
 		filemtime( get_theme_file_path( 'vendor/clicky-menus/clicky-menus.js' ) ),
