@@ -30,7 +30,7 @@ function editor_assets() {
 
 }
 
-//add_filter( 'mrw_hidden_blocks', __NAMESPACE__ . 'unhide_blocks' );
+//add_filter( 'mrw_hidden_blocks', __NAMESPACE__ . '\unhide_blocks' );
 function unhide_blocks( $blocks ) {
 
 	$blocks = array_diff( $blocks, array( 'core/spacer', 'core/table' ) );
@@ -39,7 +39,7 @@ function unhide_blocks( $blocks ) {
 
 }
 
-//add_filter( 'after_setup_theme', __NAMESPACE__ . 'register_block_styles', 999 );
+//add_filter( 'after_setup_theme', __NAMESPACE__ . '\register_block_styles', 999 );
 function register_block_styles() {
 
 	/* Paragraphs */
@@ -62,7 +62,7 @@ function replace_theme_uri( $markup ) {
 	return str_replace( '{{theme_uri}}', get_stylesheet_directory_uri(), $markup );
 }
 
-// add_action( 'after_setup_theme', __NAMESPACE__ . 'block_patterns', 9 );
+// add_action( 'after_setup_theme', __NAMESPACE__ . '\block_patterns', 9 );
 function block_patterns() {
 
 	/*
