@@ -52,7 +52,8 @@
 				array(
 					'theme_location' => 'menu-1',
 					'menu_id'        => 'primary-menu',
-					'menu_class'	 => 'clicky-menu no-js',
+					'menu_class'	 => 'main-menu clicky-menu no-js',
+					'container'		 => ''
 				)
 			);
 			?>
