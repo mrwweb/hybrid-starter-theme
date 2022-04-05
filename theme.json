@@ -35,7 +35,8 @@
 				}
 			],
 			"gradients": [],
-			"duotone": []
+			"customDuotone": false,
+			"duotone": null
 		},
 		"typography": {
 			"fontSizes": [
