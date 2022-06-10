@@ -3,7 +3,7 @@
 }
 
 /* name, color, contrasting text */
-$colors:
+/*$colors:
 	"primary" $red $white,
 	"accent" $yellow null,
 	"green" $green $white,
@@ -13,14 +13,14 @@ $colors:
 	"gray" $gray null,
 	"dark-gray" $gray--dark $white,
 	"foreground" $black $white,
-	"background" $white null;
+	"background" $white null;*/
 
 /**
  * Background and text colors are auto-output by theme.json
  *
  * This takes care of setting better default colors and other fine-tuning
  */
-@each $name, $color, $text in $colors {
+/*@each $name, $color, $text in $colors {
 	.has-#{$name}-background-color {
 		color: $text;
 
@@ -28,4 +28,4 @@ $colors:
 			border-color: $color;
 		}
 	}
-}
+}*/
