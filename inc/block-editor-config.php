@@ -30,8 +30,8 @@ function editor_assets() {
 
 }
 
-//add_filter( 'mrw_hidden_blocks', __NAMESPACE__ . '\unhide_blocks' );
-function unhide_blocks( $blocks ) {
+//add_filter( 'mrw_hidden_blocks', __NAMESPACE__ . '\show_hide_blocks' );
+function show_hide_blocks( $blocks ) {
 
 	$blocks = array_diff( $blocks, array( 'core/spacer', 'core/table' ) );
 
@@ -48,38 +48,6 @@ function register_block_styles() {
 		[
 			'name' => 'example',
 			'label' => __( 'Example', '_s' ),
-		]
-	);
-
-}
-
-/**
- * Replaces {{theme_uri}} token in HTML markup with the real theme directory URI
- * @param  str $markup HTML for block pattern (or anything else, I suppose)
- * @return str         HTML with real site theme path in it
- */
-function replace_theme_uri( $markup ) {
-	return str_replace( '{{theme_uri}}', get_stylesheet_directory_uri(), $markup );
-}
-
-// add_action( 'after_setup_theme', __NAMESPACE__ . '\block_patterns', 9 );
-function block_patterns() {
-
-	/*
-	 * HEADERS
-	 */
-	register_block_pattern_category(
-		'theme-headers',
-		[ 'label' => 'Page Headers' ],
-	);
-
-	register_block_pattern(
-		'theme/full-screen-intro-banner',
-		[
-			'title' => 'Full-screen Page Intro',
-			'content' => replace_theme_uri( file_get_contents( get_theme_file_path( 'block-patterns/full-screen-page-intro.html' ) ) ),
-			'categories' => [ 'theme-headers' ],
-			'viewportWidth' => 1200,
 		]
 	);
 
