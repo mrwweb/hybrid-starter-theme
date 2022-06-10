@@ -1,5 +1,10 @@
 <?php
 /**
+ * Changes:
+ * - Make H2 and div since time shouldn't be a heading
+ */
+
+/**
  * Block: Event Date Time
  *
  * Override this template in your own theme by creating a file at:
