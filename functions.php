@@ -7,6 +7,8 @@
  * @package _s
  */
 
+namespace Client\Theme;
+
 function setup() {
 
 	// Add default posts and comments RSS feed links to head.
@@ -53,7 +55,16 @@ add_action( 'after_setup_theme', __NAMESPACE__ . '\content_width', 0 );
 /**
  * Enqueue scripts and styles.
  */
-function scripts() {
+function scripts_and_styles() {
+
+	if( is_tribe_calendar() ) {
+		wp_enqueue_style(
+			'cs-tec-style',
+			get_theme_file_uri( 'css/plugins/the-events-calendar.css' ),
+			['cs-style'],
+			filemtime( get_theme_file_path( 'css/plugins/the-events-calendar.css' ) )
+		);
+	}
 
 	wp_enqueue_style(
 		'theme-style',
@@ -74,7 +85,7 @@ function scripts() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
-add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\scripts' );
+add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\scripts_and_styles' );
 
 add_filter( 'replace_editor', __NAMESPACE__ . '\make_blog_editable', 10, 2 );
 /**
@@ -92,6 +103,32 @@ function make_blog_editable( $replace, $post ) {
 
 	return $replace;
 
+}
+
+/**
+ * Detect Tribe Events page
+ * @link https://gist.github.com/samkent/b98bd3c9b28426b8461bc1417adf7b5d
+ */
+function is_tribe_calendar() {
+	return
+		(
+			function_exists( 'tribe_is_event' ) &&
+			tribe_is_event()
+		) ||
+		(
+			function_exists( 'tribe_is_event_category' ) &&
+			tribe_is_event_category()
+		) ||
+		(
+			function_exists( 'tribe_is_in_main_loop' ) &&
+			tribe_is_in_main_loop()
+		) ||
+		(
+			function_exists( 'tribe_is_view' ) &&
+			tribe_is_view()
+		) ||
+		'tribe_events' == get_post_type() ||
+		is_singular( 'tribe_events' );
 }
 
 require get_template_directory() . '/inc/block-editor-config.php';
