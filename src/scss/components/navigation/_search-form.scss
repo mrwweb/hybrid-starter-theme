@@ -1,0 +1,30 @@
+.search-form {
+	position: relative;
+	display: flex;
+	align-items: stretch;
+}
+
+input.search-form__input {
+	flex: 1;
+	padding-right: 2em;
+	background-color: $black;
+	color: $white;
+
+	&:focus {
+		color: $white;
+	}
+}
+
+.search-form__submit {
+
+	@include button-unset;
+
+	position: absolute;
+	height: 100%;
+	right: 0;
+
+	display: flex;
+	align-items: center;
+	padding: 0 .5em;
+
+}

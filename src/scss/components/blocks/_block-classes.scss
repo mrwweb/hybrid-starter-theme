@@ -1,0 +1,31 @@
+.has-background {
+	padding: $space-3;
+}
+
+/* name, color, contrasting text */
+$colors:
+	"primary" $red $white,
+	"accent" $yellow null,
+	"green" $green $white,
+	"secondary" $blue $white,
+	"purple" $purple $white,
+	"light-gray" $gray--light null,
+	"gray" $gray null,
+	"dark-gray" $gray--dark $white,
+	"foreground" $black $white,
+	"background" $white null;
+
+/**
+ * Background and text colors are auto-output by theme.json
+ *
+ * This takes care of setting better default colors and other fine-tuning
+ */
+@each $name, $color, $text in $colors {
+	.has-#{$name}-background-color {
+		color: $text;
+
+		.wp-block-button &.wp-block-button__link {
+			border-color: $color;
+		}
+	}
+}

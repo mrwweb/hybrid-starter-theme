@@ -1,0 +1,33 @@
+.wp-block-columns {
+	justify-content: space-between;
+	margin-bottom: 0;
+}
+
+/* Improve alignment and wrapping of columns */
+.wp-block-column {
+
+	@include flow;
+
+	& + & {
+		margin-block-start: var(--wp--style--block-gap);
+	}
+
+	@include mq-medium-blocks-only {
+
+		&.wp-block-column.wp-block-column:not(:only-child) {
+			flex-basis: 100% !important;
+			margin-inline: 0 !important;
+		}
+
+		& + & {
+			margin-block-start: var(--wp--style--block-gap);
+		}
+	}
+
+	@include mq( $bp--blocks--large ) {
+
+		& + & {
+			margin-block-start: 0;
+		}
+	}
+}

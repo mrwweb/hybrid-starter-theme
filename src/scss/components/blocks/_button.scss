@@ -1,0 +1,6 @@
+.wp-block-button .wp-block-button__link {
+
+	@include button;
+
+	border-radius: 0;
+}

@@ -1,0 +1,47 @@
+.comment-navigation,
+.posts-navigation,
+.post-navigation {
+
+	@include alignwide;
+	margin: $space-4 auto $space-3;
+
+	.nav-links {
+		display: flex;
+		flex-wrap: wrap;
+
+		a {
+			color: inherit;
+			display: flex;
+			align-items: center;
+			font-size: $font-size-s;
+			font-size: $fluid-font-size-s;
+			text-decoration: none;
+
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+
+	.nav-previous,
+	.nav-next {
+		flex: 1 0 50%;
+	}
+
+	.nav-previous a::before,
+	.nav-next a::after {
+		display: inline-block;
+		content: "";
+		width: 1.25em;
+		height: 1.25em;
+		background: url(../img/svg/arrow.svg) center / contain no-repeat;
+	}
+
+	.nav-previous a::before {
+		transform: rotate(180deg);
+	}
+
+	.nav-next a {
+		justify-content: flex-end;
+	}
+}

@@ -1,0 +1,95 @@
+.gform_wrapper.gform_wrapper.gform_wrapper.gravity-theme {
+
+	.gform_fields {
+		grid-row-gap: $space-3;
+	}
+
+	.gfield_label {
+		margin-bottom: .25rem;
+		font-size: 1em;
+	}
+
+	.gfield_description {
+		padding-bottom: .5rem;
+	}
+
+	.field_sublabel_above .description,
+	.field_sublabel_above .gfield_description,
+	.field_sublabel_above .gsection_description {
+		margin-top: 0;
+	}
+
+	.ginput_complex {
+		align-items: flex-start;
+
+		label {
+			font-size: .85em;
+		}
+	}
+
+	.gfield_radio label,
+	.gfield_checkbox label {
+		font-size: .85em;
+	}
+
+	select {
+		padding: 10px 8px;
+	}
+
+	input[type="color"],
+	input[type="date"],
+	input[type="datetime-local"],
+	input[type="datetime"],
+	input[type="email"],
+	input[type="month"],
+	input[type="number"],
+	input[type="password"],
+	input[type="search"],
+	input[type="tel"],
+	input[type="text"],
+	input[type="time"],
+	input[type="url"],
+	input[type="week"],
+	select,
+	textarea {}
+
+	.gchoice + .gchoice {
+		margin-block-start: .3125em;
+	}
+
+	/* Validation */
+	.gform_validation_errors {
+		margin-bottom: $space-3;
+		border-color: $red;
+		border-radius: 0;
+		color: $red;
+		box-shadow: none;
+
+		> h2 .gform-icon {
+			margin-top: 10px;
+			align-items: flex-start;
+		}
+	}
+
+	.gfield_validation_message,
+	.validation_message {
+		padding: 0;
+		background-color: transparent;
+		border: 0;
+		color: $red;
+	}
+
+	.gfield_error [aria-invalid="true"] {
+		border-color: $red;
+	}
+
+	.gfield_error .gfield_repeater_cell label,
+	.gfield_error label,
+	.gfield_error legend,
+	.gfield_validation_message,
+	.validation_message,
+	[aria-invalid="true"] + label,
+	label + [aria-invalid="true"] {
+		color: $red;
+	}
+}

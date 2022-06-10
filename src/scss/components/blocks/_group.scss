@@ -1,0 +1,5 @@
+.wp-block-group {
+	clear: both;
+
+	@include flow;
+}

@@ -1,0 +1,11 @@
+.wp-block-latest-posts__list.is-grid li,
+.is-style-cards li {
+	list-style: none !important;
+}
+
+.wp-block-latest-posts__list time {
+	display: block;
+	font-size: $font-size-s;
+	font-size: $fluid-font-size-s;
+	margin-top: .5em;
+}

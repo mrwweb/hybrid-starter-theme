@@ -2,8 +2,75 @@
  * Selectors reference: https://github.com/mrwweb/wordpress-block-editor-theme-support-starter/blob/master/block-editor-styles.css
  */
 @import "globals/globals";
+@import "base/typography/font-faces"; // This breaks when wrapped in a selector
+@import "plugins/the-events-calendar-editor";
+
+
+/* Hide the Order Field */
+.editor-page-attributes__order {
+	display: none;
+}
 
 :root .editor-styles-wrapper {
-    @import "base/base";
-    @import "components/blocks/index";
+	@import "base/base";
+	@import "components/blocks/blocks";
+
+	/**
+	 * Base typography and spacing
+	 */
+	background-color: $white;
+	font-family: $font__main;
+	font-size: 20px;
+	line-height: $font__line-height-body;
+
+	.block-editor-block-list__layout.is-root-container {
+
+		@include flow;
+	}
+
+	/**
+	 * Post Title
+	 */
+	.edit-post-visual-editor__post-title-wrapper {}
+
+	/**
+	 * Alignments
+	 */
+	/**
+	 * Alignments
+	 */
+
+	[data-align="left"],
+	[data-align="right"] {
+		float: none !important;
+	}
+
+	@include mq( $bp--blocks ) {
+
+		[data-align="left"],
+		[data-align="right"] {
+			max-width: $width--content;
+
+			figure {
+				max-width: 45%;
+			}
+		}
+
+		[data-align="left"] figure {
+			float: left;
+		}
+
+		[data-align="right"] figure {
+			float: right;
+		}
+
+	}
+
+	[data-align="wide"] {
+		width: 90%;
+	}
+
+	[data-align="full"] + [data-align="full"] {
+		margin-top: 0;
+	}
 }

@@ -38,24 +38,66 @@
 	}
 }
 
-@mixin alignwide {
-	max-width: $width--wide;
+@mixin mq-medium-blocks-only {
 
-	@include mq( $bp--full ) {
-		/* margin-left: $margin--lg;
-		margin-right: $margin--lg; */
-	}
-
-	@include mq( $bp--large + 80 ) { // 80 = $margin * 2 in px
-		margin-left: auto !important;
-		margin-right: auto !important;
+	@media (min-width: $bp--blocks / 16 * 1em)
+		and (max-width: ($bp--blocks--large + 1) / 16 * 1em ) {
+		@content;
 	}
 }
 
-@mixin flow( $size: 1.4em ) {
+@mixin block-container {
+
+	> * {
+		width: 90%;
+		max-width: $width--content;
+		margin-inline: auto;
+	}
+}
+
+@mixin alignwide {
+	max-width: $width--wide;
+
+	@include mq( $bp--large ) {
+		width: 100%;
+	}
+}
+
+@mixin alignfull {
+	width: 100%;
+	max-width: none;
+	margin-inline: 0;
+	margin-top: $space-4;
+
+	+ :not(.alignfull) {
+		margin-top: $space-4;
+	}
+
+	+ .alignfull {
+		margin-top: 0;
+	}
+}
+
+@mixin flow( $size: $space-3 ) {
 
 	> * + * {
 		margin-top: $size;
 	}
 
+}
+
+@mixin button {
+
+	&:hover {}
+
+	&:visited {}
+
+	&:focus {}
+}
+
+@mixin button-unset {
+	all: unset;
+	cursor: pointer;
+	box-sizing: inherit;
+	outline-offset: -.25rem;
 }

@@ -50,16 +50,9 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 /*--------------------------------------------------------------
 # Plugins
 --------------------------------------------------------------*/
-
+@import "plugins/plugins";
 
 /*--------------------------------------------------------------
 # Utilities
 --------------------------------------------------------------*/
-
-/* Accessibility
---------------------------------------------- */
-@import "utilities/accessibility";
-
-/* Alignments
---------------------------------------------- */
-@import "utilities/alignments";
+@import "utilities/utilities";

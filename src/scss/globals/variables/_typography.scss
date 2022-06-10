@@ -5,3 +5,20 @@ $font__code: monaco, consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
 $font__pre: "Courier 10 Pitch", courier, monospace;
 $font__line-height-body: 1.5;
 $font__line-height-pre: 1.6;
+
+$font-size-xs: 0.875rem;
+$font-size-s: 1.0625rem;
+$font-size-default: 1.25rem;
+$font-size-m: 1.5rem;
+$font-size-l: 2rem;
+$font-size-xl: 2.5rem;
+$font-size-xxl: 3.375rem;
+
+/* Generated with Utopia */
+$fluid-font-size-xs: clamp(0.87rem, calc(0.9rem + -0.06vw), 0.89rem);
+$fluid-font-size-s: clamp(1.04rem, calc(0.97rem + 0.13vw), 1rem);
+$fluid-font-size-default: clamp(1.13rem, calc(1.03rem + 0.38vw), 1.25rem);
+$fluid-font-size-m: clamp(1.42rem, calc(1.13rem + 1.16vw), 1.8rem);
+$fluid-font-size-l: clamp(1.6rem, calc(1.17rem + 1.72vw), 2.16rem);
+$fluid-font-size-xl: clamp(1.8rem, calc(1.19rem + 2.43vw), 2.59rem);
+$fluid-font-size-xxl: clamp(2.03rem, calc(1.19rem + 3.33vw), 3.11rem);
