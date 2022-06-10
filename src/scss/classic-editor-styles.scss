@@ -1,0 +1,19 @@
+@import "globals/globals";
+@import "base/base";
+@import "components/blocks/blocks";
+
+html {
+	background-color: $white;
+}
+
+body {
+	max-width: $width--content;
+	padding: $space-3 $space-2;
+
+	@include flow;
+}
+
+a.button.button.button {
+
+	@include button;
+}

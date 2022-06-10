@@ -7,20 +7,22 @@
  * @package _s
  */
 
-namespace Client\Theme;
+namespace _S_NAMESPACE\Theme;
 
 function setup() {
 
-	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
 
 	add_theme_support( 'title-tag' );
 
 	add_theme_support( 'post-thumbnails' );
 
+	add_editor_style( 'css/classic-editor-styles.css' );
+
 	register_nav_menus(
 		array(
 			'menu-1' => esc_html__( 'Primary', '_s' ),
+			'menu-2' => esc_html__( 'Footer', '_s' ),
 		)
 	);
 
