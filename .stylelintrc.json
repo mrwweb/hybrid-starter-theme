@@ -11,6 +11,7 @@
         "block-no-empty": null,
         "no-duplicate-selectors": null,
         "font-family-no-duplicate-names": null,
-        "selector-class-pattern": null
+        "selector-class-pattern": null,
+        "at-rule-empty-line-before": null,
     }
 }
