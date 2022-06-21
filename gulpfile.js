@@ -1,5 +1,8 @@
+/* ESLINT config: */
+/* global require exports */
+
 const { src, dest, watch, parallel } = require( 'gulp' ),
-	sass = require( 'gulp-sass' ),
+	sass = require( 'gulp-sass' )( require( 'sass' ) ),
 	postcss = require( 'gulp-postcss' ),
 	sourcemaps = require( 'gulp-sourcemaps' ),
 	autoprefixer = require( 'autoprefixer' ),
@@ -23,8 +26,8 @@ function js() {
 	return src( [ 'src/js/*.js' ] )
 		.pipe( sourcemaps.init() )
 		.pipe( babel( {
-			presets: [ '@babel/env' ]
-		}) )
+			presets: [ '@babel/env' ],
+		} ) )
 		.pipe( concat( 'scripts.min.js' ) )
 		.pipe( uglify() )
 		.pipe( sourcemaps.write( '/maps' ) )
@@ -35,7 +38,7 @@ function editorJs() {
 	return src( [ 'src/js/editor/*.js' ] )
 		.pipe( sourcemaps.init() )
 		.pipe( babel( {
-			presets: [ '@babel/env', '@babel/preset-react' ]
+			presets: [ '@babel/env', '@babel/preset-react' ],
 		} ) )
 		.pipe( concat( 'editor.min.js' ) )
 		.pipe( uglify() )

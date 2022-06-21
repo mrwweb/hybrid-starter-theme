@@ -14,12 +14,12 @@
     "gulp-concat": "^2.6.1",
     "gulp-livereload": "^4.0.2",
     "gulp-postcss": "^9.0.0",
-    "gulp-sass": "^4.1.0",
+    "gulp-sass": "^5.1.0",
     "gulp-sourcemaps": "^2.6.4",
     "gulp-uglify": "^3.0.2",
-    "node-sass": "^7.0.1",
     "postcss": "^8.0.0",
-    "postcss-logical": "^5.0.4"
+    "postcss-logical": "^5.0.4",
+    "sass": "^1.52.3"
   },
   "scripts": {
     "lint:scss": "wp-scripts lint-style 'src/scss/**/*.scss'",
