@@ -54,7 +54,8 @@
 					'theme_location' => 'menu-1',
 					'menu_id'        => 'primary-menu',
 					'menu_class'	 => 'main-menu clicky-menu no-js',
-					'container'		 => ''
+					'container'		 => '',
+					'fallback_cb'	 => false,
 				)
 			);
 			?>
