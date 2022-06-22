@@ -43,6 +43,11 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 @import "base/base";
 
 /*--------------------------------------------------------------
+# Template
+--------------------------------------------------------------*/
+@import "template/template";
+
+/*--------------------------------------------------------------
 # Components
 --------------------------------------------------------------*/
 @import "components/components";

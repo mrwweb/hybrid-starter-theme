@@ -34,8 +34,8 @@ var {
 	font-family: $font__code;
 }
 
-abbr,
-acronym {
+abbr[title],
+acronym[title] {
 	border-bottom: 1px dotted $color__border-abbr;
 	cursor: help;
 }
