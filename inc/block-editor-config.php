@@ -6,8 +6,18 @@ namespace _S_NAMESPACE\Theme;
  * 
  * @see https://make.wordpress.org/core/2021/06/16/introducing-the-template-editor-in-wordpress-5-8/
  */
-add_action( 'after_setup_theme', __NAMESPACE__ . '\disable_template_editor' );
-function disable_template_editor() {
+add_action( 'after_setup_theme', __NAMESPACE__ . '\configure_template_editors' );
+function configure_template_editors() {
+	/*
+	 * Support the block template part editor for the footer
+	 * @see https://make.wordpress.org/core/2022/10/04/block-based-template-parts-in-traditional-themes/
+	 */
+	add_theme_support( 'block-template-parts' );
+
+	/*
+	 * Remove Block Templates that are automatically enabled by theme.json
+	 * @see https://make.wordpress.org/core/2021/06/16/introducing-the-template-editor-in-wordpress-5-8/
+	 */
 	remove_theme_support( 'block-templates' );
 }
 

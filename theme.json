@@ -82,5 +82,12 @@
 		"spacing": {
 			"blockGap": "2.5em"
 		}
-	}
+	},
+	"templateParts": [
+        {
+            "area": "footer",
+            "name": "footer",
+            "title": "Footer"
+        }
+    ]
 }
