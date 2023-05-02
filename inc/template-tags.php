@@ -8,6 +8,32 @@
 */
 
 /**
+ * Detect Tribe Events page
+ * @link https://gist.github.com/samkent/b98bd3c9b28426b8461bc1417adf7b5d
+ */
+function is_tribe_calendar() {
+	return
+		(
+			function_exists( 'tribe_is_event' ) &&
+			tribe_is_event()
+		) ||
+		(
+			function_exists( 'tribe_is_event_category' ) &&
+			tribe_is_event_category()
+		) ||
+		(
+			function_exists( 'tribe_is_in_main_loop' ) &&
+			tribe_is_in_main_loop()
+		) ||
+		(
+			function_exists( 'tribe_is_view' ) &&
+			tribe_is_view()
+		) ||
+		'tribe_events' == get_post_type() ||
+		is_singular( 'tribe_events' );
+}
+
+/**
  * Prints HTML with meta information for the current post-date/time.
  */
 function _s_posted_on() {
