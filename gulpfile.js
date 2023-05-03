@@ -6,7 +6,6 @@ const { src, dest, watch, parallel } = require( 'gulp' ),
 	postcss = require( 'gulp-postcss' ),
 	sourcemaps = require( 'gulp-sourcemaps' ),
 	autoprefixer = require( 'autoprefixer' ),
-	postcssLogical = require( 'postcss-logical' ),
 	babel = require( 'gulp-babel' ),
 	concat = require( 'gulp-concat' ),
 	uglify = require( 'gulp-uglify' ),
@@ -16,7 +15,7 @@ function css() {
 	return src( 'src/scss/**/*.scss' )
 		.pipe( sourcemaps.init() )
 		.pipe( sass( { outputStyle: 'compressed' } ).on( 'error', sass.logError ) )
-		.pipe( postcss( [ postcssLogical(), autoprefixer() ] ) )
+		.pipe( postcss( [ autoprefixer() ] ) )
 		.pipe( sourcemaps.write( '/maps' ) )
 		.pipe( dest( 'css' ) )
 		.pipe( livereload() );
@@ -38,7 +37,7 @@ function editorJs() {
 	return src( [ 'src/js/editor/*.js' ] )
 		.pipe( sourcemaps.init() )
 		.pipe( babel( {
-			presets: [ '@babel/env', '@babel/preset-react' ],
+			presets: [ '@babel/env' ],
 		} ) )
 		.pipe( concat( 'editor.min.js' ) )
 		.pipe( uglify() )
