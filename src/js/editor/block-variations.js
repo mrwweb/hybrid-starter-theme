@@ -1,19 +1,6 @@
 /* ESLINT config: */
 /* global wp */
 
-/* Set Group to Inherit Layout by Default */
-wp.blocks.registerBlockVariation(
-	'core/group',
-	{
-		isDefault: true,
-		attributes: {
-			layout: {
-				inherit: true,
-			},
-		},
-	}
-);
-
 /* Adjust default Media & Text block*/
 wp.blocks.registerBlockVariation(
 	'core/media-text',
@@ -21,9 +8,7 @@ wp.blocks.registerBlockVariation(
 		isDefault: true,
 		attributes: {
 			mediaPosition: 'right',
-			imageFill: true,
-			backgroundColor: 'primary',
-			textColor: 'background',
+			imageFill: true
 		},
 		innerBlocks: [
 			[ 'core/paragraph' ],
