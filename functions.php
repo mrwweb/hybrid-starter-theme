@@ -62,7 +62,7 @@ add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\scripts_and_styles' );
  */
 function scripts_and_styles() {
 
-	if( \MRW\TEC\is_tribe_calendar() ) {
+	if( \MRW\TEC\is_tribe_view() ) {
 		wp_enqueue_style(
 			'custom-tec-style',
 			get_theme_file_uri( 'css/plugins/the-events-calendar.css' ),
