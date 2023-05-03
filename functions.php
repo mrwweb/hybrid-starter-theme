@@ -9,6 +9,10 @@
 
 namespace _S_NAMESPACE\Theme;
 
+add_action( 'after_setup_theme', __NAMESPACE__ . '\setup' );
+/**
+ * Configure theme supports
+ */
 function setup() {
 
 	add_theme_support( 'automatic-feed-links' );
@@ -22,7 +26,6 @@ function setup() {
 	register_nav_menus(
 		array(
 			'menu-1' => esc_html__( 'Primary', '_s' ),
-			'menu-2' => esc_html__( 'Footer', '_s' ),
 		)
 	);
 
@@ -40,8 +43,8 @@ function setup() {
 	);
 
 }
-add_action( 'after_setup_theme', __NAMESPACE__ . '\setup' );
 
+add_action( 'after_setup_theme', __NAMESPACE__ . '\content_width', 0 );
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
  *
@@ -52,8 +55,8 @@ add_action( 'after_setup_theme', __NAMESPACE__ . '\setup' );
 function content_width() {
 	$GLOBALS['content_width'] = apply_filters( '_s_content_width', 640 );
 }
-add_action( 'after_setup_theme', __NAMESPACE__ . '\content_width', 0 );
 
+add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\scripts_and_styles' );
 /**
  * Enqueue scripts and styles.
  */
@@ -87,7 +90,21 @@ function scripts_and_styles() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
-add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\scripts_and_styles' );
+
+add_action( 'wp_default_scripts', __NAMESPACE__ . '\dequeue_jquery_migrate' );
+/**
+ * Don't enqueue jquery migrate
+ *
+ * @see https://wordpress.stackexchange.com/a/291711/9844
+ */
+function dequeue_jquery_migrate( $scripts ) {
+    if ( ! is_admin() && ! empty( $scripts->registered['jquery'] ) ) {
+        $scripts->registered['jquery']->deps = array_diff(
+            $scripts->registered['jquery']->deps,
+            [ 'jquery-migrate' ]
+        );
+    }
+}
 
 /* Don't load duotone filters in body */
 remove_action( 'wp_body_open', 'wp_global_styles_render_svg_filters' );
