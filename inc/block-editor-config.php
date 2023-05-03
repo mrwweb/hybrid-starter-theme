@@ -40,6 +40,22 @@ function editor_assets() {
 
 }
 
+/**
+ * Enqueue block-specific styles
+ * 
+ * Only doing this for blocks that aren't used on almost every page, so we get greater benefits from caching
+ * 
+ * @see https://developer.wordpress.org/reference/functions/wp_enqueue_block_style/
+ */
+$styled_blocks = [ 'columns', 'media-text', 'latest-posts' ];
+foreach ( $styled_blocks as $block_name ) {
+	$args = array(
+		'handle' => "mrw-$block_name",
+		'src'    => get_theme_file_uri( "css/components/blocks/$block_name.css" ),
+	);
+	wp_enqueue_block_style( "core/$block_name", $args );
+}
+
 //add_filter( 'mrw_hidden_blocks', __NAMESPACE__ . '\show_hide_blocks' );
 function show_hide_blocks( $blocks ) {
 
