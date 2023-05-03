@@ -66,16 +66,6 @@
 		"color": {
 			"palette": [
 				{
-					"name": "White",
-					"slug": "background",
-					"color": "#fff"
-				},
-				{
-					"name": "Black",
-					"slug": "foreground",
-					"color": "#000"
-				},
-				{
 					"name": "Primary",
 					"slug": "primary",
 					"color": ""
@@ -91,6 +81,11 @@
 					"color": ""
 				},
 				{
+					"name": "Black",
+					"slug": "foreground",
+					"color": "#000"
+				},
+				{
 					"name": "Dark Gray",
 					"slug": "dark-gray",
 					"color": "#444"
@@ -104,6 +99,11 @@
 					"name": "Light Gray",
 					"slug": "light-gray",
 					"color": "#EFEFEF"
+				},
+				{
+					"name": "White",
+					"slug": "background",
+					"color": "#fff"
 				}
 			],
 			"gradients": [],
@@ -196,8 +196,8 @@
 			"lineHeight": "1.4"
 		},
 		"color": {
-			"text": "var(--wp--preset--color--base)",
-			"background": "var(--wp--preset--color--contrast)",
+			"text": "var(--wp--preset--color--foreground)",
+			"background": "var(--wp--preset--color--background)",
 		},
 		"elements": {
 			"heading": {
