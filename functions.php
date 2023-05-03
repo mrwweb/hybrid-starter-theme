@@ -53,7 +53,7 @@ add_action( 'after_setup_theme', __NAMESPACE__ . '\content_width', 0 );
  * @global int $content_width
  */
 function content_width() {
-	$GLOBALS['content_width'] = apply_filters( '_s_content_width', 640 );
+	$GLOBALS['content_width'] = apply_filters( '_s_content_width', 688 );
 }
 
 add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\scripts_and_styles' );
@@ -62,11 +62,11 @@ add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\scripts_and_styles' );
  */
 function scripts_and_styles() {
 
-	if( is_tribe_calendar() ) {
+	if( \MRW\TEC\is_tribe_calendar() ) {
 		wp_enqueue_style(
-			'cs-tec-style',
+			'custom-tec-style',
 			get_theme_file_uri( 'css/plugins/the-events-calendar.css' ),
-			['cs-style'],
+			['theme-style'],
 			filemtime( get_theme_file_path( 'css/plugins/the-events-calendar.css' ) )
 		);
 	}
