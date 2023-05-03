@@ -1,16 +1,15 @@
 .gform_wrapper.gform_wrapper.gform_wrapper.gravity-theme {
-
 	.gform_fields {
 		grid-row-gap: $space-3;
 	}
 
 	.gfield_label {
-		margin-bottom: .25rem;
+		margin-bottom: 0.25rem;
 		font-size: 1em;
 	}
 
 	.gfield_description {
-		padding-bottom: .5rem;
+		padding-bottom: 0.5rem;
 	}
 
 	.field_sublabel_above .description,
@@ -23,13 +22,13 @@
 		align-items: flex-start;
 
 		label {
-			font-size: .85em;
+			font-size: 0.85em;
 		}
 	}
 
 	.gfield_radio label,
 	.gfield_checkbox label {
-		font-size: .85em;
+		font-size: 0.85em;
 	}
 
 	select {
@@ -51,18 +50,19 @@
 	input[type="url"],
 	input[type="week"],
 	select,
-	textarea {}
+	textarea {
+	}
 
 	.gchoice + .gchoice {
-		margin-block-start: .3125em;
+		margin-block-start: 0.3125em;
 	}
 
 	/* Validation */
 	.gform_validation_errors {
 		margin-bottom: $space-3;
-		border-color: $red;
+		border-color: $error;
 		border-radius: 0;
-		color: $red;
+		color: $error;
 		box-shadow: none;
 
 		> h2 .gform-icon {
@@ -76,11 +76,11 @@
 		padding: 0;
 		background-color: transparent;
 		border: 0;
-		color: $red;
+		color: $error;
 	}
 
 	.gfield_error [aria-invalid="true"] {
-		border-color: $red;
+		border-color: $error;
 	}
 
 	.gfield_error .gfield_repeater_cell label,
@@ -90,6 +90,6 @@
 	.validation_message,
 	[aria-invalid="true"] + label,
 	label + [aria-invalid="true"] {
-		color: $red;
+		color: $error;
 	}
 }

@@ -1,9 +1,13 @@
-$width--content: 50rem; // 800px
-$width--wide: 62.5rem; // 1000px
+$width--content: var(--wp--style--global--content-size);
+$width--wide: var(--wp--style--global--wide-size);
 $width--max: 100rem; // 1600px
 
-$space-1: 0.5rem;
-$space-2: 1rem;
-$space-3: 2rem;
-$space-4: 4rem;
-$space-5: 6rem;
+$space-1: var(--wp--preset--spacing-10);
+$space-2: var(--wp--preset--spacing-20);
+$space-3: var(--wp--preset--spacing-30);
+$space-4: var(--wp--preset--spacing-40);
+$space-5: var(--wp--preset--spacing-50); /* Center point */
+$space-6: var(--wp--preset--spacing-60);
+$space-7: var(--wp--preset--spacing-70);
+$space-8: var(--wp--preset--spacing-80);
+$space-9: var(--wp--preset--spacing-90);

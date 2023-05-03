@@ -1,3 +1,12 @@
+button,
+input,
+select,
+optgroup,
+textarea {
+	color: $color__text-main;
+	line-height: $font__line-height-body;
+}
+
 input[type="text"],
 input[type="email"],
 input[type="url"],
@@ -16,16 +25,12 @@ input[type="color"],
 select,
 textarea {
 	padding: $space-1;
-	color: $color__text-input;
 	border: 1px solid $color__border-input;
 	border-radius: $border-radius;
 	background-color: $white;
-
-	&:focus {
-		color: $color__text-input-focus;
-	}
 }
 
 textarea {
 	width: 100%;
+	padding: $space-2;
 }

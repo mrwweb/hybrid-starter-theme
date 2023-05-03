@@ -1,20 +1,22 @@
 /* Theme Color Palette */
-$white: #fff;
-$black: #111;
-$red: red;
+$primary: var(--wp--preset--color--primary);
+$secondary: var(--wp--preset--color--secondary);
+$accent: var(--wp--preset--color--accent);
+$darkgray: var(--wp--preset--color--dark-gray);
+$gray: var(--wp--preset--color--gray);
+$lightgray: var(--wp--preset--color--light-gray);
+$white: var(--wp--preset--color--background);
+$black: var(--wp--preset--color--foreground);
+$error: maroon;
+$warning: orange;
+$message: lightblue;
 
 /* Functional Color Palette */
-$color__background-body: $white;
-$color__background-hr: #ccc;
-$color__background-button: #e6e6e6;
-$color__background-pre: #eee;
+$color__text-main: $primary;
+$color__background-hr: $lightgray;
+$color__background-button: $lightgray;
+$color__background-pre: $lightgray;
 $color__background-ins: #fff9c0;
 
-$color__link: #4169e1; //royalblue
-$color__link-visited: #800080; //purple
-$color__link-hover: #191970; //midnightblue
-$color__text-main: $black;
-$color__text-input: $color__text-main;
-
-$color__border-input: #ccc;
-$color__border-abbr: #666;
+$color__border-input: $gray;
+$color__border-abbr: $gray;

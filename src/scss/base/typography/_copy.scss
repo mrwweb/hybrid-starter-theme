@@ -1,7 +1,3 @@
-p {
-	margin-bottom: 1.5em;
-}
-
 dfn,
 cite,
 em,
@@ -9,17 +5,9 @@ i {
 	font-style: italic;
 }
 
-blockquote {
-	margin: 0 1.5em;
-}
-
-address {
-	margin: 0 0 1.5em;
-}
-
 pre {
 	background: $color__background-pre;
-	font-family: $font__pre;
+	font-family: $font__monospace;
 	line-height: $font__line-height-pre;
 	margin-bottom: 1.6em;
 	max-width: 100%;
@@ -31,7 +19,7 @@ code,
 kbd,
 tt,
 var {
-	font-family: $font__code;
+	font-family: $font__monospace;
 }
 
 abbr[title],

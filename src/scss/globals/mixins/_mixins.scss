@@ -1,4 +1,4 @@
-@mixin screen-reader-text( $focus: false ) {
+@mixin screen-reader-text($focus: false) {
 	border: 0;
 	clip: rect(1px, 1px, 1px, 1px);
 	clip-path: inset(50%);
@@ -11,9 +11,7 @@
 	word-wrap: normal !important; // Many screen reader and browser combinations announce broken words as they would appear visually.
 
 	@if $focus {
-
 		&:focus {
-
 			@include button;
 
 			clip: auto !important;
@@ -24,30 +22,22 @@
 			width: auto;
 			z-index: 100000; // Above WP toolbar.
 		}
-
 	}
-
 }
 
-@mixin mq( $breakpoint ) {
-
+@mixin mq($breakpoint) {
 	@media screen and (min-width: calc( $breakpoint / 16 ) * 1em) {
-
 		@content;
-
 	}
 }
 
 @mixin mq-medium-blocks-only {
-
-	@media (min-width: calc( $bp--blocks / 16 ) * 1em)
-		and (max-width: calc( ( $bp--blocks--large + 1 ) / 16 ) * 1em ) {
+	@media (min-width: calc( $bp--blocks / 16 ) * 1em) and (max-width: calc( ( $bp--blocks--large + 1 ) / 16 ) * 1em) {
 		@content;
 	}
 }
 
 @mixin block-container {
-
 	> * {
 		width: 90%;
 		max-width: $width--content;
@@ -58,7 +48,7 @@
 @mixin alignwide {
 	max-width: $width--wide;
 
-	@include mq( $bp--large ) {
+	@include mq($bp--large) {
 		width: 100%;
 	}
 }
@@ -78,26 +68,26 @@
 	}
 }
 
-@mixin flow( $size: $space-3 ) {
-
+@mixin flow($size: $space-3) {
 	> * + * {
 		margin-top: $size;
 	}
-
 }
 
 @mixin button {
+	&:hover {
+	}
 
-	&:hover {}
+	&:visited {
+	}
 
-	&:visited {}
-
-	&:focus {}
+	&:focus {
+	}
 }
 
 @mixin button-unset {
 	all: unset;
 	cursor: pointer;
 	box-sizing: inherit;
-	outline-offset: -.25rem;
+	outline-offset: -0.25rem;
 }
