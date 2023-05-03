@@ -17,10 +17,14 @@
 }
 
 :root .alignfull {
-	@include alignfull
+	@include alignfull;
 }
 
-@media( min-width: 37.5em ) {
+.alignfull + .alignfull {
+	margin-top: 0;
+}
+
+@media (min-width: 37.5em) {
 	.alignleft,
 	.alignright {
 		max-width: 45%;
