@@ -4,32 +4,41 @@
 
 	ul {
 		display: flex;
+		align-items: stretch;
 	}
 
-	a {
-		display: block;
+	li {
+		display: flex;
+		align-items: stretch;
+	}
+
+	a,
+	button {
+		display: flex;
+		align-items: center;
 		text-decoration: none;
 	}
 
-	.current_page_item > a,
-	.current-menu-item > a,
-	.current_page_ancestor > a,
-	.current-menu-ancestor > a {
+	.current_page_item > *,
+	.current-menu-item > *,
+	.current_page_ancestor > *,
+	.current-menu-ancestor > * {
+		font-weight: 700;
 	}
 }
 
 /* Small menu. */
 .menu-toggle,
-.main-navigation.toggled ul {
+.menu-toggle[aria-expanded="true"] + ul {
 	display: block;
 }
 
-@media screen and (min-width: 37.5em) {
+@include mq($bp--menu) {
 	.menu-toggle {
 		display: none;
 	}
 
-	.main-navigation ul {
+	.main-navigation .main-menu {
 		display: flex;
 	}
 }
