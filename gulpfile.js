@@ -1,9 +1,9 @@
 /* ESLINT config: */
 /* global require exports */
-
 const { src, dest, watch, parallel } = require( 'gulp' ),
 	sass = require( 'gulp-sass' )( require( 'sass' ) ),
 	postcss = require( 'gulp-postcss' ),
+	cssnano = require( 'cssnano' ),
 	sourcemaps = require( 'gulp-sourcemaps' ),
 	autoprefixer = require( 'autoprefixer' ),
 	babel = require( 'gulp-babel' ),
@@ -11,13 +11,18 @@ const { src, dest, watch, parallel } = require( 'gulp' ),
 	uglify = require( 'gulp-uglify' ),
 	livereload = require( 'gulp-livereload' );
 
+const postcssPlugins = [
+	autoprefixer(),
+	cssnano('default')
+];
+
 function css() {
 	return src( 'src/scss/**/*.scss' )
 		.pipe( sourcemaps.init() )
 		.pipe( sass( { outputStyle: 'compressed' } ).on( 'error', sass.logError ) )
-		.pipe( postcss( [ autoprefixer() ] ) )
+		.pipe( postcss( postcssPlugins ) )
 		.pipe( sourcemaps.write( '/maps' ) )
-		.pipe( dest( 'css' ) )
+		.pipe( dest( 'css/' ) )
 		.pipe( livereload() );
 }
 
@@ -56,4 +61,5 @@ exports.js = js;
 exports.editorJs = editorJs;
 exports.css = css;
 exports.gulpWatch = gulpWatch;
+exports.compile = parallel( css, js, editorJs );
 exports.default = parallel( css, js, editorJs, gulpWatch );
