@@ -7,9 +7,10 @@
 		let toggleTargetId, toggleTarget;
 
 		this.init = function () {
-			toggleTargetId = toggleButton.getAttribute('aria-controls');
+			toggleTargetId = toggleButton.getAttribute('data-aria-controls');
 			toggleTarget = document.getElementById(toggleTargetId);
-			toggleTarget.classList.add('wta-js-toggleTarget');
+			toggleTarget.classList.add('js-toggleTarget');
+			toggleButton.setAttribute('aria-controls', toggleTargetId);
 			toggleButton.setAttribute('aria-expanded', 'false');
 			toggleButton.addEventListener('click', toggle, false);
 			toggleButton.addEventListener('keyup', close, false);
@@ -28,7 +29,8 @@
 		const close = function (e) {
 			if (
 				27 === e.keyCode &&
-				'true' === toggleButton.getAttribute('aria-expanded')
+				toggleButton.getAttribute('data-close-on-escape') !== 'false' &&
+				toggleButton.getAttribute('aria-expanded') === 'true'
 			) {
 				toggleButton.setAttribute('aria-expanded', 'false');
 				toggleButton.focus();
@@ -38,7 +40,7 @@
 	};
 
 	document.addEventListener('DOMContentLoaded', function() {
-		const toggles = document.querySelectorAll('.wta-js-toggleButton'),
+		const toggles = document.querySelectorAll('.js-toggleButton'),
 			togglesTotal = toggles.length;
 		let toggle;
 

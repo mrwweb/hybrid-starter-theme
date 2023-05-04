@@ -1,13 +1,28 @@
-.main-navigation {
-	display: block;
-	width: 100%;
+/* Basic menu display logic */
+.menu-toggle[aria-expanded="false"] + ul {
+	display: none;
+}
 
-	ul {
-		display: flex;
-		align-items: stretch;
+@include mq($bp--menu) {
+	.menu-toggle {
+		display: none;
 	}
 
+	.main-menu {
+		display: flex !important;
+
+		.sub-menu {
+			position: absolute;
+		}
+	}
+}
+
+/* General Main Menu Styles */
+.main-menu {
+	align-items: stretch;
+
 	li {
+		position: relative;
 		display: flex;
 		align-items: stretch;
 	}
@@ -19,26 +34,25 @@
 		text-decoration: none;
 	}
 
+	button {
+		@include button-unset;
+	}
+
+	/* Only top-level items */
+	> li > a,
+	button {
+		line-height: 1;
+	}
+
+	/* Current Itesm */
 	.current_page_item > *,
 	.current-menu-item > *,
 	.current_page_ancestor > *,
 	.current-menu-ancestor > * {
 		font-weight: 700;
 	}
-}
 
-/* Small menu. */
-.menu-toggle,
-.menu-toggle[aria-expanded="true"] + ul {
-	display: block;
-}
-
-@include mq($bp--menu) {
-	.menu-toggle {
-		display: none;
-	}
-
-	.main-navigation .main-menu {
-		display: flex;
+	/* Large Screen Styles */
+	@include mq($bp--menu) {
 	}
 }

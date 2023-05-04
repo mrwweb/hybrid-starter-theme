@@ -47,12 +47,12 @@
 		</div><!-- .site-branding -->
 
 		<nav id="site-navigation" class="main-navigation js-toggleWrapper">
-			<button class="menu-toggle js-toggleButton" aria-controls="menu-wrapper" aria-expanded="false"><?php esc_html_e( 'Menu', '_s' ); ?></button>
+			<button class="menu-toggle js-toggleButton" data-aria-controls="main-menu"><?php esc_html_e( 'Menu', '_s' ); ?></button>
 			<?php
 			wp_nav_menu(
 				array(
 					'theme_location' => 'menu-1',
-					'menu_id'        => 'primary-menu',
+					'menu_id'        => 'main-menu',
 					'menu_class'	 => 'main-menu clicky-menu no-js',
 					'container'		 => '',
 					'fallback_cb'	 => false,
