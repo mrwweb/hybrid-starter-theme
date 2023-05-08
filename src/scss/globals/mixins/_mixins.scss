@@ -68,7 +68,7 @@
 	}
 }
 
-@mixin flow($size: $space-3) {
+@mixin flow($size: 1.5em) {
 	> * + * {
 		margin-top: $size;
 	}

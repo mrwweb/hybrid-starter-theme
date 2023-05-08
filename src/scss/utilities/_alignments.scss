@@ -20,10 +20,6 @@
 	@include alignfull;
 }
 
-.alignfull + .alignfull {
-	margin-top: 0;
-}
-
 @media (min-width: 37.5em) {
 	.alignleft,
 	.alignright {
@@ -37,14 +33,14 @@
 	.alignleft,
 	[data-align="left"] {
 		float: left;
-		margin-right: 1.5em;
-		margin-bottom: 1.5em;
+		margin-right: var(--wp--style--block-gap);
+		margin-bottom: var(--wp--style--block-gap);
 	}
 
 	.alignright,
 	[data-align="right"] {
 		float: right;
-		margin-left: 1.5em;
-		margin-bottom: 1.5em;
+		margin-left: var(--wp--style--block-gap);
+		margin-bottom: var(--wp--style--block-gap);
 	}
 }

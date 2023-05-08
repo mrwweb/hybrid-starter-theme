@@ -2,5 +2,6 @@ html {
 	box-sizing: border-box;
 	overflow-x: hidden;
 
-	--wp--style--block-gap: $space-5; /* this doesn't get output if gap setting is turned off */
+	/* this doesn't get output if gap setting is turned off, so I'm hacking it into place */
+	--wp--style--block-gap: var(--wp--preset--spacing--70);
 }
