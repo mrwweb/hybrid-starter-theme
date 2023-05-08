@@ -197,7 +197,7 @@
 		},
 		"color": {
 			"text": "var(--wp--preset--color--foreground)",
-			"background": "var(--wp--preset--color--background)",
+			"background": "var(--wp--preset--color--background)"
 		},
 		"elements": {
 			"heading": {
