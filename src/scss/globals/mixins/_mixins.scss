@@ -26,13 +26,13 @@
 }
 
 @mixin mq($breakpoint) {
-	@media screen and (min-width: calc( $breakpoint / 16 ) * 1em) {
+	@media screen and (min-width: calc( ( $breakpoint / 16 ) * 1em )) {
 		@content;
 	}
 }
 
 @mixin mq-medium-blocks-only {
-	@media (min-width: calc( $bp--blocks / 16 ) * 1em) and (max-width: calc( ( $bp--blocks--large + 1 ) / 16 ) * 1em) {
+	@media (min-width: calc( ( $bp--blocks / 16 ) * 1em)) and (max-width: calc( ( ( $bp--blocks--large + 1 ) / 16 ) * 1em )) {
 		@content;
 	}
 }
