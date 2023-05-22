@@ -123,76 +123,53 @@
 				}
 			],
 			"fontSizes": [
-				{
-					"name": "Tiny",
-					"slug": "x-small",
-					"size": "0.875rem",
-					"fluid": {
-						"min": ".875rem",
-						"max": "1.75rem"
-					}
-				},
-				{
-					"name": "Small",
-					"slug": "small",
-					"size": "1.0625rem",
-					"fluid": {
-						"min": "0.9375rem",
-						"max": "2.125rem"
-					}
-				},
-				{
-					"name": "Medium",
-					"slug": "medium",
-					"size": "1.25rem",
-					"fluid": {
-						"min": "1.125rem",
-						"max": "2.5rem"
-					}
-				},
-				{
-					"name": "Large",
-					"slug": "large",
-					"size": "1.5rem",
-					"fluid": {
-						"min": "1.375rem",
-						"max": "3rem"
-					}
-				},
-				{
-					"name": "Extra-Large",
-					"slug": "x-large",
-					"size": "2rem",
-					"fluid": {
-						"min": "1.75rem",
-						"max": "4rem"
-					}
-				},
-				{
-					"name": "XXL",
-					"slug": "xx-large",
-					"size": "2.5rem",
-					"fluid": {
-						"min": "2.25rem",
-						"max": "5rem"
-					}
-				},
-				{
-					"name": "XXXL",
-					"slug": "xxx-large",
-					"size": "3.375rem",
-					"fluid": {
-						"min": "2.5rem",
-						"max": "6.75rem"
-					}
-				}
-			]
+        {
+          "name": "Tiny",
+          "slug": "x-small",
+          "size": "0.875rem"
+        },
+        {
+          "name": "Small",
+          "slug": "small",
+          "size": "1.0625rem"
+        },
+        {
+          "name": "Default",
+          "slug": "default",
+          "size": "1.25rem"
+        },
+        {
+          "name": "Medium",
+          "slug": "medium",
+          "size": "1.5rem"
+        },
+        {
+          "name": "Large",
+          "slug": "large",
+          "size": "1.75rem"
+        },
+        {
+          "name": "Extra-Large",
+          "slug": "x-large",
+          "size": "2.5rem"
+        },
+        {
+          "name": "XXL",
+          "slug": "xx-large",
+          "size": "3.25rem"
+        },
+        {
+          "name": "XXXL",
+          "slug": "xxx-large",
+          "size": "4rem"
+        }
+      ],
 		}
 	},
 	"styles": {
 		"typography": {
 			"fontFamily": "var(--wp--preset--font-family--system)",
-			"fontSize": "var(--wp--preset--font-size--medium)",
+			"fontSize": "var(--wp--preset--font-size--default)",
 			"lineHeight": "1.4"
 		},
 		"color": {
@@ -224,6 +201,9 @@
 				"border": {
 					"radius": "0"
 				},
+        "typography": {
+            "textDecoration": "none"
+        },
 				"color": {
 					"background": "var(--wp--preset--color--primary)",
 					"text": "var(--wp--preset--color--background)"
