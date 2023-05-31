@@ -51,7 +51,9 @@
 		?>
 	</div><!-- .entry-content -->
 
-	<footer class="entry-footer">
-		<?php _s_entry_footer(); ?>
+	<footer class="entry-footer is-layout-constrained">
+		<div>
+			<?php rvc_entry_footer(); ?>
+		</div>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-<?php the_ID(); ?> -->
