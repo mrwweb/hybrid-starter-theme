@@ -6,6 +6,13 @@
 	padding: 0;
 }
 
+body .is-layout-constrained > :where(:not(.alignwide):not(.alignfull)) {
+	/* restrict width until viewport exceeds max content width */
+	@media (max-width: calc(43rem + 4rem)) {
+		max-width: 90vw;
+	}
+}
+
 .entry-content {
 	@include flow;
 
