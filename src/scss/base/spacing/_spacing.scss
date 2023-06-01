@@ -8,6 +8,11 @@
 
 .entry-content {
 	@include flow;
+
+	/* make space between last block and footer as long as it's not full-width */
+	> :last-child:not(.alignfull) {
+		margin-bottom: $space-9;
+	}
 }
 
 .flow {
