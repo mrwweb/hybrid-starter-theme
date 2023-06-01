@@ -1,3 +1,7 @@
-.entry-content ol {
+.wp-block-list {
+	padding-inline-start: 1.25em;
+}
+
+ol.wp-block-list {
 	@include flow($space-2);
 }
