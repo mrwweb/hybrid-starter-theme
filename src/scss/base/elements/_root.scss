@@ -1,6 +1,21 @@
 html {
 	box-sizing: border-box;
 	overflow-x: hidden;
+
+	/* Adjust font-size for subtle fluid-type-like effect without accessibility concerns of clamp() */
+	font-size: 0.875em;
+	@include mq($bp--blocks) {
+		font-size: 0.9375em;
+	}
+	@include mq($bp--large) {
+		font-size: 1em;
+	}
+	@media (min-width: 90em) {
+		font-size: 1.0625em;
+	}
+	@media (min-width: 110em) {
+		font-size: 1.125em;
+	}
 }
 
 body {
