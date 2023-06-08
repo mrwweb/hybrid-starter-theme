@@ -31,3 +31,13 @@ $colors:
 		}
 	}
 }
+
+.has-background,
+.has-text-color {
+	a,
+	a:hover,
+	a:focus,
+	a:active {
+		color: inherit;
+	}
+}
