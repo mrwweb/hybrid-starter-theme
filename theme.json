@@ -82,7 +82,7 @@
 				},
 				{
 					"name": "Black",
-					"slug": "foreground",
+					"slug": "contrast",
 					"color": "#000"
 				},
 				{
@@ -102,7 +102,7 @@
 				},
 				{
 					"name": "White",
-					"slug": "background",
+					"slug": "base",
 					"color": "#fff"
 				}
 			],
