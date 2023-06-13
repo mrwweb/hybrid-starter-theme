@@ -62,21 +62,21 @@ add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\scripts_and_styles' );
  */
 function scripts_and_styles() {
 
-	if( \MRW\TEC\is_tribe_view() ) {
-		wp_enqueue_style(
-			'custom-tec-style',
-			get_theme_file_uri( 'css/plugins/the-events-calendar.css' ),
-			['theme-style'],
-			filemtime( get_theme_file_path( 'css/plugins/the-events-calendar.css' ) )
-		);
-	}
-
 	wp_enqueue_style(
 		'theme-styles',
 		get_theme_file_uri( 'css/screen.css' ),
 		[],
 		filemtime( get_theme_file_path( 'css/screen.css' ) )
 	);
+
+	if( \MRW\TEC\is_tribe_view() ) {
+		wp_enqueue_style(
+			'_s-the-events-calendar',
+			get_theme_file_uri( 'css/plugins/the-events-calendar.css' ),
+			['theme-style'],
+			filemtime( get_theme_file_path( 'css/plugins/the-events-calendar.css' ) )
+		);
+	}
 
 	wp_enqueue_script(
 		'theme-navigation',
@@ -97,6 +97,19 @@ function scripts_and_styles() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
+}
+
+add_action( 'gform_enqueue_scripts', __NAMESPACE__ . '\enqueue_gravity_forms_css' );
+/**
+ * Only load theme Gravity Form styles when there's a form on the page!
+ */
+function enqueue_gravity_forms_css() {
+	wp_enqueue_style(
+		'_s-gravity-forms',
+		get_theme_file_uri( 'css/plugins/gravity-forms.css' ),
+		['theme-styles'],
+		filemtime( get_theme_file_path( 'css/plugins/gravity-forms.css' ) )
+	);
 }
 
 add_action( 'wp_default_scripts', __NAMESPACE__ . '\dequeue_jquery_migrate' );
