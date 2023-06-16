@@ -2,7 +2,11 @@
 
 .wp-block-columns {
 	justify-content: space-between;
-	margin-bottom: 0;
+	margin-block-end: 0;
+
+	@include mq-max($bp--blocks--large) {
+		gap: 0;
+	}
 }
 
 /* Improve alignment and wrapping of columns */
