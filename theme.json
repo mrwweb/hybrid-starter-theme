@@ -222,14 +222,14 @@
 	},
 	"templateParts": [
         {
-            "area": "footer",
-            "name": "footer",
-            "title": "Footer"
+			"name": "footer",
+            "title": "Footer",
+            "area": "footer"
         },
         {
-            "area": "uncategorized",
-            "name": "sidebar",
-            "title": "Sidebar"
+			"name": "sidebar",
+            "title": "Sidebar",
+            "area": "sidebar"
         }
     ]
 }
