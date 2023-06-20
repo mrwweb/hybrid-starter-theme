@@ -123,47 +123,47 @@
 				}
 			],
 			"fontSizes": [
-        {
-          "name": "Tiny",
-          "slug": "x-small",
-          "size": "0.875rem"
-        },
-        {
-          "name": "Small",
-          "slug": "small",
-          "size": "1.0625rem"
-        },
-        {
-          "name": "Default",
-          "slug": "default",
-          "size": "1.25rem"
-        },
-        {
-          "name": "Medium",
-          "slug": "medium",
-          "size": "1.5rem"
-        },
-        {
-          "name": "Large",
-          "slug": "large",
-          "size": "1.75rem"
-        },
-        {
-          "name": "Extra-Large",
-          "slug": "x-large",
-          "size": "2.5rem"
-        },
-        {
-          "name": "XXL",
-          "slug": "xx-large",
-          "size": "3.25rem"
-        },
-        {
-          "name": "XXXL",
-          "slug": "xxx-large",
-          "size": "4rem"
-        }
-      ],
+				{
+					"name": "Tiny",
+					"slug": "x-small",
+					"size": "0.875rem"
+				},
+				{
+					"name": "Small",
+					"slug": "small",
+					"size": "1.0625rem"
+				},
+				{
+					"name": "Default",
+					"slug": "default",
+					"size": "1.25rem"
+				},
+				{
+					"name": "Medium",
+					"slug": "medium",
+					"size": "1.5rem"
+				},
+				{
+					"name": "Large",
+					"slug": "large",
+					"size": "1.75rem"
+				},
+				{
+					"name": "Extra-Large",
+					"slug": "x-large",
+					"size": "2.5rem"
+				},
+				{
+					"name": "XXL",
+					"slug": "xx-large",
+					"size": "3.25rem"
+				},
+				{
+					"name": "XXXL",
+					"slug": "xxx-large",
+					"size": "4rem"
+				}
+			]
 		}
 	},
 	"styles": {
@@ -201,9 +201,9 @@
 				"border": {
 					"radius": "0"
 				},
-        "typography": {
-            "textDecoration": "none"
-        },
+				"typography": {
+					"textDecoration": "none"
+				},
 				"color": {
 					"background": "var(--wp--preset--color--primary)",
 					"text": "var(--wp--preset--color--background)"
@@ -221,15 +221,15 @@
 		}
 	},
 	"templateParts": [
-        {
+		{
 			"name": "footer",
-            "title": "Footer",
-            "area": "footer"
-        },
-        {
+			"title": "Footer",
+			"area": "footer"
+		},
+		{
 			"name": "sidebar",
-            "title": "Sidebar",
-            "area": "sidebar"
-        }
-    ]
+			"title": "Sidebar",
+			"area": "sidebar"
+		}
+	]
 }
