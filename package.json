@@ -3,12 +3,13 @@
   "name": "",
   "version": "1.0.0",
   "description": "",
-  "license": "GPL-2.0-or-later",
   "devDependencies": {
     "@babel/core": "^7.11.1",
     "@babel/preset-env": "^7.11.0",
     "@wordpress/eslint-plugin": "^9.3.0",
-    "autoprefixer": "^9.8.6",
+    "@wordpress/scripts": "^26.6.0",
+    "autoprefixer": "^10.4.14",
+    "classnames": "^2.3.2",
     "cssnano": "^6.0.1",
     "gulp": "^4.0.2",
     "gulp-babel": "^8.0.0",
@@ -18,7 +19,14 @@
     "gulp-sass": "^5.1.0",
     "gulp-sourcemaps": "^2.6.4",
     "gulp-uglify": "^3.0.2",
-    "postcss": "^8.0.0",
+    "postcss": "^8.4.24",
     "sass": "^1.52.3"
-  }
+  },
+  "scripts": {
+    "start": "wp-scripts start src/js/editor/index.js --output-path=js/editor --output-filename=editor.min.js"
+  },
+  "browserslist": [
+    "> 1%",
+    "not IE 11"
+  ]
 }
