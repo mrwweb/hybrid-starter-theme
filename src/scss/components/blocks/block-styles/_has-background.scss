@@ -1,5 +1,9 @@
 .has-background:where(p, .wp-block-group, .wp-block-columns, .wp-block-column) {
-	padding: $space-5;
+	padding: $space-7;
+
+	&.alignfull {
+		padding: $space-9;
+	}
 }
 
 /* name, color, contrasting text */
@@ -7,15 +11,19 @@
 $colors:
 	"primary" $primary $white,
 	"secondary" $secondary $white,
-	"dark-gray" $darkgray $white,
+	"dark-gray" $gray-dark $white,
 	"foreground" $black $white,
 	"warning" $warning white,
 	"error" $error null,
 	"message" $message null,
 	"accent" $accent null,
-	"light-gray" $lightgray null,
+	"accent-light" $accent-light null,
+	"light-gray" $gray-light null,
 	"gray" $gray null,
-	"background" $white null;
+	"background" $white null,
+	// Gradients!
+	'serene-gradient' null $white,
+	'mystic-gradient' null $white;
 
 /**
  * Background and text colors are auto-output by theme.json
@@ -32,12 +40,14 @@ $colors:
 	}
 }
 
+/* Things that inherit text color when set */
 .has-background,
 .has-text-color {
-	a,
-	a:hover,
-	a:focus,
-	a:active {
+	a:not(.wp-block-button__link),
+	a:not(.wp-block-button__link):hover,
+	a:not(.wp-block-button__link):focus,
+	a:not(.wp-block-button__link):active,
+	::marker {
 		color: inherit;
 	}
 }
