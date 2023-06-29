@@ -104,7 +104,7 @@ function _s_posted_by() {
 		)
 	) {
 		echo '<span class="byline"> by';
-		do_action( 'pp_multiple_authors_show_author_box', false, 'inline_avatar' );
+		do_action( 'pp_multiple_authors_show_author_box', false, 'inline', false, true );
 		echo '</span>';
 	} else {
 		$byline = sprintf(
