@@ -243,31 +243,7 @@
 				}
 			}
 		},
-		"blocks": {
-			"core/columns": {
-				"typography": {
-					"fontSize": "var(--wp--preset--font-size--small)"
-				},
-				"elements": {
-					"h2": {
-						"typography": {
-							"fontSize": "var(--wp--preset--font-size--large)",
-							"lineHeight": "1.3"
-						}
-					},
-					"h3": {
-						"typography": {
-							"fontSize": "var(--wp--preset--font-size--medium)"
-						}
-					},
-					"h4": {
-						"typography": {
-							"fontSize": "var(--wp--preset--font-size--default)"
-						}
-					}
-				}
-			}
-		}
+		"blocks": {}
 	},
 	"templateParts": [
 		{
