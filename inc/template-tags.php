@@ -8,14 +8,14 @@
 */
 
 /**
- * Get an SVG file from the imgs/ folder in the theme, update its attributes if necessary and return it as a string.
+ * Get an SVG file from the images/ folder in the theme, update its attributes if necessary and return it as a string.
  *
  * @author Aurooba Ahmed
  * @see https://aurooba.com/inline-svgs-in-your-wordpress-code-with-this-helper-function/
  *
  * @param string $filename The name of the SVG file to get.
  * @param array $attributes (optional) An array of attributes to add/modify to the SVG file.
- * @param string $directory (optional) The directory to look for the SVG file in, defaults to 'imgs'.
+ * @param string $directory (optional) The directory to look for the SVG file in, defaults to 'images'.
  * @return string|WP_Error The SVG file as a string or a WP_Error object if there was an error.
  */
 function get_svg( $filename, $attributes = array(), $directory = 'images/svg' ) {
