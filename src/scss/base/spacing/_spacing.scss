@@ -27,3 +27,10 @@ body .is-layout-constrained > :where(:not(.alignwide):not(.alignfull)) {
 .flow {
 	@include flow;
 }
+
+/* Generic WP Layout Class */
+@include mq($bp--blocks) {
+	.is-layout-flex > * + * {
+		margin-top: 0 !important;
+	}
+}

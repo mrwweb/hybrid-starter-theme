@@ -2,6 +2,7 @@
 .alignleft,
 .alignright {
 	margin-inline: auto;
+	float: none !important;
 }
 
 .aligncenter,
@@ -12,6 +13,14 @@
 	clear: both;
 }
 
+:root .is-layout-constrained > :where(:not(.alignwide):not(.alignfull)),
+:root .alignwide:not(.has-background) {
+	/* restrict width until viewport exceeds max content width */
+	@media (max-width: calc(43rem + 4rem)) {
+		max-width: 90vw;
+	}
+}
+
 :root .alignwide {
 	@include alignwide;
 }
@@ -20,33 +29,37 @@
 	@include alignfull;
 }
 
-@media (min-width: 37.5em) {
+@include mq($bp--blocks) {
 	.alignleft,
 	.alignright {
-		max-width: 45%;
+		max-width: 22rem !important;
 
-		+ * {
+		&:first-child + * {
 			margin-top: 0;
 		}
 	}
 
-	.alignleft,
-	[data-align="left"] {
-		float: left;
-		margin-inline-end: var(--wp--style--block-gap);
+	.alignleft {
+		float: left !important;
+		margin-inline-end: var(--wp--style--block-gap) !important;
 		margin-block-end: var(--wp--style--block-gap);
-		margin-left: calc(
-			(100% - var(--wp--style--global--content-size)) / 2
-		) !important;
+
+		.is-layout-constrained > & {
+			margin-inline-start: calc(
+				(100% - var(--wp--style--global--content-size)) / 2
+			) !important;
+		}
 	}
 
-	.alignright,
-	[data-align="right"] {
-		float: right;
-		margin-inline-start: var(--wp--style--block-gap);
+	.alignright {
+		float: right !important;
+		margin-inline-start: var(--wp--style--block-gap) !important;
 		margin-block-end: var(--wp--style--block-gap);
-		margin-right: calc(
-			(100% - var(--wp--style--global--content-size)) / 2
-		) !important;
+
+		.is-layout-constrained > & {
+			margin-inline-end: calc(
+				(100% - var(--wp--style--global--content-size)) / 2
+			) !important;
+		}
 	}
 }

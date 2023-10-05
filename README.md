@@ -19,6 +19,11 @@ gulp
 
 Integrated with the [LiveReload browser extension](https://github.com/twolfson/livereload-extensions)
 
+## Expected Icons in images/svg
+
+- `down-arrow.svg` for dropdown menu item indicator
+- `search.svg` for search button icon
+
 ## Notable Changes from _s
 
 - Lots of block-first development things including:
@@ -33,7 +38,7 @@ Integrated with the [LiveReload browser extension](https://github.com/twolfson/l
 - Custom toggle script for mobile menu and any other toggles you need
 - Fixes search forms not having unique IDs if more than one is on the page
 - Custom template tag to get SVGs
-- Expects usage of [The Events Calendar](https://wordpress.org/plugins/the-events-calendar/) and [PublishPress Authors](https://wordpress.org/plugins/publishpress-authors/)
+- Expects usage of [The Events Calendar](https://wordpress.org/plugins/the-events-calendar/), [Gravity Forms (affiliate link)](https://gravityforms.pxf.io/NkoRO1), and [PublishPress Authors](https://wordpress.org/plugins/publishpress-authors/)
   - Uses [The Events Calendar Reset](https://github.com/mrwweb/the-events-calendar-reset/) for better theme style inheritance
 
 ## Dev Environment
@@ -53,5 +58,4 @@ See `/wp-content/mu-plugins/` non-theme related site changes. (not included in t
 ## Contact
 
 Mark Root-Wiley
-<https://MRWweb.com>
-<info@MRWweb.com>
+<https://MRWweb.com/contact>
