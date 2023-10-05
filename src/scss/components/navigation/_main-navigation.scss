@@ -35,6 +35,24 @@
 
 .menu-toggle {
 	@include button;
+
+	.svg-icon {
+		width: 1em;
+		height: 1em;
+	}
+
+	.svg-icon-close {
+		display: none;
+	}
+
+	&[aria-expanded="true"] {
+		.svg-icon-menu {
+			display: none;
+		}
+		.svg-icon-close {
+			display: inline-block;
+		}
+	}
 }
 
 /* General Main Menu Styles */
