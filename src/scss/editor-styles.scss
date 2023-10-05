@@ -13,8 +13,20 @@
 	@import "base/base";
 	@import "components/blocks/blocks";
 
+	/**
+	* Global Styles
+	*/
+	/* Doesn't get added to stylesheet because I don't show the UI */
+	--wp--style--block-gap: var(--wp--preset--spacing--70);
+
+	/* Match Front-end box-sizing */
+	box-sizing: border-box;
+
+	/* Vertical space between top-level blocks */
 	.block-editor-block-list__layout.is-root-container {
 		@include flow;
+
+		margin-block: var(--wp--preset--spacing--100);
 	}
 
 	/**
@@ -26,39 +38,53 @@
 	/**
 	 * Alignments
 	 */
-	/**
-	 * Alignments
-	 */
-
-	[data-align="left"],
-	[data-align="right"] {
-		float: none !important;
+	.alignwide {
+		@include alignwide;
 	}
 
-	@include mq($bp--blocks) {
-		[data-align="left"],
-		[data-align="right"] {
-			max-width: $width--content;
+	.alignfull {
+		@include alignfull;
+	}
 
-			figure {
-				max-width: 45%;
+	@media (min-width: 37.5em) {
+		.alignleft,
+		.alignright {
+			width: 45%;
+			max-width: 22rem !important;
+
+			&:first-child + * {
+				margin-top: 0;
 			}
 		}
 
-		[data-align="left"] figure {
-			float: left;
+		.alignleft {
+			float: left !important;
+			margin-inline-end: var(--wp--style--block-gap) !important;
+			margin-block-end: var(--wp--style--block-gap);
+		}
+		.is-root-container > .alignleft {
+			margin-inline-start: calc(
+				(100% - var(--wp--style--global--content-size)) / 2
+			) !important;
 		}
 
-		[data-align="right"] figure {
-			float: right;
+		.alignright {
+			float: right !important;
+			margin-inline-start: var(--wp--style--block-gap) !important;
+			margin-block-end: var(--wp--style--block-gap);
+		}
+		.is-root-container > .alignright {
+			margin-inline-end: calc(
+				(100% - var(--wp--style--global--content-size)) / 2
+			) !important;
 		}
 	}
 
-	[data-align="wide"] {
-		width: 90%;
-	}
-
-	[data-align="full"] + [data-align="full"] {
-		margin-top: 0;
+	/**
+	 * Block Fixes
+	 */
+	/* File block doesn't match front-end styles in core??? */
+	.wp-block-file__content-wrapper > * + * {
+		margin-left: 0.75em;
 	}
 }
