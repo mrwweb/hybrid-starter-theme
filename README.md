@@ -19,6 +19,11 @@ gulp
 
 Integrated with the [LiveReload browser extension](https://github.com/twolfson/livereload-extensions)
 
+## Expected Icons in images/svg
+
+- `down-arrow.svg` for dropdown menu item indicator
+- `search.svg` for search button icon
+
 ## Notable Changes from _s
 
 - Lots of block-first development things including:
