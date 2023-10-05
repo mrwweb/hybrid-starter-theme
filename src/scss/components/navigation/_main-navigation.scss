@@ -3,22 +3,47 @@
 	display: none;
 }
 
-@include mq($bp--menu) {
-	.menu-toggle {
-		display: none;
+.menu-container {
+	position: absolute;
+	top: calc(100% + $space-4);
+	right: 0;
+
+	.sub-menu {
+		position: static;
 	}
 
-	.main-menu {
-		display: flex !important;
+	[aria-expanded="false"] + ul {
+		height: 0;
+	}
+}
+
+@include mq($bp--menu) {
+	.menu-toggle {
+		display: none !important;
+	}
+
+	.menu-container {
+		display: block !important;
+		position: static;
 
 		.sub-menu {
 			position: absolute;
+			top: calc(100% + $space-4);
 		}
 	}
 }
 
+.menu-toggle {
+	@include button;
+}
+
 /* General Main Menu Styles */
+.main-menu-container {
+	@include mq($bp--menu) {
+	}
+}
 .main-menu {
+	position: relative;
 	align-items: stretch;
 
 	li {
@@ -27,15 +52,27 @@
 		align-items: stretch;
 	}
 
+	button {
+		@include button-unset;
+	}
+
 	a,
 	button {
 		display: flex;
 		align-items: center;
+		width: 100%;
+		gap: 0.25em;
+		padding: $space-3 $space-5;
 		text-decoration: none;
+		color: currentColor;
 	}
 
-	button {
-		@include button-unset;
+	a:hover {
+		text-decoration: underline;
+	}
+
+	path {
+		fill: currentColor;
 	}
 
 	/* Only top-level items */
@@ -46,13 +83,24 @@
 
 	/* Current Itesm */
 	.current_page_item > *,
-	.current-menu-item > *,
-	.current_page_ancestor > *,
-	.current-menu-ancestor > * {
+	.current-menu-item > * {
 		font-weight: 700;
 	}
 
 	/* Large Screen Styles */
+	@include mq($bp--menu) {
+		position: static;
+		display: flex;
+		align-items: center;
+		color: $accent;
+		background-color: transparent;
+	}
+}
+
+/* Main Menu Submenus */
+.main-menu .sub-menu {
+	min-width: 16em;
+
 	@include mq($bp--menu) {
 	}
 }
