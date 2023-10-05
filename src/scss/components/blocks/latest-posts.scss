@@ -5,6 +5,10 @@
 	list-style: none !important;
 }
 
+.wp-block-latest-posts__list:not(.is-grid) li + li {
+	@include flow;
+}
+
 .wp-block-latest-posts__list time {
 	display: block;
 	font-size: $font-size-s;

@@ -1,9 +1,21 @@
 .has-background:where(p, .wp-block-group, .wp-block-columns, .wp-block-column) {
 	padding: $space-7;
 
+	.wp-block-columns & {
+		padding: $space-5;
+	}
+
 	&.alignfull {
 		padding: $space-9;
 	}
+}
+
+.is-layout-constrained
+	> .alignfull:not(.has-background):where(
+		.wp-block-group,
+		.wp-block-columns
+	) {
+	padding: $space-9;
 }
 
 /* name, color, contrasting text */
@@ -41,7 +53,12 @@ $colors:
 }
 
 /* Things that inherit text color when set */
-.has-background,
+.has-background:not(
+		.has-base-background-color,
+		.has-accent-background-color,
+		.has-accent-light-background-color,
+		.has-light-gray-background-color
+	),
 .has-text-color {
 	a:not(.wp-block-button__link),
 	a:not(.wp-block-button__link):hover,
