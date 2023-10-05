@@ -10,7 +10,7 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'flow' ); ?>>
-	<header class="entry-header flow is-layout-constrained">
+	<header class="page-header flow is-layout-constrained">
 		<?php
 		the_title( '<h1 class="entry-title">', '</h1>' );
 
@@ -25,7 +25,7 @@
 		<?php endif; ?>
 	</header><!-- .entry-header -->
 
-	<div class="entry-content flow is-layout-constrained">
+	<div class="entry-content page-content flow is-layout-constrained">
 		<?php
 		the_content(
 			sprintf(
