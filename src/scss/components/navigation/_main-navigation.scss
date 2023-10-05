@@ -10,10 +10,27 @@
 
 	.sub-menu {
 		position: static;
+		height: 0;
 	}
 
-	[aria-expanded="false"] + ul {
+	[aria-expanded="false"] + .sub-menu {
 		height: 0;
+	}
+
+	[aria-expanded="true"] + .sub-menu {
+		height: auto;
+	}
+}
+
+/* Without JS, there can't be a gap between menu and item */
+.main-menu.no-js {
+	li:hover > .sub-menu,
+	li:focus-within > .sub-menu,
+	a:focus + .sub-menu {
+		height: auto;
+	}
+	.sub-menu {
+		margin-top: 0;
 	}
 }
 
