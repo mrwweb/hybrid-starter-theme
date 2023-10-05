@@ -10,20 +10,24 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'flow' ); ?>>
-	<header class="page-header flow is-layout-constrained">
-		<?php
-		the_title( '<h1 class="entry-title">', '</h1>' );
+	<?php if( ! is_front_page() ) : ?>
+		
+		<header class="page-header flow is-layout-constrained">
+			<?php
+			the_title( '<h1 class="entry-title">', '</h1>' );
 
-		if ( 'post' === get_post_type() ) :
-			?>
-			<div class="entry-meta">
-				<?php
-				_s_posted_on();
-				_s_posted_by();
+			if ( 'post' === get_post_type() ) :
 				?>
-			</div><!-- .entry-meta -->
-		<?php endif; ?>
-	</header><!-- .entry-header -->
+				<div class="entry-meta">
+					<?php
+					_s_posted_on();
+					_s_posted_by();
+					?>
+				</div><!-- .entry-meta -->
+			<?php endif; ?>
+		</header><!-- .entry-header -->
+
+	<?php endif; ?>
 
 	<div class="entry-content page-content flow is-layout-constrained">
 		<?php
