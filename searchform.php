@@ -15,8 +15,8 @@ $search_form_counter++;
 	<label class="search-form__label screen-reader-text" for="s-<?php echo (int) $search_form_counter; ?>"><?php _ex( 'Search for:', 'label', '_s' ); ?>
 	</label>
 	<input type="search" class="search-form__input" value="<?php echo esc_attr( get_search_query() ); ?>" name="s" id="s-<?php echo (int) $search_form_counter; ?>" required>
-	<button type="submit" class="search-form__submit button button--small">
-		🔍
+	<button type="submit" class="search-form__submit button">
+		<?php echo get_svg( 'search', [ 'width' => '24', 'height' => '24' ] ); ?>
 		<span class="screen-reader-text"><?php echo esc_attr_x( 'Search', 'submit button', '_s' ); ?></span>
 	</button>
 </form>
