@@ -1,5 +1,29 @@
 @import "../globals/globals";
 
+/* The Gravity Form in loading state */
+.gform_wrapper[style="display:none"] {
+	display: flex !important;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	min-height: 25vmin;
+	padding: 5vmin;
+	background-color: lightgray;
+
+	> * {
+		display: none;
+	}
+
+	&::before {
+		content: "";
+		display: block;
+		width: 2rem;
+		height: 2rem;
+		background: url(../../../../plugins/gravityforms/images/spinner.svg)
+			center / contain no-repeat;
+	}
+}
+
 .gform_wrapper.gform_wrapper.gform_wrapper.gravity-theme {
 	.gform_fields {
 		grid-row-gap: $space-3;
@@ -10,7 +34,18 @@
 		font-size: 1em;
 	}
 
-	.gfield_description {
+	.gfield_required {
+		font-size: inherit;
+		font-style: normal;
+		color: $error;
+
+		.has-background & {
+			color: inherit;
+		}
+	}
+
+	.gfield_description,
+	.gsection_description {
 		padding-bottom: 0.5rem;
 	}
 
@@ -59,6 +94,11 @@
 		margin-block-start: 0.3125em;
 	}
 
+	/* Hide "other" field in radios unless valid */
+	.gchoice_other_control[disabled] {
+		display: none;
+	}
+
 	/* Validation */
 	.gform_validation_errors {
 		margin-bottom: $space-3;
@@ -93,5 +133,9 @@
 	[aria-invalid="true"] + label,
 	label + [aria-invalid="true"] {
 		color: $error;
+	}
+
+	/* Confirmation */
+	.gform_confirmation_wrapper {
 	}
 }
