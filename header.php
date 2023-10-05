@@ -28,7 +28,6 @@
 
 	<header id="masthead" class="site-header">
 		<div class="site-branding">
-			<div class="site-branding">
 			<?php
 			$title_tag = is_front_page() || is_home() ? 'h1' : 'div';
 			?>
