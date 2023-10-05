@@ -40,17 +40,23 @@
 		</div><!-- .site-branding -->
 
 		<nav id="site-navigation" class="main-navigation js-toggleWrapper">
-			<button class="menu-toggle js-toggleButton" data-aria-controls="main-menu"><?php esc_html_e( 'Menu', '_s' ); ?></button>
-			<?php
-			wp_nav_menu(
-				array(
-					'theme_location' => 'menu-1',
-					'menu_id'        => 'main-menu',
-					'menu_class'	 => 'main-menu clicky-menu no-js',
-					'container'		 => '',
-					'fallback_cb'	 => false,
-				)
-			);
-			?>
+			<button class="menu-toggle js-toggleButton" data-aria-controls="menu-container">
+				<?php echo get_svg( 'menu', [ 'width' => '24', 'height' => '24' ] ); ?>
+				<?php esc_html_e( 'Menu', '_s' ); ?>
+			</button>
+			<div id="menu-container" class="menu-container">
+				<?php
+				wp_nav_menu(
+					array(
+						'theme_location' => 'menu-1',
+						'menu_id'        => 'main-menu',
+						'menu_class'	 => 'main-menu clicky-menu no-js',
+						'container'		 => '',
+						'fallback_cb'	 => false,
+					)
+				);
+				get_search_form();
+				?>
+			</div>
 		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
