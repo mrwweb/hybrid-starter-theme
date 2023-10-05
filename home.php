@@ -16,7 +16,7 @@ get_header();
 $posts_page = get_option( 'page_for_posts' );
 ?>
 
-	<main id="primary" class="site-main">
+	<main id="content" class="site-main">
 
 		<?php
 		if ( have_posts() ) :
