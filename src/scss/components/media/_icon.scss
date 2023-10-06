@@ -1,0 +1,7 @@
+.svg-icon-chevron {
+	transition: transform 0.2s ease-in-out;
+
+	[aria-expanded="true"] & {
+		transform: scaleY(-1);
+	}
+}

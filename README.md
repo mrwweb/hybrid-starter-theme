@@ -23,6 +23,7 @@ Integrated with the [LiveReload browser extension](https://github.com/twolfson/l
 
 - `down-arrow.svg` for dropdown menu item indicator
 - `search.svg` for search button icon
+- right-facing `chevron.svg` for paging links
 
 ## Notable Changes from _s
 

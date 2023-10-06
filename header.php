@@ -41,7 +41,8 @@
 
 		<nav id="site-navigation" class="main-navigation js-toggleWrapper">
 			<button class="menu-toggle js-toggleButton" data-aria-controls="menu-container">
-				<?php echo get_svg( 'menu', [ 'width' => '24', 'height' => '24' ] ); ?>
+				<?php echo get_svg( 'menu', [ 'width' => '16', 'height' => '16' ] ); ?>
+				<?php echo get_svg( 'close', [ 'width' => '16', 'height' => '16' ] ); ?>
 				<?php esc_html_e( 'Menu', '_s' ); ?>
 			</button>
 			<div id="menu-container" class="menu-container">
