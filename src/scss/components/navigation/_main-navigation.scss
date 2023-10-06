@@ -71,6 +71,10 @@
 		text-decoration: underline;
 	}
 
+	svg {
+		transform: rotate(90deg);
+	}
+
 	path {
 		fill: currentColor;
 	}
