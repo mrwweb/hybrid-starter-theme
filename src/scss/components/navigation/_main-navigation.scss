@@ -1,22 +1,43 @@
-/* Basic menu display logic */
-.menu-toggle[aria-expanded="false"] + ul {
+/* Basic toggle display logic */
+.menu-toggle[aria-expanded="false"] + .menu-container {
 	display: none;
 }
 
-.menu-container {
-	position: absolute;
-	top: calc(100% + $space-4);
-	right: 0;
+.menu-toggle {
+	@include button;
 
-	.sub-menu {
-		position: static;
+	.svg-icon {
+		width: 1em;
+		height: 1em;
 	}
 
-	[aria-expanded="false"] + ul {
-		height: 0;
+	.svg-icon-close {
+		display: none;
+	}
+
+	&[aria-expanded="true"] {
+		.svg-icon-menu {
+			display: none;
+		}
+		.svg-icon-close {
+			display: inline-block;
+		}
 	}
 }
 
+/* Basic Submenu positioning Logic */
+.menu-container {
+	.sub-menu {
+		position: static;
+		height: 0;
+	}
+
+	[aria-expanded="true"] + .sub-menu {
+		height: auto;
+	}
+}
+
+/* Desktop Menu */
 @include mq($bp--menu) {
 	.menu-toggle {
 		display: none !important;
@@ -29,16 +50,25 @@
 		.sub-menu {
 			position: absolute;
 			top: calc(100% + $space-4);
+			z-index: 999;
 		}
 	}
 }
 
-.menu-toggle {
-	@include button;
+/* Extra JS Fallback */
+.main-menu.no-js {
+	li:hover > .sub-menu,
+	li:focus-within > .sub-menu,
+	a:focus + .sub-menu {
+		height: auto;
+	}
+	.sub-menu {
+		margin-top: 0;
+	}
 }
 
 /* General Main Menu Styles */
-.main-menu-container {
+.menu-container {
 	@include mq($bp--menu) {
 	}
 }
@@ -49,9 +79,11 @@
 	li {
 		position: relative;
 		display: flex;
-		align-items: stretch;
+		justify-content: stretch;
+		flex-wrap: wrap;
 	}
 
+	/* Buttons and Links */
 	button {
 		@include button-unset;
 	}
@@ -61,7 +93,7 @@
 		display: flex;
 		align-items: center;
 		width: 100%;
-		gap: 0.25em;
+		gap: 0.4375em;
 		padding: $space-3 $space-5;
 		text-decoration: none;
 		color: currentColor;
@@ -71,8 +103,14 @@
 		text-decoration: underline;
 	}
 
+	/* SVG Drop-down Indicators */
 	svg {
+		flex: 0 0 0.5em;
 		transform: rotate(90deg);
+	}
+
+	[aria-expanded="true"] svg {
+		transform: rotate(90deg) scaleX(-1);
 	}
 
 	path {
@@ -85,26 +123,29 @@
 		line-height: 1;
 	}
 
-	/* Current Itesm */
+	/* Current Items */
 	.current_page_item > *,
 	.current-menu-item > * {
 		font-weight: 700;
+	}
+
+	.sub-menu {
+		flex: 0 0 100%;
+		background-color: $base;
+		box-shadow: $box-shadow;
+		border-radius: $border-radius;
+
+		@include mq($bp--menu) {
+			min-width: 14em;
+		}
 	}
 
 	/* Large Screen Styles */
 	@include mq($bp--menu) {
 		position: static;
 		display: flex;
+		flex-wrap: wrap;
 		align-items: center;
-		color: $accent;
 		background-color: transparent;
-	}
-}
-
-/* Main Menu Submenus */
-.main-menu .sub-menu {
-	min-width: 16em;
-
-	@include mq($bp--menu) {
 	}
 }
