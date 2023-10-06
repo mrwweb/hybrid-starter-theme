@@ -4,7 +4,7 @@
 }
 
 .menu-toggle {
-	@include button;
+	@include button-unset;
 
 	.svg-icon {
 		width: 1em;
