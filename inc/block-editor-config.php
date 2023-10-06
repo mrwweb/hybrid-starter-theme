@@ -19,23 +19,6 @@ function configure_template_editors() {
 	remove_theme_support( 'block-templates' );
 }
 
-add_filter( 'default_wp_template_part_areas', __NAMESPACE__ . '\template_part_areas' );
-/**
- * Add registered "Sidebar" area for template parts
- * 
- * @see https://developer.wordpress.org/news/2023/06/upgrading-the-site-editing-experience-with-custom-template-part-areas/
- */
-function template_part_areas( array $areas ) {
-	$areas[] = array(
-		'area'        => 'sidebar',
-		'area_tag'    => 'aside',
-		'label'       => __( 'Sidebar', '_s' ),
-		'icon'        => 'sidebar'
-	);
-
-	return $areas;
-}
-
 add_action( 'enqueue_block_editor_assets', __NAMESPACE__ . '\editor_assets' );
 function editor_assets() {
 

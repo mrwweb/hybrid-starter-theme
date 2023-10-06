@@ -249,12 +249,12 @@
 		{
 			"name": "footer",
 			"title": "Footer",
-			"area": "footer"
+			"area": "uncategorized"
 		},
 		{
 			"name": "sidebar",
 			"title": "Sidebar",
-			"area": "sidebar"
+			"area": "uncategorized"
 		}
 	]
 }
