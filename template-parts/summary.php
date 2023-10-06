@@ -9,10 +9,10 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class( 'is-layout-constrained' ); ?>>
-	<header class="entry-header flow">
+<article id="post-<?php the_ID(); ?>" <?php post_class( 'is-layout-constrained post-summary' ); ?>>
+	<header class="post-summary__header flow">
 		<?php
-		the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+		the_title( '<h2 class="post-summary__title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 		if ( 'post' === get_post_type() ) :
 			?>
 			<div class="entry-meta">
@@ -22,17 +22,17 @@
 				?>
 			</div><!-- .entry-meta -->
 		<?php endif; ?>
-	</header><!-- .entry-header -->
+	</header>
 
 	<?php _s_post_thumbnail(); ?>
 
-	<div class="entry-summary">
+	<div class="post-summary__content">
 		<?php
 		the_excerpt();
 		?>
-	</div><!-- .entry-content -->
+	</div>
 
-	<footer class="entry-footer">
+	<footer class="post-summary__footer entry-menu">
 		<?php _s_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
+	</footer>
 </article><!-- #post-<?php the_ID(); ?> -->

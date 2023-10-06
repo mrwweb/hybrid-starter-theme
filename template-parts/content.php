@@ -14,7 +14,7 @@
 		
 		<header class="page-header flow is-layout-constrained">
 			<?php
-			the_title( '<h1 class="entry-title">', '</h1>' );
+			the_title( '<h1 class="page-title">', '</h1>' );
 
 			if ( 'post' === get_post_type() ) :
 				?>
@@ -25,11 +25,11 @@
 					?>
 				</div><!-- .entry-meta -->
 			<?php endif; ?>
-		</header><!-- .entry-header -->
+		</header>
 
 	<?php endif; ?>
 
-	<div class="entry-content page-content flow is-layout-constrained">
+	<div class="page-content page-content flow is-layout-constrained">
 		<?php
 		the_content(
 			sprintf(
@@ -53,11 +53,11 @@
 			)
 		);
 		?>
-	</div><!-- .entry-content -->
+	</div>
 
-	<footer class="entry-footer is-layout-constrained">
+	<footer class="page-footer is-layout-constrained">
 		<div>
-			<?php rvc_entry_footer(); ?>
+			<?php _s_entry_footer(); ?>
 		</div>
-	</footer><!-- .entry-footer -->
+	</footer>
 </article><!-- #post-<?php the_ID(); ?> -->

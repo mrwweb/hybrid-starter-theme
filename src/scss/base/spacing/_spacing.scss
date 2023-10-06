@@ -15,7 +15,7 @@ body .is-layout-constrained > :where(:not(.alignwide):not(.alignfull)) {
 	}
 }
 
-.entry-content {
+.page-content {
 	@include flow;
 
 	/* make space between last block and footer as long as it's not full-width */

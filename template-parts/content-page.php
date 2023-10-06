@@ -10,13 +10,13 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'flow' ); ?>>
-	<header class="entry-header is-layout-constrained">
-		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-	</header><!-- .entry-header -->
+	<header class="page-header is-layout-constrained">
+		<?php the_title( '<h1 class="page-title">', '</h1>' ); ?>
+	</header>
 
 	<?php _s_post_thumbnail(); ?>
 
-	<div class="entry-content is-layout-constrained flow">
+	<div class="page-content is-layout-constrained flow">
 		<?php
 		the_content();
 
@@ -27,6 +27,6 @@
 			)
 		);
 		?>
-	</div><!-- .entry-content -->
+	</div>
 
 </article><!-- #post-<?php the_ID(); ?> -->
