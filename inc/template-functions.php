@@ -7,6 +7,7 @@
 
 namespace _S_NAMESPACE\Theme;
 
+add_filter( 'body_class', __NAMESPACE__ . '\body_classes' );
 /**
  * Adds custom classes to the array of body classes.
  *
@@ -14,14 +15,10 @@ namespace _S_NAMESPACE\Theme;
  * @return array
  */
 function body_classes( $classes ) {
-	// Adds a class of hfeed to non-singular pages.
-	if ( ! is_singular() ) {
-		$classes[] = 'hfeed';
-	}
+	// do stuff!
 
 	return $classes;
 }
-add_filter( 'body_class', __NAMESPACE__ . '\body_classes' );
 
 add_filter( 'nav_menu_item_title', __NAMESPACE__ . '\add_dropdown_icon', 10, 4 );
 /**
@@ -32,7 +29,7 @@ function add_dropdown_icon( $item_output, $item, $args, $depth ) {
 	$has_children = in_array( 'menu-item-has-children', $item->classes, true );
 
 	if( $depth === 0 && $has_children ) {
-		$item_output = $item_output . get_svg( 'down-arrow', [ 'width' => '16', 'height' => '11' ], 'images' );
+		$item_output = $item_output . get_svg( 'chevron', [ 'width' => '16', 'height' => '16' ] );
 	}
 		
 	return $item_output;
