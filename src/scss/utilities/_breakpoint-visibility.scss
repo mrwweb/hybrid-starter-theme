@@ -1,0 +1,51 @@
+// Small Screens (600px)
+@include mq($bp--small) {
+	.is-visible-small-down {
+		display: none !important;
+	}
+}
+
+@include mq-max($bp--small) {
+	.is-visible-small-up {
+		display: none !important;
+	}
+}
+
+// Medium Screens (768px)
+@include mq($bp--medium) {
+	.is-visible-medium-down {
+		display: none !important;
+	}
+}
+
+@include mq-max($bp--medium) {
+	.is-visible-medium-up {
+		display: none !important;
+	}
+}
+
+// Mobile Menu (820px)
+@include mq($bp--menu) {
+	.is-visible-with-mobile-menu {
+		display: none !important;
+	}
+}
+
+@include mq-max($bp--menu) {
+	.is-visible-with-desktop-menu {
+		display: none !important;
+	}
+}
+
+// Large Screens (1024px)
+@include mq($bp--large) {
+	.is-visible-large-down {
+		display: none !important;
+	}
+}
+
+@include mq-max($bp--large) {
+	.is-visible-large-up {
+		display: none !important;
+	}
+}
