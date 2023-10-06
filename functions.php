@@ -69,7 +69,7 @@ function scripts_and_styles() {
 		filemtime( get_theme_file_path( 'css/screen.css' ) )
 	);
 
-	if( \MRW\TEC\is_tribe_view() ) {
+	if( function_exists( '\MRW\TEC\is_tribe_view' ) && \MRW\TEC\is_tribe_view() ) {
 		wp_enqueue_style(
 			'_s-the-events-calendar',
 			get_theme_file_uri( 'css/plugins/the-events-calendar.css' ),
