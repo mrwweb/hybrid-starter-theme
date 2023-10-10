@@ -9,5 +9,5 @@
 ?>
 
 <aside id="secondary" class="widget-area">
-	<?php block_template_part( 'footer' ); ?>
+	<?php block_template_part( 'sidebar' ); ?>
 </aside><!-- #secondary -->
