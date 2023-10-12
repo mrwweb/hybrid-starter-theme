@@ -10,30 +10,37 @@
 	}
 }
 
-.wp-block-media-text.has-background {
-	.wp-block-media-text__content {
-		padding-block: $space-8;
-	}
-}
-
 .wp-block-media-text__content {
 	@include flow;
 }
 
-/* No outer padding*/
-.wp-block-media-text:not(.has-background) .wp-block-media-text__content {
+/* No outer padding by default*/
+.wp-block-media-text .wp-block-media-text__content {
 	padding: $space-8 0 0;
 }
 
+/* Restore padding for background or no-background fullwidth */
+.wp-block-media-text.has-background,
+.wp-block-media-text.alignfull {
+	.wp-block-media-text__content {
+		padding: $space-8;
+	}
+}
+
 @include mq($bp--blocks) {
-	.wp-block-media-text:not(.has-background):not(.has-media-on-the-right)
+	.wp-block-media-text:not(.has-background, .alignfull):not(
+			.has-media-on-the-right
+		)
 		.wp-block-media-text__content {
 		padding-top: 0;
 		padding-left: $space-8;
 		padding-right: 0;
 	}
 
-	.wp-block-media-text.has-media-on-the-right:not(.has-background)
+	.wp-block-media-text.has-media-on-the-right:not(
+			.has-background,
+			.align-full
+		)
 		.wp-block-media-text__content {
 		padding-top: 0;
 		padding-left: 0;
