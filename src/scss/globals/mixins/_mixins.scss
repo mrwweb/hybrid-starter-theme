@@ -63,13 +63,14 @@
 	width: 100%;
 	max-width: none;
 	margin-inline: 0;
-	margin-top: $space-4;
+	margin-top: $space-8;
 
-	+ :not(.alignfull) {
-		margin-top: $space-4;
+	+ * {
+		margin-top: $space-8;
 	}
 
-	+ .alignfull {
+	+ .alignfull.has-background,
+	+ .alignfull.wp-block-cover {
 		margin-top: 0;
 	}
 }
