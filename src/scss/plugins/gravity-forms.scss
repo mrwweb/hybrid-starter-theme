@@ -37,7 +37,7 @@
 	.gfield_required {
 		font-size: inherit;
 		font-style: normal;
-		color: $error;
+		color: $required;
 
 		.has-background & {
 			color: inherit;
@@ -102,9 +102,9 @@
 	/* Validation */
 	.gform_validation_errors {
 		margin-bottom: $space-3;
+		border-radius: $border-radius;
 		border-color: $error;
-		border-radius: 0;
-		color: $error;
+		background-color: $error;
 		box-shadow: none;
 
 		> h2 .gform-icon {
@@ -116,13 +116,12 @@
 	.gfield_validation_message,
 	.validation_message {
 		padding: 0;
-		background-color: transparent;
+		background-color: $warning;
 		border: 0;
-		color: $error;
 	}
 
 	.gfield_error [aria-invalid="true"] {
-		border-color: $error;
+		border-color: $required;
 	}
 
 	.gfield_error .gfield_repeater_cell label,
@@ -132,10 +131,12 @@
 	.validation_message,
 	[aria-invalid="true"] + label,
 	label + [aria-invalid="true"] {
-		color: $error;
+		color: $required;
 	}
 
 	/* Confirmation */
 	.gform_confirmation_wrapper {
+		padding: $space-7;
+		background-color: $success;
 	}
 }

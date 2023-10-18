@@ -107,7 +107,17 @@
 				}
 			],
 			"gradients": [],
-			"customDuotone": false
+			"customDuotone": false,
+			"defaultPalette": false
+		},
+		"custom": {
+			"color": {
+				"message": "lightblue",
+				"success": "honeydew",
+				"warning": "lemonchiffon",
+				"error": "crimson",
+				"required": "var(--wp--custom--color--error)"
+			}
 		},
 		"typography": {
 			"fontFamilies": [

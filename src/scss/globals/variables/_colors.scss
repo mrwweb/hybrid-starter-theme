@@ -9,9 +9,11 @@ $base: var(--wp--preset--color--base);
 $contrast: var(--wp--preset--color--contrast);
 $white: $base;
 $black: $contrast;
-$error: Crimson;
-$warning: LemonChiffon;
-$message: lightblue;
+$error: var(--wp--custom--color--error);
+$warning: var(--wp--custom--color--warning);
+$message: var(--wp--custom--color--message);
+$success: var(--wp--custom--color--success);
+$required: var(--wp--custom--color--required);
 
 /* Functional Color Palette */
 $color__text-main: $primary;
