@@ -13,6 +13,14 @@
 	clear: both;
 }
 
+:root .alignwide {
+	@include alignwide;
+}
+
+:root .alignfull {
+	@include alignfull;
+}
+
 :root .is-layout-constrained > :where(:not(.alignwide):not(.alignfull)),
 :root .alignwide:not(.has-background) {
 	/* restrict width until viewport exceeds max content width */
@@ -21,12 +29,10 @@
 	}
 }
 
-:root .alignwide {
-	@include alignwide;
-}
-
-:root .alignfull {
-	@include alignfull;
+.is-root-container > .wp-block-group.alignfull:not(.has-background),
+.is-root-container > .wp-block-columns.alignfull:not(.has-background) {
+	max-width: 90%;
+	margin-inline: auto;
 }
 
 @include mq($bp--blocks) {

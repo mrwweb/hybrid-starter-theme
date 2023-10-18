@@ -1,4 +1,4 @@
-<div class="page-content is-layout-constrained flow">
+<div class="page-content is-layout-constrained is-root-container flow">
     <?php
     while ( have_posts() ) :
         the_post();

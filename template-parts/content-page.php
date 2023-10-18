@@ -18,7 +18,7 @@
 
 	<?php _s_post_thumbnail(); ?>
 
-	<div class="page-content is-layout-constrained flow">
+	<div class="page-content is-root-container is-layout-constrained flow">
 		<?php
 		the_content();
 

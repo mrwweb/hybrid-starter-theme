@@ -14,7 +14,7 @@
 		<h1 class="page-title"><?php esc_html_e( 'Nothing Found', '_s' ); ?></h1>
 	</header><!-- .page-header -->
 
-	<div class="page-content flow">
+	<div class="page-content is-root-container flow">
 		<?php
 		if ( is_home() && current_user_can( 'publish_posts' ) ) :
 

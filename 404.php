@@ -17,7 +17,7 @@ get_header();
 				<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', '_s' ); ?></h1>
 			</header><!-- .page-header -->
 
-			<div class="page-content flow">
+			<div class="page-content is-root-container flow">
 				<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', '_s' ); ?></p>
 
 				<?php get_search_form(); ?>

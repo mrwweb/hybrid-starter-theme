@@ -25,7 +25,7 @@
 		<?php endif; ?>
 	</header>
 
-	<div class="page-content page-content flow is-layout-constrained">
+	<div class="page-content is-layout-constrained is-root-container flow">
 		<?php
 		the_content(
 			sprintf(
