@@ -21,15 +21,17 @@ Integrated with the [LiveReload browser extension](https://github.com/twolfson/l
 
 ## Expected Icons in images/svg
 
-- `down-arrow.svg` for dropdown menu item indicator
+- Right-pointing `arrow.svg` for dropdown menu item indicator
 - `search.svg` for search button icon
-- right-facing `chevron.svg` for paging links
+- Right-pointing `chevron.svg` for paging links
+- `close.svg` for menu toggle button
+- `menu.svg` for menu toggle button
 
 ## Notable Changes from _s
 
 - Lots of block-first development things including:
   - `theme.json`
-  - Maps SASS variables to `theme.json` custom properties so `theme.json` is the "source of truth"
+  - Maps SASS variables to `theme.json` custom properties so `theme.json` is the "source of truth" (Notable downside of this technique: cannot perform SASS calculations on custom properties.)
   - Block-specific SCSS partials
   - Stylesheets for less-used blocks are enqueued per-block
   - Uses Block Template Parts instead of widgets for the footer and sidebar
@@ -38,7 +40,7 @@ Integrated with the [LiveReload browser extension](https://github.com/twolfson/l
 - Uses [`clicky-menus` script](https://github.com/mrwweb/clicky-menus) for [click-triggered dropdown navigation submenus](https://css-tricks.com/in-praise-of-the-unambiguous-click-menu/)
 - Custom toggle script for mobile menu and any other toggles you need
 - Fixes search forms not having unique IDs if more than one is on the page
-- Custom template tag to get SVGs
+- Custom template tag to get SVGs (props @aurooba [Inline SVG Helper function](https://aurooba.com/inline-svgs-in-your-wordpress-code-with-this-helper-function/))
 - Expects usage of [The Events Calendar](https://wordpress.org/plugins/the-events-calendar/), [Gravity Forms (affiliate link)](https://gravityforms.pxf.io/NkoRO1), and [PublishPress Authors](https://wordpress.org/plugins/publishpress-authors/)
   - Uses [The Events Calendar Reset](https://github.com/mrwweb/the-events-calendar-reset/) for better theme style inheritance
 
@@ -49,6 +51,8 @@ Autoformatting/linting:
 - `.editorconfig`
 - `.stylelintrc.json`
 - `.eslintrc`
+- `.phpcs.xml.dist`
+- `prettier` configured in `package.json`
 
 Make sure your editor supports `.editorconfig` for some very basic coding standards autoformatting.
 
