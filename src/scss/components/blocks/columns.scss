@@ -14,9 +14,10 @@
 	@include flow;
 
 	& + & {
-		margin-block-start: var(--wp--style--block-gap);
+		margin-block-start: $gap;
 	}
 
+	/* Don't wrap columns until 768px breakpoint */
 	@include mq-medium-blocks-only {
 		&.wp-block-column.wp-block-column:not(:only-child) {
 			flex-basis: 100% !important;
@@ -24,7 +25,7 @@
 		}
 
 		& + & {
-			margin-block-start: var(--wp--style--block-gap);
+			margin-block-start: $gap;
 		}
 	}
 
