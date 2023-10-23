@@ -73,7 +73,7 @@ function scripts_and_styles() {
 		wp_enqueue_style(
 			'_s-the-events-calendar',
 			get_theme_file_uri( 'css/plugins/the-events-calendar.css' ),
-			['theme-style'],
+			['theme-styles'],
 			filemtime( get_theme_file_path( 'css/plugins/the-events-calendar.css' ) )
 		);
 	}
