@@ -1,12 +1,11 @@
 @import "../../globals/globals";
 
 .wp-block-media-text {
-	margin-block: $space-9;
-	padding: 0;
+	margin-block-start: $space-9;
 	clear: both;
 
-	&.alignfull + .alignfull {
-		margin-block-start: calc(-1 * $space-9) !important;
+	&.alignfull + :not(.alignfull) {
+		margin-block-start: $space-9 !important;
 	}
 }
 
@@ -16,20 +15,21 @@
 
 /* No outer padding by default*/
 .wp-block-media-text .wp-block-media-text__content {
-	padding: $space-8 0 0;
+	padding:  0;
+	padding-block-start: $space-8;
 }
 
 @include mq($bp--blocks) {
 	.wp-block-media-text .wp-block-media-text__content {
-		padding-top: 0;
-		padding-left: $space-8;
-		padding-right: 0;
+		padding-block-start: 0;
+		padding-inline-start: $space-8;
+		padding-inline-end: 0;
 	}
 
 	.wp-block-media-text.has-media-on-the-right .wp-block-media-text__content {
-		padding-top: 0;
-		padding-left: 0;
-		padding-right: $space-8;
+		padding-block-start: 0;
+		padding-inline-start: 0;
+		padding-inline-end: $space-8;
 	}
 }
 
@@ -43,11 +43,7 @@
 	padding: $space-8;
 }
 
-.wp-block-media-text.mrw-card-block .wp-block-media-text__content {
-	padding-block-start: $space-5 !important;
-}
-
-/* Taller min-height than default when cropped image */
+/* Taller min-height than default styles when cropped image */
 .wp-block-media-text.is-image-fill .wp-block-media-text__media {
 	min-height: 21rem;
 }
