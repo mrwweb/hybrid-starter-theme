@@ -10,7 +10,7 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'flow' ); ?>>
-	<?php if( ! is_front_page() ) : ?>
+	<?php if ( ! is_front_page() ) : ?>
 		<header class="page-header is-layout-constrained">
 			<?php the_title( '<h1 class="page-title">', '</h1>' ); ?>
 		</header>

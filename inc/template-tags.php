@@ -1,11 +1,11 @@
 <?php
 /**
-* Custom template tags for this theme
-*
-* Eventually, some of the functionality here could be replaced by core features.
-*
-* @package _s
-*/
+ * Custom template tags for this theme
+ *
+ * Eventually, some of the functionality here could be replaced by core features.
+ *
+ * @package _s
+ */
 
 /**
  * Get an SVG file from the images/ folder in the theme, update its attributes if necessary and return it as a string.
@@ -14,13 +14,13 @@
  * @see https://aurooba.com/inline-svgs-in-your-wordpress-code-with-this-helper-function/
  *
  * @param string $filename The name of the SVG file to get.
- * @param array $attributes (optional) An array of attributes to add/modify to the SVG file.
+ * @param array  $attributes (optional) An array of attributes to add/modify to the SVG file.
  * @param string $directory (optional) The directory to look for the SVG file in, defaults to 'images'.
  * @return string|WP_Error The SVG file as a string or a WP_Error object if there was an error.
  */
 function get_svg( $filename, $attributes = array(), $directory = 'images/svg' ) {
 	// Get the SVG file.
-	$svg = file_get_contents( get_stylesheet_directory() . '/' . $directory . '/' . $filename . '.svg' );
+	$svg = file_get_contents( get_theme_file_path( "assets/$directory/$filename.svg" ) ); //phpcs:ignore
 
 	$errors = new WP_Error();
 
@@ -28,7 +28,7 @@ function get_svg( $filename, $attributes = array(), $directory = 'images/svg' ) 
 	if ( ! $svg ) {
 		$svg_error_message = sprintf(
 			/* translators: %1$s: SVG file name, %2$s: SVG directory */
-			__( 'There was an error retrieving the SVG file "%1$s" from the "%2$s" directory.', 'yourdomain' ),
+			__( 'There was an error retrieving the SVG file "%1$s" from the "%2$s" directory.', '_s' ),
 			$filename . '.svg',
 			$directory
 		);
@@ -37,7 +37,7 @@ function get_svg( $filename, $attributes = array(), $directory = 'images/svg' ) 
 			'svg_file_not_found',
 			$svg_error_message,
 			array(
-				'svg_file' => $filename . '.svg',
+				'svg_file'      => $filename . '.svg',
 				'svg_directory' => $directory,
 			)
 		);
@@ -57,7 +57,7 @@ function get_svg( $filename, $attributes = array(), $directory = 'images/svg' ) 
 				$update_svg->add_class( $value );
 				continue;
 			}
-			// Otherwise, set/update the attribute with the new value
+			// Otherwise, set/update the attribute with the new value.
 			$update_svg->set_attribute( $attribute, $value );
 		}
 	}
@@ -90,17 +90,17 @@ function _s_posted_on() {
 	);
 
 	echo '<span class="posted-on">' . $posted_on . '</span>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-
 }
 
 /**
  * Prints HTML with meta information for the current author.
  */
 function _s_posted_by() {
-	if(
+	if (
 		in_array(
 			'publishpress-authors/publishpress-authors.php',
-			apply_filters( 'active_plugins', get_option( 'active_plugins' ) )
+			apply_filters( 'active_plugins', get_option( 'active_plugins' ) ),
+			true
 		)
 	) {
 		echo '<span class="byline"> by';
@@ -115,7 +115,6 @@ function _s_posted_by() {
 
 		echo '<span class="byline"> ' . $byline . '</span>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 	}
-
 }
 
 /**

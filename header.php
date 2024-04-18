@@ -31,18 +31,34 @@
 			<?php
 			$title_tag = is_front_page() || is_home() ? 'h1' : 'div';
 			?>
-			<<?php echo $title_tag; ?> class="site-title">
+			<<?php echo $title_tag; //phpcs:ignore ?> class="site-title">
 				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"<?php echo $title_tag === 'h1' ? ' aria-current="page"' : ''; ?>>
-					<?php echo get_svg( 'logo', [ 'width' => "", 'height' => "" ] ); ?>
+					<?php echo get_svg( 'logo', array() ); //phpcs:ignore ?>
 					<span class="screen-reader-text"><?php bloginfo( 'name' ); ?></span>
 				</a>
-			</<?php echo $title_tag; ?>>
+			</<?php echo $title_tag; //phpcs:ignore ?>>
 		</div><!-- .site-branding -->
 
 		<nav id="site-navigation" class="main-navigation js-toggleWrapper">
 			<button class="menu-toggle js-toggleButton" data-aria-controls="menu-container">
-				<?php echo get_svg( 'menu', [ 'width' => '16', 'height' => '16' ] ); ?>
-				<?php echo get_svg( 'close', [ 'width' => '16', 'height' => '16' ] ); ?>
+				<?php
+				echo get_svg( //phpcs:ignore
+					'menu',
+					array(
+						'width'  => '16',
+						'height' => '16',
+					)
+				);
+				?>
+				<?php
+				echo get_svg( //phpcs:ignore
+					'close',
+					array(
+						'width'  => '16',
+						'height' => '16',
+					)
+				);
+				?>
 				<?php esc_html_e( 'Menu', '_s' ); ?>
 			</button>
 			<div id="menu-container" class="menu-container">
@@ -51,9 +67,9 @@
 					array(
 						'theme_location' => 'menu-1',
 						'menu_id'        => 'main-menu',
-						'menu_class'	 => 'main-menu clicky-menu no-js',
-						'container'		 => '',
-						'fallback_cb'	 => false,
+						'menu_class'     => 'main-menu clicky-menu no-js',
+						'container'      => '',
+						'fallback_cb'    => false,
 					)
 				);
 				get_search_form();

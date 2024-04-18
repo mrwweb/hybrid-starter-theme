@@ -1,0 +1,37 @@
+@use "../../abstracts/" as *;
+@forward "alignments";
+
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+	margin: 0;
+	padding: 0;
+}
+
+body .is-layout-constrained > :where(:not(.alignwide):not(.alignfull)) {
+	/* restrict width until viewport exceeds max content width */
+	@media (max-width: calc(43rem + 4rem)) {
+		max-width: 90vw;
+	}
+}
+
+.is-root-container {
+	@include flow;
+
+	/* make space between last block and footer as long as it's not full-width */
+	> :last-child:not(.alignfull) {
+		margin-bottom: $space-9;
+	}
+}
+
+.flow {
+	@include flow;
+}
+
+/* Generic WP Layout Class */
+@include mq($bp--blocks) {
+	.is-layout-flex > * + * {
+		margin-top: 0 !important;
+	}
+}

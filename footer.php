@@ -16,8 +16,8 @@
 		<?php block_template_part( 'footer' ); ?>
 		
 		<div class="site-info is-layout-constrained">
-			<?php echo get_the_privacy_policy_link('', '<span class="sep"> | </span>'); ?>
-			<?php echo bloginfo( 'name' ); ?> © <?php echo date('Y'); ?>
+			<?php echo get_the_privacy_policy_link( '', '<span class="sep"> | </span>' ); // phpcs:ignore ?>
+			<?php echo bloginfo( 'name' ); ?> © <?php echo esc_html( gmdate( 'Y' ) ); ?>
 			<span class="sep"> | </span>
 				<?php
 				/* translators: 1: Theme name, 2: Theme author. */

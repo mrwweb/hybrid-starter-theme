@@ -21,7 +21,7 @@ function setup() {
 
 	add_theme_support( 'post-thumbnails' );
 
-	add_editor_style( 'css/classic-editor-styles.css' );
+	add_editor_style( 'assets/css/classic-editor-styles.css' );
 
 	register_nav_menus(
 		array(
@@ -41,7 +41,6 @@ function setup() {
 			'script',
 		)
 	);
-
 }
 
 add_action( 'after_setup_theme', __NAMESPACE__ . '\content_width', 0 );
@@ -62,35 +61,37 @@ add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\scripts_and_styles' );
  */
 function scripts_and_styles() {
 
+	wp_dequeue_script( 'jquery' );
+
 	wp_enqueue_style(
 		'theme-styles',
-		get_theme_file_uri( 'css/screen.css' ),
-		[],
-		filemtime( get_theme_file_path( 'css/screen.css' ) )
+		get_theme_file_uri( 'assets/css/screen.css' ),
+		array(),
+		filemtime( get_theme_file_path( 'assets/css/screen.css' ) )
 	);
 
-	if( function_exists( '\MRW\TEC\is_tribe_view' ) && \MRW\TEC\is_tribe_view() ) {
+	if ( function_exists( '\MRW\TEC\is_tribe_view' ) && \MRW\TEC\is_tribe_view() ) {
 		wp_enqueue_style(
 			'_s-the-events-calendar',
-			get_theme_file_uri( 'css/plugins/the-events-calendar.css' ),
-			['theme-styles'],
-			filemtime( get_theme_file_path( 'css/plugins/the-events-calendar.css' ) )
+			get_theme_file_uri( 'assets/css/plugins/the-events-calendar.css' ),
+			array( 'theme-styles' ),
+			filemtime( get_theme_file_path( 'assets/css/plugins/the-events-calendar.css' ) )
 		);
 	}
 
 	wp_enqueue_script(
 		'theme-navigation',
-		get_theme_file_uri( 'vendor/clicky-menus/clicky-menus.js' ),
-		[],
-		filemtime( get_theme_file_path( 'vendor/clicky-menus/clicky-menus.js' ) ),
+		get_theme_file_uri( 'assets/vendor/clicky-menus/clicky-menus.js' ),
+		array(),
+		filemtime( get_theme_file_path( 'assets/vendor/clicky-menus/clicky-menus.js' ) ),
 		true
 	);
 
 	wp_enqueue_script(
-		'theme-scripts',
-		get_theme_file_uri( 'js/scripts.min.js' ),
-		[ 'theme-navigation' ],
-		filemtime( get_theme_file_path( 'js/scripts.min.js' ) ),
+		'mrw-toggler',
+		get_theme_file_uri( 'assets/js/toggler.js' ),
+		array( 'theme-navigation' ),
+		filemtime( get_theme_file_path( 'assets/js/toggler.js' ) ),
 		true
 	);
 
@@ -106,9 +107,9 @@ add_action( 'gform_enqueue_scripts', __NAMESPACE__ . '\enqueue_gravity_forms_css
 function enqueue_gravity_forms_css() {
 	wp_enqueue_style(
 		'_s-gravity-forms',
-		get_theme_file_uri( 'css/plugins/gravity-forms.css' ),
-		['theme-styles'],
-		filemtime( get_theme_file_path( 'css/plugins/gravity-forms.css' ) )
+		get_theme_file_uri( 'assets/css/plugins/gravity-forms.css' ),
+		array( 'theme-styles' ),
+		filemtime( get_theme_file_path( 'assets/css/plugins/gravity-forms.css' ) )
 	);
 }
 
@@ -116,15 +117,17 @@ add_action( 'wp_default_scripts', __NAMESPACE__ . '\dequeue_jquery_migrate' );
 /**
  * Don't enqueue jquery migrate
  *
+ * @param object $scripts WP_Scripts object
+ *
  * @see https://wordpress.stackexchange.com/a/291711/9844
  */
 function dequeue_jquery_migrate( $scripts ) {
-    if ( ! is_admin() && ! empty( $scripts->registered['jquery'] ) ) {
-        $scripts->registered['jquery']->deps = array_diff(
-            $scripts->registered['jquery']->deps,
-            [ 'jquery-migrate' ]
-        );
-    }
+	if ( ! is_admin() && ! empty( $scripts->registered['jquery'] ) ) {
+		$scripts->registered['jquery']->deps = array_diff(
+			$scripts->registered['jquery']->deps,
+			array( 'jquery-migrate' )
+		);
+	}
 }
 
 /* Don't load duotone filters in body */
@@ -145,7 +148,6 @@ function make_blog_editable( $replace, $post ) {
 	}
 
 	return $replace;
-
 }
 
 require get_template_directory() . '/inc/block-editor-config.php';

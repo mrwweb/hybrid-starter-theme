@@ -1,3 +1,5 @@
+@use "../../abstracts/" as *;
+
 /* Basic toggle display logic */
 .menu-toggle[aria-expanded="false"] + .menu-container {
 	display: none;
@@ -26,7 +28,15 @@
 }
 
 /* Basic Submenu positioning Logic */
+.main-navigation {
+	position: relative;
+}
 .menu-container {
+	position: absolute;
+	right: 0;
+	top: 100%;
+	z-index: 999;
+
 	.sub-menu {
 		position: static;
 		height: 0;

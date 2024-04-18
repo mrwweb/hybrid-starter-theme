@@ -1,3 +1,5 @@
+@use "../abstracts/" as *;
+
 // Small Screens (600px)
 @include mq($bp--small) {
 	.is-visible-small-down {

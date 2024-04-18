@@ -1,4 +1,4 @@
-@import "../globals/globals";
+@use "../abstracts" as *;
 
 /* The Gravity Form in loading state */
 .gform_wrapper[style="display:none"] {

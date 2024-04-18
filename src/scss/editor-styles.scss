@@ -1,8 +1,8 @@
 /*
  * Selectors reference: https://github.com/mrwweb/wordpress-block-editor-theme-support-starter/blob/master/block-editor-styles.css
  */
-@import "globals/globals";
-@import "plugins/the-events-calendar-editor";
+@use "sass:meta";
+@use "abstracts" as *;
 
 /* Hide the Order Field */
 .editor-page-attributes__order {
@@ -10,8 +10,8 @@
 }
 
 :root .editor-styles-wrapper {
-	@import "base/base";
-	@import "components/blocks/blocks";
+	@include meta.load-css("base");
+	@include meta.load-css("blocks");
 
 	/**
 	* Global Styles

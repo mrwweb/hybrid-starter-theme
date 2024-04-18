@@ -20,17 +20,18 @@ $posts_page = get_option( 'page_for_posts' );
 
 		<?php
 		if ( have_posts() ) :
-            $page_for_posts = get_option( 'page_for_posts' );
-            $blog_content = get_the_content( null, false, (int) $page_for_posts );
-            ?>
-            <header class="page-header is-layout-constrained flow">
-                <h1 class="page-title"><?php echo get_the_title( (int) $page_for_posts ); ?></h1>
-                <?php if( $blog_content ) {
-                    echo '<div class="archive-description">' . apply_filters( 'the_content', $blog_content ) . '</div>';
-                }
-                ?>
-            </header>
-            <?php
+			$page_for_posts = get_option( 'page_for_posts' );
+			$blog_content   = get_the_content( null, false, (int) $page_for_posts );
+			?>
+			<header class="page-header is-layout-constrained flow">
+				<h1 class="page-title"><?php echo wp_kses_post( get_the_title( (int) $page_for_posts ) ); ?></h1>
+				<?php
+				if ( $blog_content ) {
+					echo '<div class="archive-description">' . wp_kses_post( apply_filters( 'the_content', $blog_content ) ) . '</div>';
+				}
+				?>
+			</header>
+			<?php
 
 			/* Start the Loop */
 			get_template_part( 'template-parts/posts-loop' );
