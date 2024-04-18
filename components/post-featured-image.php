@@ -2,7 +2,7 @@
 /**
  * The post thumbnail for a post
  *
- * @package _s
+ * @package _mrw
  */
 
 if ( ! post_password_required() && has_post_thumbnail() ) {

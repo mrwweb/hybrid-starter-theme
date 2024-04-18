@@ -6,7 +6,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package _s
+ * @package _mrw
  */
 
 ?>
@@ -24,7 +24,7 @@
 <script>document.body.className = document.body.className.replace(' no-js ', ' ');</script>
 <?php wp_body_open(); ?>
 <div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', '_s' ); ?></a>
+	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', '_mrw' ); ?></a>
 
 	<header id="masthead" class="site-header">
 		<div class="site-branding">
@@ -59,7 +59,7 @@
 					)
 				);
 				?>
-				<?php esc_html_e( 'Menu', '_s' ); ?>
+				<?php esc_html_e( 'Menu', '_mrw' ); ?>
 			</button>
 			<div id="menu-container" class="menu-container">
 				<?php

@@ -2,10 +2,10 @@
 /**
  * Add custom blocks variations to the editor
  *
- * @package _s
+ * @package _mrw
  */
 
-namespace _S_NAMESPACE\Theme;
+namespace _MRW_NAMESPACE\Theme;
 
 add_filter( 'get_block_type_variations', __NAMESPACE__ . '\block_variations', 10, 2 );
 

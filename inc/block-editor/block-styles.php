@@ -2,10 +2,10 @@
 /**
  * Add custom style variations to blocks
  *
- * @package _s
+ * @package _mrw
  */
 
-namespace _S_NAMESPACE\Theme;
+namespace _MRW_NAMESPACE\Theme;
 
 // add_filter( 'after_setup_theme', __NAMESPACE__ . '\register_block_styles', 999 );
 function register_block_styles() {
@@ -15,7 +15,7 @@ function register_block_styles() {
 		'core/paragraph',
 		array(
 			'name'  => 'example',
-			'label' => __( 'Example', '_s' ),
+			'label' => __( 'Example', '_mrw' ),
 		)
 	);
 }

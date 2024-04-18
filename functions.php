@@ -1,13 +1,13 @@
 <?php
 /**
- * _s functions and definitions
+ * _mrw functions and definitions
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package _s
+ * @package _mrw
  */
 
-namespace _S_NAMESPACE\Theme;
+namespace _MRW_NAMESPACE\Theme;
 
 add_action( 'after_setup_theme', __NAMESPACE__ . '\setup' );
 /**
@@ -25,7 +25,7 @@ function setup() {
 
 	register_nav_menus(
 		array(
-			'menu-1' => esc_html__( 'Primary', '_s' ),
+			'menu-1' => esc_html__( 'Primary', '_mrw' ),
 		)
 	);
 
@@ -52,7 +52,7 @@ add_action( 'after_setup_theme', __NAMESPACE__ . '\content_width', 0 );
  * @global int $content_width
  */
 function content_width() {
-	$GLOBALS['content_width'] = apply_filters( '_s_content_width', 688 );
+	$GLOBALS['content_width'] = apply_filters( '_mrw_content_width', 688 );
 }
 
 add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\scripts_and_styles' );
@@ -72,7 +72,7 @@ function scripts_and_styles() {
 
 	if ( function_exists( '\MRW\TEC\is_tribe_view' ) && \MRW\TEC\is_tribe_view() ) {
 		wp_enqueue_style(
-			'_s-the-events-calendar',
+			' _mrw-the-events-calendar',
 			get_theme_file_uri( 'assets/css/plugins/the-events-calendar.css' ),
 			array( 'theme-styles' ),
 			filemtime( get_theme_file_path( 'assets/css/plugins/the-events-calendar.css' ) )
@@ -106,7 +106,7 @@ add_action( 'gform_enqueue_scripts', __NAMESPACE__ . '\enqueue_gravity_forms_css
  */
 function enqueue_gravity_forms_css() {
 	wp_enqueue_style(
-		'_s-gravity-forms',
+		' _mrw-gravity-forms',
 		get_theme_file_uri( 'assets/css/plugins/gravity-forms.css' ),
 		array( 'theme-styles' ),
 		filemtime( get_theme_file_path( 'assets/css/plugins/gravity-forms.css' ) )

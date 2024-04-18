@@ -4,7 +4,7 @@
  *
  * Supports the PublishPress Authors plugin and falls back to default WP
  *
- * @package _s
+ * @package _mrw
  */
 
 if (
@@ -20,7 +20,7 @@ if (
 } else {
 	$byline = sprintf(
 		/* translators: %s: post author. */
-		esc_html_x( 'by %s', 'post author', '_s' ),
+		esc_html_x( 'by %s', 'post author', '_mrw' ),
 		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 	);
 

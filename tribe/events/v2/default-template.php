@@ -2,7 +2,7 @@
 /**
  * Override the "Default Template" for non-single TEC views like Month view
  *
- * @package _s
+ * @package _mrw
  *
  * CHANGES:
  *

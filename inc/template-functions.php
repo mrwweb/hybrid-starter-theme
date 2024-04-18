@@ -2,10 +2,10 @@
 /**
  * Functions which enhance the theme by hooking into WordPress
  *
- * @package _s
+ * @package _mrw
  */
 
-namespace _S_NAMESPACE\Theme;
+namespace _MRW_NAMESPACE\Theme;
 
 // add_filter( 'body_class', __NAMESPACE__ . '\body_classes' );
 /**

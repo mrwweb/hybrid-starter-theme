@@ -2,7 +2,7 @@
 /**
  * The footer for a post body
  *
- * @package _s
+ * @package _mrw
  */
 
 if ( is_user_logged_in() ) :
@@ -13,7 +13,7 @@ if ( is_user_logged_in() ) :
 			sprintf(
 				wp_kses(
 					/* translators: %s: Name of current post. Only visible to screen readers */
-					__( 'Edit <span class="screen-reader-text">%s</span>', '_s' ),
+					__( 'Edit <span class="screen-reader-text">%s</span>', '_mrw' ),
 					array(
 						'span' => array(
 							'class' => array(),

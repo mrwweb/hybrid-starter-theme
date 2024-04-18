@@ -2,7 +2,7 @@
 /**
  * The post meta for a post
  *
- * @package _s
+ * @package _mrw
  */
 
 if ( 'post' === get_post_type() ) :

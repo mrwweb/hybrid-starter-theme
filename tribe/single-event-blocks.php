@@ -2,7 +2,7 @@
 /**
  * Override single event template for posts with blocks
  *
- * @package _s
+ * @package _mrw
  *
  * CHANGES:
  *

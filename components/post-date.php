@@ -2,7 +2,7 @@
 /**
  * The Publication Date of a post
  *
- * @package _s
+ * @package _mrw
  */
 
 $time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
@@ -20,7 +20,7 @@ $time_string = sprintf(
 
 $posted_on = sprintf(
 	/* translators: %s: post date. */
-	esc_html_x( 'Posted on %s', 'post date', '_s' ),
+	esc_html_x( 'Posted on %s', 'post date', '_mrw' ),
 	'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
 );
 ?>

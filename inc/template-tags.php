@@ -2,7 +2,7 @@
 /**
  * Custom template tags for this theme
  *
- * @package _s
+ * @package _mrw
  */
 
 /**
@@ -26,7 +26,7 @@ function get_svg( $filename, $attributes = array(), $directory = 'images/svg' ) 
 	if ( ! $svg ) {
 		$svg_error_message = sprintf(
 			/* translators: %1$s: SVG file name, %2$s: SVG directory */
-			__( 'There was an error retrieving the SVG file "%1$s" from the "%2$s" directory.', '_s' ),
+			__( 'There was an error retrieving the SVG file "%1$s" from the "%2$s" directory.', '_mrw' ),
 			$filename . '.svg',
 			$directory
 		);
