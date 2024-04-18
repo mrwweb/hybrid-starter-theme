@@ -35,5 +35,5 @@
 		?>
 	</div>
 	
-	<?php get_template_part( 'components/post-footer', get_post_type(), [ 'class' => 'page-footer is-layout-constrained' ] ); ?>
+	<?php get_template_part( 'components/post-footer', get_post_type(), array( 'class' => 'page-footer is-layout-constrained' ) ); ?>
 </article><!-- #post-<?php the_ID(); ?> -->

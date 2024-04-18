@@ -41,7 +41,7 @@ function editor_assets() {
 		filemtime( get_theme_file_path( 'assets/css/editor-styles.css' ) )
 	);
 
-	if( get_post_type() === 'tribe_events' ) {
+	if ( get_post_type() === 'tribe_events' ) {
 		wp_enqueue_style(
 			'_s-tec-block-editor',
 			get_theme_file_uri( 'assets/css/plugins/the-events-calendar-editor.css' ),
