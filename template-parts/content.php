@@ -13,18 +13,9 @@
 	<header class="page-header flow is-layout-constrained">
 		<?php
 		the_title( '<h1 class="page-title">', '</h1>' );
-
-		if ( 'post' === get_post_type() ) :
-			?>
-			<div class="entry-meta">
-				<?php
-				_s_posted_on();
-				_s_posted_by();
-				?>
-			</div><!-- .entry-meta -->
-		<?php endif; ?>
+		get_template_part( 'components/post-meta', get_post_type() );
+		?>
 	</header>
-
 	<div class="page-content is-layout-constrained is-root-container flow">
 		<?php
 		the_content(
@@ -41,19 +32,8 @@
 				wp_kses_post( get_the_title() )
 			)
 		);
-
-		wp_link_pages(
-			array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', '_s' ),
-				'after'  => '</div>',
-			)
-		);
 		?>
 	</div>
-
-	<footer class="page-footer is-layout-constrained">
-		<div>
-			<?php _s_entry_footer(); ?>
-		</div>
-	</footer>
+	
+	<?php get_template_part( 'components/post-footer', get_post_type(), [ 'class' => 'page-footer is-layout-constrained' ] ); ?>
 </article><!-- #post-<?php the_ID(); ?> -->

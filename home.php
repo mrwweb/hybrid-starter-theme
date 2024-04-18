@@ -46,5 +46,5 @@ $posts_page = get_option( 'page_for_posts' );
 	</main><!-- #main -->
 
 <?php
-get_sidebar();
+block_template_part( 'sidebar' );
 get_footer();

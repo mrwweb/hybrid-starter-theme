@@ -49,5 +49,5 @@ get_header();
 	</main><!-- #main -->
 
 <?php
-get_sidebar();
+block_template_part( 'sidebar' );
 get_footer();
