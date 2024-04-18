@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package _s
+ * @package _mrw
  */
 
 ?>
@@ -16,19 +16,9 @@
 		</header>
 	<?php endif; ?>
 
-	<?php _s_post_thumbnail(); ?>
+	<?php get_template_part( 'components/post-featured-image' ); ?>
 
 	<div class="page-content is-root-container is-layout-constrained flow">
-		<?php
-		the_content();
-
-		wp_link_pages(
-			array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', '_s' ),
-				'after'  => '</div>',
-			)
-		);
-		?>
+		<?php the_content(); ?>
 	</div>
-
 </article><!-- #post-<?php the_ID(); ?> -->

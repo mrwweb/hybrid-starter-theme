@@ -2,10 +2,10 @@
 /**
  * Configuring what the block editor supports and enqueuing assets for the block editor and blocks
  *
- * @package _s
+ * @package _mrw
  */
 
-namespace _S_NAMESPACE\Theme;
+namespace _MRW_NAMESPACE\Theme;
 
 /**
  * Remove Block Templates that are automatically enabled by theme.json
@@ -35,28 +35,28 @@ add_action( 'enqueue_block_editor_assets', __NAMESPACE__ . '\editor_assets' );
 function editor_assets() {
 
 	wp_enqueue_style(
-		'_s-block-editor',
+		' _mrw-block-editor',
 		get_theme_file_uri( 'assets/css/editor-styles.css' ),
 		array(),
 		filemtime( get_theme_file_path( 'assets/css/editor-styles.css' ) )
 	);
 
-	if( get_post_type() === 'tribe_events' ) {
+	if ( get_post_type() === 'tribe_events' ) {
 		wp_enqueue_style(
-			'_s-tec-block-editor',
+			' _mrw-tec-block-editor',
 			get_theme_file_uri( 'assets/css/plugins/the-events-calendar-editor.css' ),
 			array(),
 			filemtime( get_theme_file_path( 'assets/css/plugins/the-events-calendar-editor.css' ) )
 		);
 	}
 
-	wp_enqueue_script(
-		'_s-block-editor',
+	/* wp_enqueue_script(
+		' _mrw-block-editor',
 		get_theme_file_uri( 'assets/js/editor.js' ),
 		array(),
 		filemtime( get_theme_file_path( 'js/editor.js' ) ),
 		true
-	);
+	); */
 }
 
 /**
@@ -93,3 +93,6 @@ require 'block-editor/default-block-markup.php';
 
 /* Register custom block styles */
 require 'block-editor/block-styles.php';
+
+/* Register custom block variations in PHP as much as possible */
+require 'block-editor/block-variations.php';

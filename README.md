@@ -1,33 +1,56 @@
+<!-- markdownlint-disable MD014 -->
 # {Site Name} Theme
 
-A theme supporting the block editor based on _s (with lots of changes 😃).
+A theme supporting the block editor based on [_s](https://github.com/Automattic/_s/) but with a _tremendous_ number of changes 😃.
+
+## Quick Start
+
+Clone or download this repository, change its name to something else, and then you'll need to do a six-step find and replace on the name in all the templates.
+
+1. Search for `'_mrw'` (inside single quotations) to capture the text domain and replace with: `'theme-prefix'`.
+2. Search for `"_mrw"` (double quotes) to capture phpcs ruleset and replace with `"theme-previx"`
+3. Search for `_mrw_` to capture all the functions names and replace with: `theme_prefix_`.
+4. Search for `Text Domain: _mrw` in `style.css` and replace with: `Text Domain: theme-prefix`.
+5. Search for `_mrw` (with a space before it) to capture DocBlocks and replace with: `Theme_Prefix`.
+6. Search for `_mrw-` to capture prefixed handles and replace with: `theme-prefix-`.
+7. Search for `_MRW_` (in uppercase) to capture constants and replace with: `THEME_PREFIX_`.
 
 ## Build Process
 
-This site uses a Gulp build process in order to support SASS with autoprefixer and logical properties syntax. Gulp also minifies and uglifies JS and provides Live Reload.
+This site uses a SASS build process in order to support SASS with autoprefixer.
 
-Edit CSS and JS files in `/src/`
+Edit CSS files in `/src/`
 
-See `package.json` and `gulpfile.js` for details.
+See `package.json` for details.
 
-To run build from `/wp-content/themes/{themename}/`
+To install build from `/wp-content/themes/{themename}/`
 
 ```sh
-npm install
-gulp
+$ npm install
 ```
 
-Integrated with the [LiveReload browser extension](https://github.com/twolfson/livereload-extensions)
+To run build for development:
+
+```sh
+$ npm run watch
+```
+
+To build prefixed and minified CSS for release:
+
+```sh
+$ npm run build
+```
 
 ## Expected Icons in images/svg
 
+- `logo.svg` for logo
 - Right-pointing `arrow.svg` for dropdown menu item indicator
 - `search.svg` for search button icon
 - Right-pointing `chevron.svg` for paging links
 - `close.svg` for menu toggle button
 - `menu.svg` for menu toggle button
 
-## Notable Changes from _s
+## Notable Changes from _mrw
 
 - Lots of block-first development things including:
   - `theme.json`
@@ -35,8 +58,9 @@ Integrated with the [LiveReload browser extension](https://github.com/twolfson/l
   - Block-specific SCSS partials
   - Stylesheets for less-used blocks are enqueued per-block
   - Uses Block Template Parts instead of widgets for the footer and sidebar
-  - JavaScript used to set a few default block variations
+  - PHP used to set a few default block variations
   - Example of block style ready to go in `/inc/block-editor-config.php`
+  - Uses template parts instead of most template tags
 - Uses [`clicky-menus` script](https://github.com/mrwweb/clicky-menus) for [click-triggered dropdown navigation submenus](https://css-tricks.com/in-praise-of-the-unambiguous-click-menu/)
 - Custom toggle script for mobile menu and any other toggles you need
 - Fixes search forms not having unique IDs if more than one is on the page

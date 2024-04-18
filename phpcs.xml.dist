@@ -32,7 +32,7 @@
 	USE THE WordPress AND THE Theme Review RULESET
 	############################################################################# -->
     <rule ref="WordPress">
-        <!-- This rule does not apply here since the _s prefix should be changed by the theme author. -->
+        <!-- This rule does not apply here since the _mrw prefix should be changed by the theme author. -->
         <exclude name="WordPress.NamingConventions.PrefixAllGlobals.ShortPrefixPassed" />
         <!-- I'm pretty sure this rule is on the way out. I understand why people recommend it and I think it's more readable the other way -->
         <exclude name="WordPress.PHP.YodaConditions.NotYoda" />
@@ -46,7 +46,7 @@
         <properties>
             <property name="text_domain"
                       type="array"
-                      value="_s" />
+                      value="_mrw" />
         </properties>
     </rule>
     <!-- Allow for theme specific exceptions to the file name rules based
@@ -81,7 +81,7 @@
         <properties>
             <property name="prefixes"
                       type="array"
-                      value="_s" />
+                      value="_mrw" />
         </properties>
     </rule>
     <!-- #############################################################################

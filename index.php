@@ -4,7 +4,7 @@
  *
  * This file is used as the default *Archive* template. singular.php is the default single-post template
  *
- * @package _s
+ * @package _mrw
  */
 
 get_header();
@@ -34,5 +34,5 @@ get_header();
 	</main><!-- #main -->
 
 <?php
-get_sidebar();
+block_template_part( 'sidebar' );
 get_footer();

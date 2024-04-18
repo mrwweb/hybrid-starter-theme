@@ -2,7 +2,7 @@
 /**
  * Standard loop for archive pages, blog, etc.
  *
- * @package _s
+ * @package _mrw
  */
 
 ?>

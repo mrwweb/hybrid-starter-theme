@@ -2,10 +2,10 @@
 /**
  * Filter the markup of default WordPress blocks in order to make them easier to use or more semantic
  *
- * @package _s
+ * @package _mrw
  */
 
-namespace _S_NAMESPACE\Theme;
+namespace _MRW_NAMESPACE\Theme;
 
 use WP_HTML_Tag_Processor;
 

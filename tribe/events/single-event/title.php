@@ -4,7 +4,7 @@
  *
  * @link http://evnt.is/1aiy
  *
- * @package _s
+ * @package _mrw
  *
  * @version 4.7.2
  *
