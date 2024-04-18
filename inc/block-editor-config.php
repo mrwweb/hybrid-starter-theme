@@ -93,3 +93,6 @@ require 'block-editor/default-block-markup.php';
 
 /* Register custom block styles */
 require 'block-editor/block-styles.php';
+
+/* Register custom block variations in PHP as much as possible */
+require 'block-editor/block-variations.php';
