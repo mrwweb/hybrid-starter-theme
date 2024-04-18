@@ -50,13 +50,13 @@ function editor_assets() {
 		);
 	}
 
-	wp_enqueue_script(
+	/* wp_enqueue_script(
 		'_s-block-editor',
 		get_theme_file_uri( 'assets/js/editor.js' ),
 		array(),
 		filemtime( get_theme_file_path( 'js/editor.js' ) ),
 		true
-	);
+	); */
 }
 
 /**

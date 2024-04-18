@@ -10,7 +10,6 @@ namespace _S_NAMESPACE\Theme;
 add_filter( 'get_block_type_variations', __NAMESPACE__ . '\block_variations', 10, 2 );
 
 function block_variations( $variations, $block ) {
-	var_dump( 'variations' );
 	$block_name = $block->name;
 	switch ( $block_name ) {
 		case 'core/media-text':
