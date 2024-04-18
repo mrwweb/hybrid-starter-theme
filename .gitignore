@@ -5,5 +5,5 @@ style.css.map
 .DS_Store
 
 # compiled code
-/css
-/js
+/assets/css
+/assets/js/editor
