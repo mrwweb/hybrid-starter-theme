@@ -1,0 +1,72 @@
+@use "../../abstracts/" as *;
+
+.has-background:where(p, .wp-block-group, .wp-block-columns, .wp-block-column) {
+	padding: $space-7;
+
+	.wp-block-columns & {
+		padding: $space-5;
+	}
+
+	&.alignfull {
+		padding: $space-9;
+	}
+}
+
+.is-layout-constrained
+	> .alignfull:not(.has-background):where(
+		.wp-block-group,
+		.wp-block-columns
+	) {
+	padding: $space-9;
+}
+
+/* name, color, contrasting text */
+/* prettier-ignore */
+$colors:
+	"primary" $primary $white,
+	"secondary" $secondary $white,
+	"dark-gray" $gray-dark $white,
+	"foreground" $black $white,
+	"warning" $warning white,
+	"error" $error null,
+	"message" $message null,
+	"accent" $accent null,
+	"accent-light" $accent-light null,
+	"light-gray" $gray-light null,
+	"gray" $gray null,
+	"background" $white null,
+	// Gradients!
+	'serene-gradient' null $white,
+	'mystic-gradient' null $white;
+
+/**
+ * Background and text colors are auto-output by theme.json
+ *
+ * This takes care of setting better default colors and other fine-tuning
+ */
+@each $name, $color, $text in $colors {
+	.has-#{$name}-background-color {
+		color: $text;
+
+		.wp-block-button &.wp-block-button__link {
+			border-color: $color;
+		}
+	}
+}
+
+/* Things that inherit text color when set */
+.has-background:not(
+		.has-base-background-color,
+		.has-accent-background-color,
+		.has-accent-light-background-color,
+		.has-light-gray-background-color
+	),
+.has-text-color {
+	a:not(.wp-block-button__link),
+	a:not(.wp-block-button__link):hover,
+	a:not(.wp-block-button__link):focus,
+	a:not(.wp-block-button__link):active,
+	::marker {
+		color: inherit;
+	}
+}

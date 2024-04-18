@@ -1,6 +1,6 @@
-@import "globals/globals";
-@import "base/base";
-@import "components/blocks/blocks";
+@use "abstracts" as *;
+@use "base";
+@use "components";
 
 html {
 	background-color: $white;

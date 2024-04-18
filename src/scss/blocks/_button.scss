@@ -1,0 +1,7 @@
+@use "../abstracts/" as *;
+
+.wp-block-button .wp-block-button__link {
+	@include button;
+
+	border-radius: $border-radius;
+}

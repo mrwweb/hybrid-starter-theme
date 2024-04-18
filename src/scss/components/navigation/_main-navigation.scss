@@ -1,3 +1,5 @@
+@use "../../abstracts/" as *;
+
 /* Basic toggle display logic */
 .menu-toggle[aria-expanded="false"] + .menu-container {
 	display: none;

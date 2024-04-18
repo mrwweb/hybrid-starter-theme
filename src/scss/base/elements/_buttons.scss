@@ -1,3 +1,5 @@
+@use "../../abstracts/" as *;
+
 .button:is(a,button,input),
 .button > a, // menus
 input[type="button"],

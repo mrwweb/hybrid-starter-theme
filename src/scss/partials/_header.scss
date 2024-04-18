@@ -1,0 +1,16 @@
+@use "../abstracts/" as *;
+
+.site-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.site-title {
+	align-self: center;
+	font-size: inherit;
+
+	a {
+		display: block;
+	}
+}

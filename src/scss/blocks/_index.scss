@@ -1,0 +1,13 @@
+/*
+ * Outdated Selectors reference: https://github.com/mrwweb/wordpress-block-editor-theme-support-starter/blob/master/front-end-blocks.css
+ */
+
+/* Generic Block Classes */
+@forward "block-styles";
+
+/* Specific Blocks */
+@forward "button";
+@forward "group";
+@forward "image";
+@forward "list";
+@forward "pullquote";

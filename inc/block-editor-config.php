@@ -35,14 +35,23 @@ add_action( 'enqueue_block_editor_assets', __NAMESPACE__ . '\editor_assets' );
 function editor_assets() {
 
 	wp_enqueue_style(
-		'block-editor',
+		'_s-block-editor',
 		get_theme_file_uri( 'assets/css/editor-styles.css' ),
 		array(),
 		filemtime( get_theme_file_path( 'assets/css/editor-styles.css' ) )
 	);
 
+	if( get_post_type() === 'tribe_events' ) {
+		wp_enqueue_style(
+			'_s-tec-block-editor',
+			get_theme_file_uri( 'assets/css/plugins/the-events-calendar-editor.css' ),
+			array(),
+			filemtime( get_theme_file_path( 'assets/css/plugins/the-events-calendar-editor.css' ) )
+		);
+	}
+
 	wp_enqueue_script(
-		'block-editor',
+		'_s-block-editor',
 		get_theme_file_uri( 'assets/js/editor.js' ),
 		array(),
 		filemtime( get_theme_file_path( 'js/editor.js' ) ),
