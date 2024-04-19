@@ -198,7 +198,7 @@
 			"h1": {
 				"typography": {
 					"fontSize": "var(--wp--preset--font-size--xx-large)",
-					"lineHeight": "1.2"					
+					"lineHeight": "1.2"
 				}
 			},
 			"h2": {

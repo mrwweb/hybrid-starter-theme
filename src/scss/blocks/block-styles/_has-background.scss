@@ -31,13 +31,9 @@ $colors:
 	"error" $error null,
 	"message" $message null,
 	"accent" $accent null,
-	"accent-light" $accent-light null,
 	"light-gray" $gray-light null,
 	"gray" $gray null,
-	"background" $white null,
-	// Gradients!
-	'serene-gradient' null $white,
-	'mystic-gradient' null $white;
+	"background" $white null;
 
 /**
  * Background and text colors are auto-output by theme.json
@@ -58,7 +54,6 @@ $colors:
 .has-background:not(
 		.has-base-background-color,
 		.has-accent-background-color,
-		.has-accent-light-background-color,
 		.has-light-gray-background-color
 	),
 .has-text-color {
