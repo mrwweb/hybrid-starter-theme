@@ -28,6 +28,11 @@ function configure_template_editors() {
 	remove_theme_support( 'block-templates' );
 }
 
+/**
+ * Load separate stylesheets for blocks with their own styles
+ */
+add_filter( 'should_load_separate_core_block_assets', '__return_true' );
+
 add_action( 'enqueue_block_editor_assets', __NAMESPACE__ . '\editor_assets' );
 /**
  * Enqueue the styles and scripts that customize the block editor
