@@ -40,7 +40,7 @@ add_action( 'enqueue_block_editor_assets', __NAMESPACE__ . '\editor_assets' );
 function editor_assets() {
 
 	wp_enqueue_style(
-		' _mrw-block-editor',
+		'_mrw-block-editor',
 		get_theme_file_uri( 'assets/css/editor-styles.css' ),
 		array(),
 		filemtime( get_theme_file_path( 'assets/css/editor-styles.css' ) )
@@ -48,7 +48,7 @@ function editor_assets() {
 
 	if ( get_post_type() === 'tribe_events' ) {
 		wp_enqueue_style(
-			' _mrw-tec-block-editor',
+			'_mrw-tec-block-editor',
 			get_theme_file_uri( 'assets/css/plugins/the-events-calendar-editor.css' ),
 			array(),
 			filemtime( get_theme_file_path( 'assets/css/plugins/the-events-calendar-editor.css' ) )
@@ -56,7 +56,7 @@ function editor_assets() {
 	}
 
 	/* wp_enqueue_script(
-		' _mrw-block-editor',
+		'_mrw-block-editor',
 		get_theme_file_uri( 'assets/js/editor.js' ),
 		array(),
 		filemtime( get_theme_file_path( 'js/editor.js' ) ),
@@ -74,7 +74,7 @@ function editor_assets() {
 $styled_blocks = array( 'columns', 'media-text', 'latest-posts' );
 foreach ( $styled_blocks as $block_name ) {
 	$args = array(
-		'handle' => "mrw-$block_name",
+		'handle' => "_mrw-$block_name",
 		'src'    => get_theme_file_uri( "assets/css/components/blocks/$block_name.css" ),
 	);
 	wp_enqueue_block_style( "core/$block_name", $args );

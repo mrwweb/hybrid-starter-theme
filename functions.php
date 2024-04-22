@@ -72,7 +72,7 @@ function scripts_and_styles() {
 
 	if ( function_exists( '\MRW\TEC\is_tribe_view' ) && \MRW\TEC\is_tribe_view() ) {
 		wp_enqueue_style(
-			' _mrw-the-events-calendar',
+			'_mrw-the-events-calendar',
 			get_theme_file_uri( 'assets/css/plugins/the-events-calendar.css' ),
 			array( 'theme-styles' ),
 			filemtime( get_theme_file_path( 'assets/css/plugins/the-events-calendar.css' ) )
@@ -88,7 +88,7 @@ function scripts_and_styles() {
 	);
 
 	wp_enqueue_script(
-		'mrw-toggler',
+		'_mrw-toggler',
 		get_theme_file_uri( 'assets/js/toggler.js' ),
 		array( 'theme-navigation' ),
 		filemtime( get_theme_file_path( 'assets/js/toggler.js' ) ),
@@ -106,7 +106,7 @@ add_action( 'gform_enqueue_scripts', __NAMESPACE__ . '\enqueue_gravity_forms_css
  */
 function enqueue_gravity_forms_css() {
 	wp_enqueue_style(
-		' _mrw-gravity-forms',
+		'_mrw-gravity-forms',
 		get_theme_file_uri( 'assets/css/plugins/gravity-forms.css' ),
 		array( 'theme-styles' ),
 		filemtime( get_theme_file_path( 'assets/css/plugins/gravity-forms.css' ) )
