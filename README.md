@@ -10,10 +10,9 @@ Clone or download this repository, change its name to something else, and then y
 1. Search for `'_mrw'` (inside single quotations) to capture the text domain and replace with: `'theme-prefix'`.
 2. Search for `"_mrw"` (double quotes) to capture phpcs ruleset and replace with `"theme-previx"`
 3. Search for `_mrw_` to capture all the functions names and replace with: `theme_prefix_`.
-4. Search for `Text Domain: _mrw` in `style.css` and replace with: `Text Domain: theme-prefix`.
-5. Search for `_mrw` (with a space before it) to capture DocBlocks and replace with: `Theme_Prefix`.
-6. Search for `_mrw-` to capture prefixed handles and replace with: `theme-prefix-`.
-7. Search for `_MRW_` (in uppercase) to capture constants and replace with: `THEME_PREFIX_`.
+4. Search for ` _mrw` (with a space before it) to capture DocBlocks and replace with: `Theme_Prefix`. {{< /_<!-- markdownlint-disable -->_/ >}}
+5. Search for `_mrw-` to capture prefixed handles and replace with: `theme-prefix-`.
+6. Search for `_MRW_` (in uppercase) to capture constants and replace with: `THEME_PREFIX_`.
 
 ## Build Process
 
