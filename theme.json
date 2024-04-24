@@ -250,6 +250,14 @@
 						"text": { "ref": "styles.color.background" }
 					}
 				}
+			},
+			"caption": {
+				"color": {
+					"text": "var(--wp--preset--color--gray-dark)"
+				},
+				"typography": {
+					"fontSize": "var(--wp--preset--font-size--small)"
+				}
 			}
 		},
 		"blocks": {}
