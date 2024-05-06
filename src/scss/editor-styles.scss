@@ -4,8 +4,11 @@
 @use "sass:meta";
 @use "abstracts" as *;
 
-:root .editor-styles-wrapper {
+.editor-styles-wrapper {
 	@include meta.load-css("base");
+}
+
+:root .editor-styles-wrapper {
 	@include meta.load-css("blocks");
 
 	/**
