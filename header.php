@@ -39,41 +39,5 @@
 			</<?php echo $title_tag; //phpcs:ignore ?>>
 		</div><!-- .site-branding -->
 
-		<nav id="site-navigation" class="main-navigation js-toggleWrapper">
-			<button class="menu-toggle js-toggleButton" data-aria-controls="menu-container">
-				<?php
-				echo get_svg( //phpcs:ignore
-					'menu',
-					array(
-						'width'  => '16',
-						'height' => '16',
-					)
-				);
-				?>
-				<?php
-				echo get_svg( //phpcs:ignore
-					'close',
-					array(
-						'width'  => '16',
-						'height' => '16',
-					)
-				);
-				?>
-				<?php esc_html_e( 'Menu', '_mrw' ); ?>
-			</button>
-			<div id="menu-container" class="menu-container">
-				<?php
-				wp_nav_menu(
-					array(
-						'theme_location' => 'menu-1',
-						'menu_id'        => 'main-menu',
-						'menu_class'     => 'main-menu clicky-menu no-js',
-						'container'      => '',
-						'fallback_cb'    => false,
-					)
-				);
-				get_search_form();
-				?>
-			</div>
-		</nav><!-- #site-navigation -->
+		<?php get_template_part( 'template-parts/navigation-main' ); ?>
 	</header><!-- #masthead -->
