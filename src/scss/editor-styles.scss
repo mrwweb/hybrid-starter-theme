@@ -4,11 +4,6 @@
 @use "sass:meta";
 @use "abstracts" as *;
 
-/* Hide the Order Field */
-.editor-page-attributes__order {
-	display: none;
-}
-
 :root .editor-styles-wrapper {
 	@include meta.load-css("base");
 	@include meta.load-css("blocks");
