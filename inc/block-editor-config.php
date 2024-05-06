@@ -75,7 +75,7 @@ $styled_blocks = array( 'columns', 'media-text', 'latest-posts' );
 foreach ( $styled_blocks as $block_name ) {
 	$args = array(
 		'handle' => "_mrw-$block_name",
-		'src'    => get_theme_file_uri( "assets/css/components/blocks/$block_name.css" ),
+		'src'    => get_theme_file_uri( "assets/css/blocks/$block_name.css" ),
 	);
 	wp_enqueue_block_style( "core/$block_name", $args );
 }
