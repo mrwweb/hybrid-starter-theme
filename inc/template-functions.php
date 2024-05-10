@@ -7,7 +7,7 @@
 
 namespace _MRW_NAMESPACE\Theme;
 
-// add_filter( 'body_class', __NAMESPACE__ . '\body_classes' );
+add_filter( 'body_class', __NAMESPACE__ . '\body_classes' );
 /**
  * Adds custom classes to the array of body classes.
  *
@@ -33,7 +33,7 @@ function add_dropdown_icon( $item_output, $item, $args, $depth ) {
 	$has_children = in_array( 'menu-item-has-children', $item->classes, true );
 
 	if ( $depth === 0 && $has_children ) {
-		$item_output = $item_output . get_svg(
+		$item_output = $item_output . _mrw_get_svg(
 			'chevron',
 			array(
 				'width'  => '16',

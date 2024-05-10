@@ -29,14 +29,14 @@
 	<header id="masthead" class="site-header">
 		<div class="site-branding">
 			<?php
-			$title_tag = is_front_page() || is_home() ? 'h1' : 'div';
+			$_mrw_title_tag = is_front_page() || is_home() ? 'h1' : 'div';
 			?>
-			<<?php echo $title_tag; //phpcs:ignore ?> class="site-title">
-				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"<?php echo $title_tag === 'h1' ? ' aria-current="page"' : ''; ?>>
-					<?php echo get_svg( 'logo', array() ); //phpcs:ignore ?>
+			<<?php echo $_mrw_title_tag; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?> class="site-title">
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"<?php echo $_mrw_title_tag === 'h1' ? ' aria-current="page"' : ''; ?>>
+					<?php echo _mrw_get_svg( 'logo', array() ); //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 					<span class="screen-reader-text"><?php bloginfo( 'name' ); ?></span>
 				</a>
-			</<?php echo $title_tag; //phpcs:ignore ?>>
+			</<?php echo $_mrw_title_tag; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
 		</div><!-- .site-branding -->
 
 		<?php get_template_part( 'template-parts/navigation-main' ); ?>

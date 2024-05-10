@@ -16,7 +16,7 @@
 		<?php block_template_part( 'footer' ); ?>
 		
 		<div class="site-info is-layout-constrained">
-			<?php echo get_the_privacy_policy_link( '', '<span class="sep"> | </span>' ); // phpcs:ignore ?>
+			<?php echo get_the_privacy_policy_link( '', '<span class="sep"> | </span>' ); //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 			<?php echo bloginfo( 'name' ); ?> © <?php echo esc_html( gmdate( 'Y' ) ); ?>
 			<span class="sep"> | </span>
 				<?php

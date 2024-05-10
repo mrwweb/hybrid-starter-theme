@@ -1,18 +1,19 @@
 @use "../../abstracts/" as *;
 
-.has-background:where(p, .wp-block-group, .wp-block-columns, .wp-block-column) {
+.has-background:where(p, .wp-block-group, .wp-block-columns, .wp-block-column),
+.wp-block-cover {
 	padding: $space-7;
 
 	.wp-block-columns & {
-		padding: $space-5;
+		padding: $space-4;
 	}
 
-	&.alignfull {
-		padding: $space-9;
+	.is-root-container > &.alignfull {
+		padding: $space-8;
 	}
 }
 
-.is-layout-constrained
+.is-root-container
 	> .alignfull:not(.has-background):where(
 		.wp-block-group,
 		.wp-block-columns

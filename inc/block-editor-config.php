@@ -55,13 +55,15 @@ function editor_assets() {
 		);
 	}
 
-	/* wp_enqueue_script(
+	/*
+	wp_enqueue_script(
 		'_mrw-block-editor',
 		get_theme_file_uri( 'assets/js/editor.js' ),
 		array(),
 		filemtime( get_theme_file_path( 'js/editor.js' ) ),
 		true
-	); */
+	);
+	*/
 }
 
 /**
@@ -71,16 +73,16 @@ function editor_assets() {
  *
  * @see https://developer.wordpress.org/reference/functions/wp_enqueue_block_style/
  */
-$styled_blocks = array( 'columns', 'media-text', 'latest-posts' );
-foreach ( $styled_blocks as $block_name ) {
-	$args = array(
-		'handle' => "_mrw-$block_name",
-		'src'    => get_theme_file_uri( "assets/css/blocks/$block_name.css" ),
+$_mrw_styled_blocks = array( 'columns', 'media-text', 'latest-posts' );
+foreach ( $_mrw_styled_blocks as $_mrw_block_name ) {
+	$_mrw_block_style_args = array(
+		'handle' => "_mrw-$_mrw_block_name",
+		'src'    => get_theme_file_uri( "assets/css/blocks/$_mrw_block_name.css" ),
 	);
-	wp_enqueue_block_style( "core/$block_name", $args );
+	wp_enqueue_block_style( "core/$_mrw_block_name", $_mrw_block_style_args );
 }
 
-// add_filter( 'mrw_hidden_blocks', __NAMESPACE__ . '\show_hide_blocks' );
+add_filter( 'mrw_hidden_blocks', __NAMESPACE__ . '\show_hide_blocks' );
 /**
  * Adjust what block are available in the editor via MRW Simplified Editor hook
  *
@@ -88,10 +90,22 @@ foreach ( $styled_blocks as $block_name ) {
  */
 function show_hide_blocks( $blocks ) {
 
-	$blocks = array_diff( $blocks, array( 'core/spacer', 'core/table' ) );
+	$blocks = array_diff( $blocks, array() );
 
 	return $blocks;
 }
+
+add_filter( 'mrw_hidden_block_editor_settings', __NAMESPACE__ . '\show_block_settings' );
+/**
+ * Unhide hidden-by-default block editor features in MRW Simplified Editor
+ *
+ * @param array $features array of hidden features
+ * @return array modified list of features to hide
+ */
+function show_block_settings( $features ) {
+	return array_diff( $features, array( 'spacing' ) );
+}
+
 
 /* Adjust default Core block markup */
 require 'block-editor/default-block-markup.php';

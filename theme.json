@@ -7,6 +7,7 @@
 			"wideSize": "63rem"
 		},
 		"spacing": {
+			"blockGap": true,
 			"spacingScale": {
 				"steps": 0
 			},

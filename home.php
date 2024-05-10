@@ -13,21 +13,21 @@
  */
 
 get_header();
-$posts_page = get_option( 'page_for_posts' );
+$_mrw_posts_page = get_option( 'page_for_posts' );
 ?>
 
 	<main id="content" class="site-main">
 
 		<?php
 		if ( have_posts() ) :
-			$page_for_posts = get_option( 'page_for_posts' );
-			$blog_content   = get_the_content( null, false, (int) $page_for_posts );
+			$_mrw_page_for_posts = get_option( 'page_for_posts' );
+			$_mrw_blog_content   = get_the_content( null, false, (int) $_mrw_page_for_posts );
 			?>
 			<header class="page-header is-layout-constrained flow">
-				<h1 class="page-title"><?php echo wp_kses_post( get_the_title( (int) $page_for_posts ) ); ?></h1>
+				<h1 class="page-title"><?php echo wp_kses_post( get_the_title( (int) $_mrw_page_for_posts ) ); ?></h1>
 				<?php
-				if ( $blog_content ) {
-					echo '<div class="archive-description">' . wp_kses_post( apply_filters( 'the_content', $blog_content ) ) . '</div>';
+				if ( $_mrw_blog_content ) {
+					echo '<div class="archive-description">' . wp_kses_post( apply_filters( 'the_content', $_mrw_blog_content ) ) . '</div>'; //phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound
 				}
 				?>
 			</header>

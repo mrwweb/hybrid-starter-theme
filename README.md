@@ -3,6 +3,10 @@
 
 A theme supporting the block editor based on [_s](https://github.com/Automattic/_s/) but with a _tremendous_ number of changes 😃.
 
+## See Also
+
+There are other `README.md` files in this theme in specific folders where explanations of rationale and structure are useful. e.g. `src/scss/blocks/` describes when to make a partial for a block and when to compile it into the main sheet
+
 ## Quick Start
 
 Clone or download this repository, change its name to something else, and then you'll need to do a six-step find and replace on the name in all the templates.
@@ -40,7 +44,7 @@ To build prefixed and minified CSS for release:
 $ npm run build
 ```
 
-## Expected Icons in images/svg
+## Expected Icons in `assets/images/svg`
 
 - `logo.svg` for logo
 - Right-pointing `arrow.svg` for dropdown menu item indicator
@@ -49,7 +53,7 @@ $ npm run build
 - `close.svg` for menu toggle button
 - `menu.svg` for menu toggle button
 
-## Notable Changes from _mrw
+## Notable Changes from Underscores Theme
 
 - Lots of block-first development things including:
   - `theme.json`

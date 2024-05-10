@@ -8,6 +8,11 @@
 .menu-toggle {
 	@include button-unset;
 
+	display: flex;
+	gap: $space-1;
+	align-items: center;
+	line-height: 1;
+
 	.svg-icon {
 		width: 1em;
 		height: 1em;
