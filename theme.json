@@ -118,6 +118,9 @@
 				"warning": "lemonchiffon",
 				"error": "crimson",
 				"required": "var(--wp--custom--color--error)"
+			},
+			"radius": {
+				"default": 0
 			}
 		},
 		"typography": {
