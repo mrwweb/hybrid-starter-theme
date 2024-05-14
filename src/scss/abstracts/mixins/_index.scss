@@ -96,13 +96,18 @@
 }
 
 @mixin button {
-	&:hover {
-	}
+	padding: $space-3;
+	border-radius: $border-radius;
+	border: 2px solid transparent;
+	background-color: $primary;
+	color: $base;
+	text-decoration: none !important;
 
-	&:visited {
-	}
-
+	&:hover,
+	&:visited,
 	&:focus {
+		background-color: $secondary;
+		color: $base;
 	}
 }
 
