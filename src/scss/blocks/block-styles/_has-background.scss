@@ -26,15 +26,15 @@
 $colors:
 	"primary" $primary $white,
 	"secondary" $secondary $white,
-	"dark-gray" $gray-dark $white,
-	"foreground" $black $white,
+	"gray-dark" $gray-dark $white,
+	"contrast" $black $white,
 	"warning" $warning white,
 	"error" $error null,
 	"message" $message null,
 	"accent" $accent null,
-	"light-gray" $gray-light null,
+	"gray-light" $gray-light null,
 	"gray" $gray null,
-	"background" $white null;
+	"base" $white null;
 
 /**
  * Background and text colors are auto-output by theme.json
