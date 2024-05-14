@@ -88,7 +88,7 @@
 				},
 				{
 					"name": "Dark Gray",
-					"slug": "dark-gray",
+					"slug": "gray-dark",
 					"color": "#444"
 				},
 				{
@@ -98,7 +98,7 @@
 				},
 				{
 					"name": "Light Gray",
-					"slug": "light-gray",
+					"slug": "gray-light",
 					"color": "#EFEFEF"
 				},
 				{
