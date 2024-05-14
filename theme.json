@@ -239,10 +239,21 @@
 			},
 			"button": {
 				"border": {
-					"radius": "0"
+					"radius": "var(--wp--custom--radius--default)",
+					"color": "transparent",
+					"width": "3px",
+					"style": "solid"
+				},
+				"spacing": {
+					"padding": {
+						"top": "var(--wp--preset--spacing--30)",
+						"right": "var(--wp--preset--spacing--30)",
+						"bottom": "var(--wp--preset--spacing--30)",
+						"left": "var(--wp--preset--spacing--30)"
+					}
 				},
 				"typography": {
-					"textDecoration": "none"
+					"textDecoration": "none !important"
 				},
 				"color": {
 					"background": "var(--wp--preset--color--primary)",
