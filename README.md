@@ -68,7 +68,7 @@ $ npm run build
 - Custom toggle script for mobile menu and any other toggles you need
 - Fixes search forms not having unique IDs if more than one is on the page
 - Custom template tag to get SVGs (props @aurooba [Inline SVG Helper function](https://aurooba.com/inline-svgs-in-your-wordpress-code-with-this-helper-function/))
-- Expects usage of [The Events Calendar](https://wordpress.org/plugins/the-events-calendar/), [Gravity Forms (affiliate link)](https://gravityforms.pxf.io/NkoRO1), and [PublishPress Authors](https://wordpress.org/plugins/publishpress-authors/)
+- Expects usage of [MRW Simplified Editor](https://wordpress.org/plugins/mrw-web-design-simple-tinymce), [The Events Calendar](https://wordpress.org/plugins/the-events-calendar/), [Gravity Forms (affiliate link)](https://gravityforms.pxf.io/NkoRO1), and [PublishPress Authors](https://wordpress.org/plugins/publishpress-authors/)
   - Uses [The Events Calendar Reset](https://github.com/mrwweb/the-events-calendar-reset/) for better theme style inheritance
 
 ## Dev Environment
