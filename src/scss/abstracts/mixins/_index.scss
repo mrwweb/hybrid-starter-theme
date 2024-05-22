@@ -47,8 +47,7 @@
 
 @mixin block-container {
 	> * {
-		width: 90%;
-		max-width: $width--content;
+		width: $width--content;
 		margin-inline: auto;
 	}
 }
@@ -57,11 +56,11 @@
 	max-width: $width--wide;
 
 	&:first-child {
-		margin-block-start: 0;
+		margin-block-start: $space-7;
 	}
 
 	+ * {
-		margin-block-start: $space-8;
+		margin-block-start: $space-7;
 	}
 
 	@include mq($bp--large) {
@@ -73,14 +72,14 @@
 	width: 100%;
 	max-width: none;
 	margin-inline: 0;
-	margin-top: $space-8;
+	margin-top: $space-7;
 
 	&:first-child {
 		margin-block-start: 0;
 	}
 
 	+ * {
-		margin-top: $space-8;
+		margin-top: $space-7;
 	}
 
 	+ .alignfull.has-background,

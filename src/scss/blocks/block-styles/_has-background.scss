@@ -1,24 +1,31 @@
 @use "../../abstracts/" as *;
 
-.has-background:where(p, .wp-block-group, .wp-block-columns, .wp-block-column),
+// Automatically add padding to blocks/elements without innerBlocks (and Cover block)
+.has-background:where(p, ul, ol, h1, h2, h3, h4, h5, h6, blockquote),
 .wp-block-cover {
-	padding: $space-7;
-
-	.wp-block-columns & {
-		padding: $space-4;
-	}
+	padding: $space-4;
 
 	.is-root-container > &.alignfull {
-		padding: $space-8;
+		padding: $space-7;
 	}
 }
 
-.is-root-container
-	> .alignfull:not(.has-background):where(
-		.wp-block-group,
-		.wp-block-columns
-	) {
-	padding: $space-9;
+/* Required to contain child margins by creating new block formatting context */
+.has-background:is(.wp-block-group, .wp-block-column) {
+	display: flow-root;
+}
+.has-background:is(.wp-block-group, .wp-block-column)
+	> :first-child:not(.alignfull) {
+	margin-block-start: $space-6;
+}
+.has-background:is(.wp-block-group, .wp-block-column)
+	> :last-child:not(.alignfull.has-background) {
+	margin-block-end: $space-6;
+}
+
+/* When alignfull doesn't have a background, it still needs padding in these cases */
+.alignfull:not(.has-background):where(.wp-block-group, .wp-block-columns) {
+	padding-inline: 5%;
 }
 
 /* name, color, contrasting text */
@@ -28,9 +35,6 @@ $colors:
 	"secondary" $secondary $white,
 	"gray-dark" $gray-dark $white,
 	"contrast" $black $white,
-	"warning" $warning white,
-	"error" $error null,
-	"message" $message null,
 	"accent" $accent null,
 	"gray-light" $gray-light null,
 	"gray" $gray null,
@@ -55,7 +59,7 @@ $colors:
 .has-background:not(
 		.has-base-background-color,
 		.has-accent-background-color,
-		.has-light-gray-background-color
+		.has-gray-light-background-color
 	),
 .has-text-color {
 	a:not(.wp-block-button__link),

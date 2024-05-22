@@ -3,8 +3,8 @@
 	"version": 2,
 	"settings": {
 		"layout": {
-			"contentSize": "43rem",
-			"wideSize": "63rem"
+			"contentSize": "min( 90%, 43rem )",
+			"wideSize": "min( 90%, 63rem )"
 		},
 		"spacing": {
 			"blockGap": true,
