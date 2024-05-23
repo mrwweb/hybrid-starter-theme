@@ -41,6 +41,6 @@
 		);
 		?>
 		
-		<?php get_template_part( 'components/search-toggle' ); ?>
+		<?php get_template_part( 'components/search-with-toggle' ); ?>
 	</div>
 </nav><!-- #site-navigation -->
