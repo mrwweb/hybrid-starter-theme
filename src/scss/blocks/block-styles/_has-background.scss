@@ -48,10 +48,6 @@ $colors:
 @each $name, $color, $text in $colors {
 	.has-#{$name}-background-color {
 		color: $text;
-
-		.wp-block-button &.wp-block-button__link {
-			border-color: $color;
-		}
 	}
 }
 
