@@ -18,7 +18,7 @@
 		<div class="site-info is-layout-constrained">
 			<?php echo get_the_privacy_policy_link( '', '<span class="sep"> | </span>' ); //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 			<?php echo bloginfo( 'name' ); ?> © <?php echo esc_html( gmdate( 'Y' ) ); ?>
-			<span class="sep"> | </span>
+			<span class="sep" aria-hidden="true"> | </span>
 				<?php
 				/* translators: 1: Theme name, 2: Theme author. */
 				printf( esc_html__( 'Site by %1$s.', '_mrw' ), '<a href="https://MRWweb.com/" rel="nofollow designer">MRW Web Design</a>' );
