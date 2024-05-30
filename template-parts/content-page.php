@@ -18,7 +18,7 @@
 
 	<?php get_template_part( 'components/post-featured-image' ); ?>
 
-	<div class="page-content is-root-container is-layout-constrained flow">
+	<div class="page-content is-root-container is-layout-constrained">
 		<?php the_content(); ?>
 	</div>
 </article><!-- #post-<?php the_ID(); ?> -->

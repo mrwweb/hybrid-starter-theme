@@ -23,7 +23,7 @@ $_mrw_posts_page = get_option( 'page_for_posts' );
 			$_mrw_page_for_posts = get_option( 'page_for_posts' );
 			$_mrw_blog_content   = get_the_content( null, false, (int) $_mrw_page_for_posts );
 			?>
-			<header class="page-header is-layout-constrained flow">
+			<header class="page-header is-layout-constrained">
 				<h1 class="page-title"><?php echo wp_kses_post( get_the_title( (int) $_mrw_page_for_posts ) ); ?></h1>
 				<?php
 				if ( $_mrw_blog_content ) {

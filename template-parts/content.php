@@ -16,7 +16,7 @@
 		get_template_part( 'components/post-meta', get_post_type() );
 		?>
 	</header>
-	<div class="page-content is-layout-constrained is-root-container flow">
+	<div class="page-content is-root-container is-layout-constrained">
 		<?php
 		the_content(
 			sprintf(

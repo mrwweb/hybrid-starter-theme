@@ -26,6 +26,7 @@ function setup() {
 	register_nav_menus(
 		array(
 			'menu-1' => esc_html__( 'Primary', '_mrw' ),
+			'menu-404' => esc_html__( '404 Page List', '_mrw' ),
 		)
 	);
 

@@ -6,7 +6,7 @@
  */
 
 ?>
-<div class="page-content is-layout-constrained is-root-container flow">
+<div class="page-content is-root-container is-layout-constrained">
 	<?php
 	while ( have_posts() ) :
 		the_post();
