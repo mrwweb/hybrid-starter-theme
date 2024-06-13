@@ -56,11 +56,12 @@ function editor_assets() {
 	}
 
 	/*
+	$asset_file = include get_theme_file_path( 'assets/js/editor/editor.asset.php' );
 	wp_enqueue_script(
-		'_mrw-block-editor',
-		get_theme_file_uri( 'assets/js/editor.js' ),
-		array(),
-		filemtime( get_theme_file_path( 'js/editor.js' ) ),
+		'trec-block-editor-options',
+		get_theme_file_uri( 'assets/js/editor/editor.js' ),
+		$asset_file['dependencies'],
+		$asset_file['version'],
 		true
 	);
 	*/
