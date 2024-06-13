@@ -4,7 +4,7 @@
 @use "sass:meta";
 @use "abstracts" as *;
 
-.editor-styles-wrapper {
+:where(.editor-styles-wrapper) {
 	@include meta.load-css("base");
 }
 
@@ -14,9 +14,6 @@
 	/**
 	* Global Styles
 	*/
-	/* Doesn't get added to stylesheet because I don't show the UI */
-	--wp--style--block-gap: var(--wp--preset--spacing--70);
-
 	/* Match Front-end box-sizing */
 	box-sizing: border-box;
 
