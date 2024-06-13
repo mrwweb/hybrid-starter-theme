@@ -72,25 +72,25 @@
 	width: 100%;
 	max-width: none;
 	margin-inline: 0;
-	margin-top: $space-7;
+	margin-block-start: $space-7;
 
 	&:first-child {
 		margin-block-start: 0;
 	}
 
 	+ * {
-		margin-top: $space-7;
+		margin-block-start: $space-7;
 	}
 
 	+ .alignfull.has-background,
 	+ .alignfull.wp-block-cover {
-		margin-top: 0;
+		margin-block-start: 0;
 	}
 }
 
 @mixin flow($size: 1.5em) {
 	> * + * {
-		margin-top: $size;
+		margin-block-start: $size;
 	}
 }
 
