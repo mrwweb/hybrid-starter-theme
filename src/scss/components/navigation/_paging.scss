@@ -5,7 +5,10 @@
 .post-navigation,
 .tribe-events-calendar-list-nav {
 	@include alignwide;
-	margin: $space-8 auto $space-10;
+
+	& {
+		margin: $space-8 auto $space-10;
+	}
 
 	.nav-links,
 	.tribe-events-c-nav__list {
