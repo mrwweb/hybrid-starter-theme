@@ -5,7 +5,7 @@
  * @package _mrw
  */
 
-namespace _MRW_NAMESPACE\Theme;
+namespace _MRW\Theme;
 
 add_filter( 'get_block_type_variations', __NAMESPACE__ . '\block_variations', 10, 2 );
 /**

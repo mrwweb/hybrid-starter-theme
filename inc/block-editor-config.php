@@ -5,7 +5,7 @@
  * @package _mrw
  */
 
-namespace _MRW_NAMESPACE\Theme;
+namespace _MRW\Theme;
 
 /**
  * Remove Block Templates that are automatically enabled by theme.json
@@ -29,7 +29,13 @@ function configure_template_editors() {
 }
 
 add_filter( 'default_wp_template_part_areas', __NAMESPACE__ . '\template_part_areas' );
-function template_part_areas( array $areas ) {
+/**
+ * Add Sidebar and Special Pages template part areas
+ *
+ * @param array $areas array of template part areas. must have all params defined to avoid fatal error
+ * @return array $areas
+ */
+function template_part_areas( $areas ) {
 	$areas[] = [
 		'area'        => 'sidebar',
 		'area_tag'    => 'aside',
@@ -48,14 +54,16 @@ function template_part_areas( array $areas ) {
 	return $areas;
 }
 
-/**
+/*
  * Load separate stylesheets for blocks with their own styles
+ *
+ * add_filter( 'should_load_separate_core_block_assets', '__return_true' );
  *
  * Until FOUC/CLS issues are resolved with this, I'm turning it off
  *
  * @see https://github.com/WordPress/gutenberg/issues/57395
  */
-// add_filter( 'should_load_separate_core_block_assets', '__return_true' );
+
 
 add_action( 'enqueue_block_editor_assets', __NAMESPACE__ . '\editor_assets' );
 /**
@@ -79,16 +87,14 @@ function editor_assets() {
 		);
 	}
 
-	/*
 	$asset_file = include get_theme_file_path( 'assets/js/editor/editor.asset.php' );
 	wp_enqueue_script(
-		'_mrw-block-editor-options',
+		'_mrw-block-editor',
 		get_theme_file_uri( 'assets/js/editor/editor.js' ),
 		$asset_file['dependencies'],
 		$asset_file['version'],
 		true
 	);
-	*/
 }
 
 /**

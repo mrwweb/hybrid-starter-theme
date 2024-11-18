@@ -7,7 +7,7 @@
  * @package _mrw
  */
 
-namespace _MRW_NAMESPACE\Theme;
+namespace _MRW\Theme;
 
 add_action( 'after_setup_theme', __NAMESPACE__ . '\setup' );
 /**

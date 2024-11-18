@@ -5,7 +5,7 @@
  * @package _mrw
  */
 
-namespace _MRW_NAMESPACE\Theme;
+namespace _MRW\Theme;
 
 add_filter( 'after_setup_theme', __NAMESPACE__ . '\register_block_styles', 999 );
 /**

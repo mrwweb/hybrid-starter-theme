@@ -5,7 +5,7 @@
  * @package _mrw
  */
 
-namespace _MRW_NAMESPACE\Theme;
+namespace _MRW\Theme;
 
 use WP_HTML_Tag_Processor;
 

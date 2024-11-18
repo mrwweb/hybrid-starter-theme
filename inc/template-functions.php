@@ -5,7 +5,7 @@
  * @package _mrw
  */
 
-namespace _MRW_NAMESPACE\Theme;
+namespace _MRW\Theme;
 
 add_filter( 'body_class', __NAMESPACE__ . '\body_classes' );
 /**
