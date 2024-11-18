@@ -95,5 +95,6 @@
     <!-- <rule ref="PHPCompatibilityWP" /> -->
     <rule ref="Squiz.Commenting.FunctionComment">
         <exclude name="Squiz.Commenting.FunctionComment.ParamCommentFullStop" />
+        <exclude name="Squiz.Commenting.InlineComment.InvalidEndChar" />
     </rule>
 </ruleset>
