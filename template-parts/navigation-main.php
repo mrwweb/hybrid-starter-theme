@@ -7,13 +7,13 @@
 
 ?>
 <nav id="site-navigation" class="main-navigation js-toggleWrapper">
-	<button class="menu-toggle js-toggleButton" data-aria-controls="menu-container">
+	<button id="main-menu-toggle" class="menu-toggle js-toggleButton" data-aria-controls="menu-container">
 		<?php
 		echo _mrw_get_svg( // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 			'menu',
 			array(
-				'width'  => '16',
-				'height' => '16',
+				'width'  => '24',
+				'height' => '24',
 			)
 		);
 		?>
@@ -21,8 +21,8 @@
 		echo _mrw_get_svg( // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 			'close',
 			array(
-				'width'  => '16',
-				'height' => '16',
+				'width'  => '24',
+				'height' => '24',
 			)
 		);
 		?>
@@ -33,14 +33,13 @@
 		wp_nav_menu(
 			array(
 				'theme_location' => 'menu-1',
+				'container'      => '',
 				'menu_id'        => 'main-menu',
 				'menu_class'     => 'main-menu clicky-menu no-js',
-				'container'      => '',
+				'items_wrap'	 => '<ul id="%1$s" class="%2$s" data-clicky-submenu-selector=".clicky-menu > li > ul">%3$s</ul>',
 				'fallback_cb'    => false,
 			)
 		);
 		?>
-		
-		<?php get_template_part( 'components/search-with-toggle' ); ?>
 	</div>
 </nav><!-- #site-navigation -->

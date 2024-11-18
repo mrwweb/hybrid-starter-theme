@@ -155,3 +155,5 @@ require get_template_directory() . '/inc/block-editor-config.php';
 require get_template_directory() . '/inc/template-tags.php';
 
 require get_template_directory() . '/inc/template-functions.php';
+
+require get_template_directory() . '/inc/menu-item-replacements.php';
