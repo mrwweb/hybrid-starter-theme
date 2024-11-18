@@ -61,7 +61,9 @@ add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\scripts_and_styles' );
  */
 function scripts_and_styles() {
 
-	wp_dequeue_script( 'jquery' );
+	/*
+	* Styles
+	*/
 
 	wp_enqueue_style(
 		'theme-styles',
@@ -70,6 +72,7 @@ function scripts_and_styles() {
 		filemtime( get_theme_file_path( 'assets/css/screen.css' ) )
 	);
 
+	/* Defined in mu-plugins */
 	if ( function_exists( '\MRW\TEC\is_tribe_view' ) && \MRW\TEC\is_tribe_view() ) {
 		wp_enqueue_style(
 			'_mrw-the-events-calendar',
@@ -78,6 +81,12 @@ function scripts_and_styles() {
 			filemtime( get_theme_file_path( 'assets/css/plugins/the-events-calendar.css' ) )
 		);
 	}
+
+	/*
+	 * Scripts
+	 */
+	// usually gets enqueued by a plugin, but we can dream!
+	wp_dequeue_script( 'jquery' );
 
 	wp_enqueue_script(
 		'theme-navigation',
