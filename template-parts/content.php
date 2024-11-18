@@ -23,11 +23,11 @@
 				wp_kses(
 					/* translators: %s: Name of current post. Only visible to screen readers */
 					__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', '_mrw' ),
-					array(
-						'span' => array(
-							'class' => array(),
-						),
-					)
+					[
+						'span' => [
+							'class' => [],
+						],
+					]
 				),
 				wp_kses_post( get_the_title() )
 			)
@@ -35,5 +35,5 @@
 		?>
 	</div>
 	
-	<?php get_template_part( 'components/post-footer', get_post_type(), array( 'class' => 'page-footer is-layout-constrained' ) ); ?>
+	<?php get_template_part( 'components/post-footer', get_post_type(), [ 'class' => 'page-footer is-layout-constrained' ] ); ?>
 </article><!-- #post-<?php the_ID(); ?> -->

@@ -19,29 +19,29 @@ function block_variations( $variations, $block ) {
 	$block_name = $block->name;
 	switch ( $block_name ) {
 		case 'core/media-text':
-			$variations[] = array(
+			$variations[] = [
 				'name'       => 'media-text',
 				'isDefault'  => true,
-				'attributes' => array(
+				'attributes' => [
 					'mediaPosition' => 'right',
 					'imageFill'     => true,
-				),
-			);
+				],
+			];
 			break;
 
 		case 'core/latest-posts':
-			$variations[] = array(
+			$variations[] = [
 				'name'       => 'latest-posts',
 				'isDefault'  => true,
-				'attributes' => array(
+				'attributes' => [
 					'displayPostContent'     => true,
 					'excerptLength'          => 50,
 					'displayPostDate'        => true,
 					'displayFeaturedImage'   => true,
 					'featuredImageSizeSlug'  => 'medium',
 					'addLinkToFeaturedImage' => true,
-				),
-			);
+				],
+			];
 			break;
 	}
 

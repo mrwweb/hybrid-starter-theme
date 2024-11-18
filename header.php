@@ -33,7 +33,7 @@
 			?>
 			<<?php echo $_mrw_title_tag; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?> class="site-title">
 				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"<?php echo $_mrw_title_tag === 'h1' ? ' aria-current="page"' : ''; ?>>
-					<?php echo _mrw_get_svg( 'logo', array() ); //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+					<?php echo _mrw_get_svg( 'logo', [] ); //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 					<span class="screen-reader-text"><?php bloginfo( 'name' ); ?></span>
 				</a>
 			</<?php echo $_mrw_title_tag; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>

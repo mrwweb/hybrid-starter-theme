@@ -30,29 +30,29 @@ function configure_template_editors() {
 
 add_filter( 'default_wp_template_part_areas', __NAMESPACE__ . '\template_part_areas' );
 function template_part_areas( array $areas ) {
-	$areas[] = array(
+	$areas[] = [
 		'area'        => 'sidebar',
-		'area_tag'	  => 'aside',
+		'area_tag'    => 'aside',
 		'label'       => __( 'Sidebar', '_mrw' ),
 		'icon'        => 'sidebar',
 		'description' => __( 'Manage sidebar content on pages with a sidebar.', '_mrw' ),
-	);
-	$areas[] = array(
+	];
+	$areas[] = [
 		'area'        => 'special-pages',
-		'area_tag'	  => 'div',
+		'area_tag'    => 'div',
 		'label'       => __( 'Special Pages', '_mrw' ),
 		'description' => __( 'Edit your 404 page, etc.', '_mrw' ),
 		'icon'        => 'layout',
-	);
+	];
 
 	return $areas;
 }
 
 /**
  * Load separate stylesheets for blocks with their own styles
- * 
+ *
  * Until FOUC/CLS issues are resolved with this, I'm turning it off
- * 
+ *
  * @see https://github.com/WordPress/gutenberg/issues/57395
  */
 // add_filter( 'should_load_separate_core_block_assets', '__return_true' );
@@ -66,7 +66,7 @@ function editor_assets() {
 	wp_enqueue_style(
 		'_mrw-block-editor',
 		get_theme_file_uri( 'assets/css/editor-styles.css' ),
-		array(),
+		[],
 		filemtime( get_theme_file_path( 'assets/css/editor-styles.css' ) )
 	);
 
@@ -74,7 +74,7 @@ function editor_assets() {
 		wp_enqueue_style(
 			'_mrw-tec-block-editor',
 			get_theme_file_uri( 'assets/css/plugins/the-events-calendar-editor.css' ),
-			array(),
+			[],
 			filemtime( get_theme_file_path( 'assets/css/plugins/the-events-calendar-editor.css' ) )
 		);
 	}
@@ -98,12 +98,12 @@ function editor_assets() {
  *
  * @see https://developer.wordpress.org/reference/functions/wp_enqueue_block_style/
  */
-$_mrw_styled_blocks = array( 'columns', 'media-text', 'latest-posts' );
+$_mrw_styled_blocks = [ 'columns', 'media-text', 'latest-posts' ];
 foreach ( $_mrw_styled_blocks as $_mrw_block_name ) {
-	$_mrw_block_style_args = array(
+	$_mrw_block_style_args = [
 		'handle' => "_mrw-$_mrw_block_name",
 		'src'    => get_theme_file_uri( "assets/css/blocks/$_mrw_block_name.css" ),
-	);
+	];
 	wp_enqueue_block_style( "core/$_mrw_block_name", $_mrw_block_style_args );
 }
 
@@ -115,7 +115,7 @@ add_filter( 'mrw_hidden_blocks', __NAMESPACE__ . '\show_hide_blocks' );
  */
 function show_hide_blocks( $blocks ) {
 
-	$blocks = array_diff( $blocks, array() );
+	$blocks = array_diff( $blocks, [] );
 
 	return $blocks;
 }
@@ -128,7 +128,7 @@ add_filter( 'mrw_hidden_block_editor_settings', __NAMESPACE__ . '\show_block_set
  * @return array modified list of features to hide
  */
 function show_block_settings( $features ) {
-	return array_diff( $features, array( 'spacing' ) );
+	return array_diff( $features, [ 'spacing' ] );
 }
 
 

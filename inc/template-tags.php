@@ -16,7 +16,7 @@
  * @param string $directory (optional) The directory to look for the SVG file in, defaults to 'images'.
  * @return string|WP_Error The SVG file as a string or a WP_Error object if there was an error.
  */
-function _mrw_get_svg( $filename, $attributes = array(), $directory = 'images/svg' ) {
+function _mrw_get_svg( $filename, $attributes = [], $directory = 'images/svg' ) {
 	// Get the SVG file.
 	$svg = file_get_contents( get_theme_file_path( "assets/$directory/$filename.svg" ) ); //phpcs:ignore WordPress.WP.AlternativeFunctions.file_get_contents_file_get_contents
 
@@ -34,10 +34,10 @@ function _mrw_get_svg( $filename, $attributes = array(), $directory = 'images/sv
 		$errors->add(
 			'svg_file_not_found',
 			$svg_error_message,
-			array(
+			[
 				'svg_file'      => $filename . '.svg',
 				'svg_directory' => $directory,
-			)
+			]
 		);
 		return $errors;
 

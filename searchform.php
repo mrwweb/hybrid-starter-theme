@@ -19,10 +19,10 @@ if ( ! isset( $_mrw_search_form_counter ) ) {
 		<?php
 		echo _mrw_get_svg( // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 			'search',
-			array(
+			[
 				'width'  => '24',
 				'height' => '24',
-			)
+			]
 		);
 		?>
 		<span class="screen-reader-text"><?php echo esc_attr_x( 'Search', 'submit button', '_mrw' ); ?></span>

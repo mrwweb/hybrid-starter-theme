@@ -24,14 +24,14 @@ function setup() {
 	add_editor_style( 'assets/css/classic-editor-styles.css' );
 
 	register_nav_menus(
-		array(
+		[
 			'menu-1' => esc_html__( 'Primary', '_mrw' ),
-		)
+		]
 	);
 
 	add_theme_support(
 		'html5',
-		array(
+		[
 			'search-form',
 			'comment-form',
 			'comment-list',
@@ -39,7 +39,7 @@ function setup() {
 			'caption',
 			'style',
 			'script',
-		)
+		]
 	);
 }
 
@@ -60,7 +60,6 @@ add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\scripts_and_styles' );
  * Enqueue scripts and styles.
  */
 function scripts_and_styles() {
-
 	/*
 	* Styles
 	*/
@@ -68,7 +67,7 @@ function scripts_and_styles() {
 	wp_enqueue_style(
 		'theme-styles',
 		get_theme_file_uri( 'assets/css/screen.css' ),
-		array(),
+		[],
 		filemtime( get_theme_file_path( 'assets/css/screen.css' ) )
 	);
 
@@ -77,7 +76,7 @@ function scripts_and_styles() {
 		wp_enqueue_style(
 			'_mrw-the-events-calendar',
 			get_theme_file_uri( 'assets/css/plugins/the-events-calendar.css' ),
-			array( 'theme-styles' ),
+			[ 'theme-styles' ],
 			filemtime( get_theme_file_path( 'assets/css/plugins/the-events-calendar.css' ) )
 		);
 	}
@@ -91,7 +90,7 @@ function scripts_and_styles() {
 	wp_enqueue_script(
 		'theme-navigation',
 		get_theme_file_uri( 'assets/vendor/clicky-menus/clicky-menus.js' ),
-		array(),
+		[],
 		filemtime( get_theme_file_path( 'assets/vendor/clicky-menus/clicky-menus.js' ) ),
 		true
 	);
@@ -99,7 +98,7 @@ function scripts_and_styles() {
 	wp_enqueue_script(
 		'_mrw-toggler',
 		get_theme_file_uri( 'assets/js/toggler.js' ),
-		array( 'theme-navigation' ),
+		[ 'theme-navigation' ],
 		filemtime( get_theme_file_path( 'assets/js/toggler.js' ) ),
 		true
 	);
@@ -117,7 +116,7 @@ function enqueue_gravity_forms_css() {
 	wp_enqueue_style(
 		'_mrw-gravity-forms',
 		get_theme_file_uri( 'assets/css/plugins/gravity-forms.css' ),
-		array( 'theme-styles' ),
+		[ 'theme-styles' ],
 		filemtime( get_theme_file_path( 'assets/css/plugins/gravity-forms.css' ) )
 	);
 }
@@ -134,7 +133,7 @@ function dequeue_jquery_migrate( $scripts ) {
 	if ( ! is_admin() && ! empty( $scripts->registered['jquery'] ) ) {
 		$scripts->registered['jquery']->deps = array_diff(
 			$scripts->registered['jquery']->deps,
-			array( 'jquery-migrate' )
+			[ 'jquery-migrate' ]
 		);
 	}
 }

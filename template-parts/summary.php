@@ -23,5 +23,5 @@
 		<?php the_excerpt(); ?>
 	</div>
 
-	<?php get_template_part( 'components/post-footer', '', array( 'class' => 'post-summary__footer entry-meta' ) ); ?>
+	<?php get_template_part( 'components/post-footer', '', [ 'class' => 'post-summary__footer entry-meta' ] ); ?>
 </article><!-- #post-<?php the_ID(); ?> -->

@@ -36,7 +36,10 @@
         <exclude name="WordPress.NamingConventions.PrefixAllGlobals.ShortPrefixPassed" />
         <!-- I'm pretty sure this rule is on the way out. I understand why people recommend it and I think it's more readable the other way -->
         <exclude name="WordPress.PHP.YodaConditions.NotYoda" />
+        <!-- I can't take it anymore. I love short array syntax too much. -->
+        <exclude name="Universal.Arrays.DisallowShortArraySyntax"/>
     </rule>
+    
     <!-- #############################################################################
 	SNIFF SPECIFIC CONFIGURATION
 	############################################################################# -->

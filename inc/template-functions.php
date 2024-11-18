@@ -35,10 +35,10 @@ function add_dropdown_icon( $item_output, $item, $args, $depth ) {
 	if ( $depth === 0 && $has_children ) {
 		$item_output = $item_output . _mrw_get_svg(
 			'chevron',
-			array(
+			[
 				'width'  => '16',
 				'height' => '16',
-			)
+			]
 		);
 	}
 
