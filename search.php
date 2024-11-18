@@ -14,7 +14,7 @@ get_header();
 
 		<?php if ( have_posts() ) : ?>
 
-			<header class="page-header">
+			<header class="page-header is-layout-constrained">
 				<h1 class="page-title">
 					<?php
 					/* translators: %s: search query. */
