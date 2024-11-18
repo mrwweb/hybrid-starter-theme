@@ -22,6 +22,10 @@
 	@include flow;
 }
 
+.flow-sm {
+	@include flow(0.5em);
+}
+
 /* Generic WP Layout Class */
 @include mq($bp--blocks) {
 	.is-layout-flex > * + * {

@@ -9,8 +9,8 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class( 'is-layout-constrained post-summary' ); ?>>
-	<header class="post-summary__header flow">
+<article id="post-<?php the_ID(); ?>" <?php post_class( 'flow-sm post-summary' ); ?>>
+	<header class="post-summary__header flow-sm">
 		<?php
 		the_title( '<h2 class="post-summary__title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 		get_template_part( 'components/post-meta', get_post_type() );
