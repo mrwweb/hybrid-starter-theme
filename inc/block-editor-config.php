@@ -82,7 +82,7 @@ function editor_assets() {
 	/*
 	$asset_file = include get_theme_file_path( 'assets/js/editor/editor.asset.php' );
 	wp_enqueue_script(
-		'trec-block-editor-options',
+		'_mrw-block-editor-options',
 		get_theme_file_uri( 'assets/js/editor/editor.js' ),
 		$asset_file['dependencies'],
 		$asset_file['version'],
