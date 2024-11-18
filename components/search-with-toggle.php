@@ -1,6 +1,8 @@
 <?php
 /**
  * A template part where the search form is contained within a toggle container
+ * 
+ * I'm considering a different approach to this that involves swapping out a menu item so this can be a full-class part of the navigation menu
  *
  * @package _mrw
  */
