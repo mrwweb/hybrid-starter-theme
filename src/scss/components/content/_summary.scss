@@ -1,0 +1,18 @@
+@use "../../abstracts/" as *;
+
+.post-summary__image img {
+	aspect-ratio: 16 / 9;
+	object-fit: cover;
+}
+
+.post-summary__title {
+	font-size: $font-size-m;
+}
+
+.post-summary__content {
+	font-size: $font-size-s;
+}
+
+.search-results .post-summary__title {
+	font-size: $font-size-default;
+}

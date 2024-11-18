@@ -3,6 +3,7 @@
 .wp-block-columns {
 	justify-content: space-between;
 	margin-block-end: 0;
+	gap: $space-8;
 }
 
 /* Improve alignment and wrapping of columns */
@@ -13,5 +14,18 @@
 			flex-basis: 100% !important;
 			margin-inline: 0 !important;
 		}
+	}
+}
+
+/* Auto font-size adjustments for text in 3+ columns */
+.wp-block-columns:where(:has(> .wp-block-column:nth-child(3))) {
+	font-size: $font-size-s;
+
+	h2 {
+		font-size: $font-size-l;
+	}
+
+	h3 {
+		font-size: $font-size-m;
 	}
 }

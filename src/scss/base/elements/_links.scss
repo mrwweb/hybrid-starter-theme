@@ -1,0 +1,32 @@
+/* Append me some mime-types! */
+a[href$=".doc"]::after {
+	content: " [DOC]";
+}
+a[href$=".docx"]::after {
+	content: " [DOCX]";
+}
+a[href$=".ppt"]::after {
+	content: " [PPT]";
+}
+a[href$=".pptx"]::after {
+	content: " [PPTX]";
+}
+
+a[href$=".pdf"]::after {
+	content: " [PDF]";
+}
+
+a[href$=".xls"]::after {
+	content: " [XLS]";
+}
+a[href$=".xlsx"]::after {
+	content: " [XLSX]";
+}
+
+a[href$=".csv"]::after {
+	content: " [CSV]";
+}
+
+a[href$=".txt"]::after {
+	content: " [TXT]";
+}

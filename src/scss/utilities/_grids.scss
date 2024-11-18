@@ -1,0 +1,12 @@
+@use "../abstracts/" as *;
+
+.grid-two-columns,
+.grid-three-columns {
+	display: grid;
+	gap: $space-8;
+	grid-template-columns: repeat(auto-fit, minmax(19.5rem, 1fr));
+}
+.grid-three-columns {
+	gap: $space-7;
+	grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+}

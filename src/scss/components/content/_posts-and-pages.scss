@@ -9,3 +9,22 @@
 .page-links {
 	clear: both;
 }
+
+.entry-meta {
+	display: flex;
+	gap: $space-2 $space-4;
+	flex-wrap: wrap;
+	align-items: center;
+	margin-block-start: $space-2;
+	font-size: $font-size-s;
+	line-height: 1;
+
+	a {
+		color: inherit;
+	}
+}
+
+.page-footer {
+	margin-block-end: $space-10;
+	font-size: $font-size-s;
+}

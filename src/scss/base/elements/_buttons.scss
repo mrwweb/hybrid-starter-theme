@@ -7,3 +7,17 @@ input[type="reset"],
 input[type="submit"] {
 	@include button;
 }
+
+.wp-element-button path {
+	fill: currentColor;
+}
+
+.button-unset {
+	@include button-unset;
+}
+
+[disabled] {
+	opacity: 0.8 !important;
+	filter: grayscale(100%);
+	cursor: not-allowed !important;
+}

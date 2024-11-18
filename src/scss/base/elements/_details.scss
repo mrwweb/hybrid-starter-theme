@@ -1,0 +1,13 @@
+@use "../../abstracts/" as *;
+
+details {
+	@include flow();
+}
+
+summary {
+	cursor: pointer;
+
+	&::marker {
+		color: $primary;
+	}
+}

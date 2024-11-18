@@ -3,12 +3,14 @@
 html {
 	box-sizing: border-box;
 	overflow-x: hidden;
+	scroll-padding-top: 3rem;
+	scroll-behavior: smooth;
+	@media (prefers-reduced-motion: reduce) {
+		scroll-behavior: auto;
+	}
 
 	/* Adjust font-size for subtle fluid-type-like effect without accessibility concerns of clamp() */
-	font-size: 0.875em;
-	@include mq($bp--blocks) {
-		font-size: 0.9375em;
-	}
+	font-size: 0.9375em;
 	@include mq($bp--large) {
 		font-size: 1em;
 	}
@@ -18,10 +20,4 @@ html {
 	@media (min-width: 110em) {
 		font-size: 1.125em;
 	}
-}
-
-body {
-	/* this doesn't get output if gap setting is turned off, so I'm hacking it into place */
-	/* has to be on body because that's where the spacing presets are */
-	--wp--style--block-gap: var(--wp--preset--spacing--70);
 }

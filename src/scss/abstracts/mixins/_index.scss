@@ -27,6 +27,16 @@
 	}
 }
 
+@mixin undo-screen-reader-text {
+	clip: none;
+	clip-path: none;
+	height: auto;
+	margin: 0;
+	overflow: visible;
+	position: static !important;
+	width: 1px;
+}
+
 @mixin mq($breakpoint) {
 	@media screen and (min-width: calc( ( $breakpoint / 16 ) * 1em )) {
 		@content;
@@ -54,13 +64,14 @@
 
 @mixin alignwide {
 	max-width: $width--wide;
+	margin-block-start: $space-8;
 
 	&:first-child {
-		margin-block-start: $space-7;
+		margin-block-start: 0;
 	}
 
 	+ * {
-		margin-block-start: $space-7;
+		margin-block-start: $space-8;
 	}
 
 	@include mq($bp--large) {
@@ -72,14 +83,14 @@
 	width: 100%;
 	max-width: none;
 	margin-inline: 0;
-	margin-block-start: $space-7;
+	margin-block-start: $space-8;
 
 	&:first-child {
 		margin-block-start: 0;
 	}
 
 	+ * {
-		margin-block-start: $space-7;
+		margin-block-start: $space-8;
 	}
 
 	+ .alignfull.has-background,
@@ -101,6 +112,11 @@
 	background-color: $primary;
 	color: $base;
 	text-decoration: none !important;
+	transition:
+		background-color 0.125s ease-in-out,
+		color 0.125s ease-in-out,
+		border-color 0.125s ease-in-out;
+	cursor: pointer;
 
 	&:hover,
 	&:visited,
@@ -115,4 +131,8 @@
 	cursor: pointer;
 	box-sizing: inherit;
 	outline-offset: -0.25rem;
+	transition:
+		background-color 0.125s ease-in-out,
+		color 0.125s ease-in-out,
+		border-color 0.125s ease-in-out;
 }

@@ -72,24 +72,6 @@
 		padding: 10px 8px;
 	}
 
-	input[type="color"],
-	input[type="date"],
-	input[type="datetime-local"],
-	input[type="datetime"],
-	input[type="email"],
-	input[type="month"],
-	input[type="number"],
-	input[type="password"],
-	input[type="search"],
-	input[type="tel"],
-	input[type="text"],
-	input[type="time"],
-	input[type="url"],
-	input[type="week"],
-	select,
-	textarea {
-	}
-
 	.gchoice + .gchoice {
 		margin-block-start: 0.3125em;
 	}
@@ -133,10 +115,10 @@
 	label + [aria-invalid="true"] {
 		color: $required;
 	}
+}
 
-	/* Confirmation */
-	.gform_confirmation_wrapper {
-		padding: $space-7;
-		background-color: $success;
-	}
+/* Confirmation */
+.gform_confirmation_wrapper {
+	padding: $space-7;
+	background-color: $success;
 }

@@ -12,10 +12,12 @@
 
 /* Strong default focus styles */
 :focus {
-	outline-style: double !important;
-	outline-width: 0.1875rem !important;
-	outline-color: currentColor !important;
-	outline-color: var(--outline-color, currentColor) !important;
+	outline-offset: 2px !important;
+	outline-offset: var(--focus-outline-offset, 2px) !important;
+	outline-style: solid !important;
+	outline-width: 2px !important;
+	outline-color: var(--focus-outline-color, #{$primary}) !important;
+	box-shadow: 0 0 0 6px var(--focus-outline-color, #{$white}) !important;
 }
 
 :focus:not(:focus-visible) {

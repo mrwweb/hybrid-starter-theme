@@ -1,11 +1,16 @@
 @use "../abstracts/" as *;
 
 .wp-block-list {
+	margin-inline-start: 0;
 	padding-inline-start: 1.25em;
 	@include flow($space-3);
 
 	.wp-block-list {
 		margin-block-start: $space-3;
+	}
+
+	::marker {
+		color: $primary;
 	}
 }
 

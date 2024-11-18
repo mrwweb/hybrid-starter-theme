@@ -6,7 +6,7 @@
 
 .comment-form,
 .comment-respond {
-	@include flow();
+	@include flow;
 }
 
 .comment-content a {

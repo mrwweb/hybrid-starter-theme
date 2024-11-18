@@ -1,0 +1,10 @@
+@use "../abstracts/" as *;
+
+/* When a link is in a background color, automatically set its background and color */
+.wp-block-button__link {
+	// example to start
+	.has-primary-background-color & {
+		background-color: $accent;
+		color: $primary;
+	}
+}

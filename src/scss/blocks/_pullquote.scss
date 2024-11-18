@@ -7,3 +7,25 @@
 		text-align: center;
 	}
 }
+
+blockquote.wp-block-quote,
+figure.wp-block-pullquote {
+	cite {
+		display: block;
+		margin-block-start: $space-3;
+		font-family: $font__main;
+		font-size: $font-size-s;
+		color: inherit;
+
+		&::before {
+			display: inline-block;
+			content: "– ";
+		}
+	}
+}
+
+figure.wp-block-pullquote {
+	// reset core styles
+	padding-block: 0;
+	margin-block-end: 0;
+}
