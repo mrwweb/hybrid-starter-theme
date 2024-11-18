@@ -15,8 +15,6 @@ add_action( 'after_setup_theme', __NAMESPACE__ . '\setup' );
  */
 function setup() {
 
-	add_theme_support( 'automatic-feed-links' );
-
 	add_theme_support( 'title-tag' );
 
 	add_theme_support( 'post-thumbnails' );
