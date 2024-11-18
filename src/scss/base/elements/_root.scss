@@ -5,12 +5,14 @@ html {
 	overflow-x: hidden;
 	scroll-padding-top: 3rem;
 	scroll-behavior: smooth;
+	font-size: 0.9375em;
+
+	/* Honor accessibility preferences */
 	@media (prefers-reduced-motion: reduce) {
 		scroll-behavior: auto;
 	}
 
 	/* Adjust font-size for subtle fluid-type-like effect without accessibility concerns of clamp() */
-	font-size: 0.9375em;
 	@include mq($bp--large) {
 		font-size: 1em;
 	}

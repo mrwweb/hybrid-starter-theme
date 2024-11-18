@@ -1,0 +1,26 @@
+@use "../../abstracts/" as *;
+
+.is-root-container {
+	@include flow;
+
+	& {
+		margin-block-start: 0;
+	}
+
+	> :first-child:not(.alignfull) {
+		margin-block-start: $space-8;
+	}
+
+	/* make space between last block and footer as long as it's not full-width and flush to footer */
+	> :last-child:not(.alignfull),
+	> :last-child[class*="shape-"],
+	.gform_wrapper:has(+ script):nth-last-child(2) {
+		margin-block-end: $space-9;
+	}
+}
+
+@include mq($bp--blocks) {
+	.is-layout-flex > * + * {
+		margin-top: 0 !important;
+	}
+}

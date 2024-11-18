@@ -1,6 +1,0 @@
-/* Generic WP Layout Class */
-@include mq($bp--blocks) {
-	.is-layout-flex > * + * {
-		margin-top: 0 !important;
-	}
-}
