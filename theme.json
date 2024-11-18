@@ -1,6 +1,6 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/theme.json",
-	"version": 2,
+	"version": 3,
 	"settings": {
 		"layout": {
 			"contentSize": "min( 90%, 43rem )",
@@ -8,9 +8,7 @@
 		},
 		"spacing": {
 			"blockGap": true,
-			"spacingScale": {
-				"steps": 0
-			},
+			"defaultSpacingSizes": false,
 			"spacingSizes": [
 				{
 					"name": "1",
@@ -65,6 +63,7 @@
 			]
 		},
 		"color": {
+			"defaultPalette": false,
 			"palette": [
 				{
 					"name": "Primary",
@@ -108,8 +107,7 @@
 				}
 			],
 			"gradients": [],
-			"customDuotone": false,
-			"defaultPalette": false
+			"customDuotone": false
 		},
 		"custom": {
 			"color": {
@@ -117,7 +115,8 @@
 				"success": "honeydew",
 				"warning": "lemonchiffon",
 				"error": "crimson",
-				"required": "var(--wp--custom--color--error)"
+				"required": "var(--wp--custom--color--error)",
+				"link": "navy"
 			},
 			"radius": {
 				"default": 0
@@ -130,18 +129,7 @@
 			}
 		},
 		"typography": {
-			"fontFamilies": [
-				{
-					"name": "System Fonts",
-					"slug": "system",
-					"fontFamily": "-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen-Sans,Ubuntu,Cantarell,'Helvetica Neue',sans-serif"
-				},
-				{
-					"name": "Monospace",
-					"slug": "monospace",
-					"fontFamily": "ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace;"
-				}
-			],
+			"defaultFontSizes": false,
 			"fontSizes": [
 				{
 					"name": "Tiny",
@@ -183,6 +171,18 @@
 					"slug": "xxx-large",
 					"size": "4rem"
 				}
+			],
+			"fontFamilies": [
+				{
+					"name": "System Fonts",
+					"slug": "system",
+					"fontFamily": "-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen-Sans,Ubuntu,Cantarell,'Helvetica Neue',sans-serif"
+				},
+				{
+					"name": "Monospace",
+					"slug": "monospace",
+					"fontFamily": "ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace;"
+				}
 			]
 		}
 	},
@@ -214,7 +214,7 @@
 			"h2": {
 				"typography": {
 					"fontSize": "var(--wp--preset--font-size--x-large)",
-					"lineHeight": "1.2"
+					"lineHeight": "1.3"
 				}
 			},
 			"h3": {
@@ -230,7 +230,7 @@
 			},
 			"link": {
 				"color": {
-					"text": "var(--wp--preset--color--primary)"
+					"text": "var(--wp--custom--color--link)"
 				},
 				":hover": {
 					"typography": {
