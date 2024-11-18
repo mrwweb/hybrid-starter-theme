@@ -28,10 +28,34 @@ function configure_template_editors() {
 	remove_theme_support( 'block-templates' );
 }
 
+add_filter( 'default_wp_template_part_areas', __NAMESPACE__ . '\template_part_areas' );
+function template_part_areas( array $areas ) {
+	$areas[] = array(
+		'area'        => 'sidebar',
+		'area_tag'	  => 'aside',
+		'label'       => __( 'Sidebar', '_mrw' ),
+		'icon'        => 'sidebar',
+		'description' => __( 'Manage sidebar content on pages with a sidebar.', '_mrw' ),
+	);
+	$areas[] = array(
+		'area'        => 'special-pages',
+		'area_tag'	  => 'div',
+		'label'       => __( 'Special Pages', '_mrw' ),
+		'description' => __( 'Edit your 404 page, etc.', '_mrw' ),
+		'icon'        => 'layout',
+	);
+
+	return $areas;
+}
+
 /**
  * Load separate stylesheets for blocks with their own styles
+ * 
+ * Until FOUC/CLS issues are resolved with this, I'm turning it off
+ * 
+ * @see https://github.com/WordPress/gutenberg/issues/57395
  */
-add_filter( 'should_load_separate_core_block_assets', '__return_true' );
+// add_filter( 'should_load_separate_core_block_assets', '__return_true' );
 
 add_action( 'enqueue_block_editor_assets', __NAMESPACE__ . '\editor_assets' );
 /**

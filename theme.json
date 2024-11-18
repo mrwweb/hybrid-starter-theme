@@ -302,9 +302,14 @@
 			"area": "footer"
 		},
 		{
+			"name": "404",
+			"title": "404 Page",
+			"area": "special-pages"
+		},
+		{
 			"name": "sidebar",
 			"title": "Sidebar",
-			"area": "uncategorized"
+			"area": "sidebar"
 		}
 	]
 }

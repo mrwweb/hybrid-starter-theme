@@ -16,20 +16,7 @@ get_header();
 		</header><!-- .page-header -->
 
 		<div class="page-content is-root-container is-layout-constrained">
-			<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', '_mrw' ); ?></p>
-			<?php
-			wp_nav_menu(
-				array(
-					'theme_location' => 'menu-404',
-					'menu_id'        => 'menu-404',
-					'menu_class'     => 'menu-404',
-					'container'      => '',
-					'fallback_cb'    => false,
-				)
-			);
-
-			get_search_form();
-			?>
+			<?php block_template_part( 'footer' ); ?>
 		</div><!-- .page-content -->
 	</article><!-- .error-404 -->
 </main><!-- #main -->
