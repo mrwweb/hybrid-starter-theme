@@ -20,7 +20,7 @@ Update theme details in `style.css` and set new 1200x900 `screenshot.png`.
 Finally, do a six-step find and replace on the name in all the templates.
 
 1. Search for `'_mrw'` (inside single quotations) to capture the text domain and replace with: `'theme-prefix'`.
-2. Search for `"_mrw"` (double quotes) to capture phpcs ruleset and replace with `"theme-previx"`
+2. Search for `"_mrw"` (double quotes) to capture phpcs ruleset and replace with `"theme-prefix"`
 3. Search for `_mrw_` to capture all the functions names and replace with: `theme_prefix_`.
 4. Search for ` _mrw` (with a space before it) to capture DocBlocks and replace with: `Theme_Prefix`. {{< /_<!-- markdownlint-disable -->_/ >}}
 5. Search for `_mrw-` to capture prefixed handles and replace with: `theme-prefix-`.
