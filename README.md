@@ -50,7 +50,7 @@ $ npm run watch
 To build prefixed and minified CSS for release:
 
 ```sh
-$ npm run sass-build
+$ npm run sass:build
 ```
 
 To compile scripts that run in the Block Editor:
