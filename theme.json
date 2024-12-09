@@ -271,28 +271,36 @@
 				},
 				"color": {
 					"background": "var:preset|color|primary",
-					"text": { "ref": "styles.color.background" }
+					"text": "var:preset|color|base"
 				},
 				":hover": {
 					"color": {
 						"background": "var:preset|color|secondary",
-						"text": { "ref": "styles.color.background" }
+						"text": "var:preset|color|base"
 					}
 				},
 				":focus": {
 					"color": {
 						"background": "var:preset|color|secondary",
-						"text": { "ref": "styles.color.background" }
+						"text": "var:preset|color|base"
 					}
 				},
 				":visited": {
 					"color": {
 						"background": "var:preset|color|secondary",
-						"text": { "ref": "styles.color.background" }
+						"text": "var:preset|color|base"
 					}
 				}
 			},
 			"caption": {
+				"color": {
+					"text": "var:preset|color|gray-dark"
+				},
+				"typography": {
+					"fontSize": "var:preset|font-size|small"
+				}
+			},
+			"cite": {
 				"color": {
 					"text": "var:preset|color|gray-dark"
 				},
