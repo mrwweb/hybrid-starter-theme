@@ -118,6 +118,9 @@
 				"required": "var(--wp--custom--color--error)",
 				"link": "navy"
 			},
+			"spacing": {
+				"gap": "var(--wp--preset--spacing--70)"
+			},
 			"radius": {
 				"default": 0
 			},
@@ -197,7 +200,7 @@
 			"background": "var(--wp--preset--color--base)"
 		},
 		"spacing": {
-			"blockGap": "var(--wp--preset--spacing--70)"
+			"blockGap": "var(--wp--custom--spacing--gap)"
 		},
 		"elements": {
 			"heading": {

@@ -9,4 +9,4 @@ $space-8: var(--wp--preset--spacing--80); // 3.125rem
 $space-9: var(--wp--preset--spacing--90); // 4.125rem
 $space-10: var(--wp--preset--spacing--100); // 5.625rem
 
-$gap: $space-5;
+$gap: var(--wp--custom--spacing--gap);
