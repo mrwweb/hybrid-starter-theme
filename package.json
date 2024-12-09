@@ -17,7 +17,7 @@
 		"wp-scripts": "wp-scripts start src/js/editor/index.js --output-path=assets/js/editor --output-filename=editor.js",
 		"watch": "sass --watch --update --style=expanded src/scss:assets/css",
 		"sass": "sass --style=expanded src/scss:assets/css",
-		"sass-build": "sass --no-source-map --style=compressed src/scss:assets/css && postcss --no-map assets/css/**/*.css --replace --use autoprefixer cssnano"
+		"sass:build": "sass --no-source-map --style=compressed src/scss:assets/css && postcss --no-map assets/css/**/*.css --replace --use autoprefixer cssnano"
 	},
 	"browserslist": [
 		"> 1%"
