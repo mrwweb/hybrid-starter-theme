@@ -179,12 +179,12 @@
 				{
 					"name": "System Fonts",
 					"slug": "system",
-					"fontFamily": "-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen-Sans,Ubuntu,Cantarell,'Helvetica Neue',sans-serif"
+					"fontFamily": "system-ui, sans-serif"
 				},
 				{
 					"name": "Display",
 					"slug": "display",
-					"fontFamily": "-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen-Sans,Ubuntu,Cantarell,'Helvetica Neue',sans-serif"
+					"fontFamily": "Avenir, Montserrat, Corbel, 'URW Gothic', source-sans-pro, sans-serif"
 				},
 				{
 					"name": "Monospace",
