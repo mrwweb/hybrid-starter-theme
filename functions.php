@@ -136,9 +136,6 @@ function dequeue_jquery_migrate( $scripts ) {
 	}
 }
 
-/* Don't load duotone filters in body */
-remove_action( 'wp_body_open', 'wp_global_styles_render_svg_filters' );
-
 add_filter( 'replace_editor', __NAMESPACE__ . '\make_blog_editable', 10, 2 );
 /**
  * Simulate non-empty content to enable Gutenberg editor
