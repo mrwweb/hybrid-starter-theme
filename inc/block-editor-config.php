@@ -104,13 +104,18 @@ function editor_assets() {
  *
  * @see https://developer.wordpress.org/reference/functions/wp_enqueue_block_style/
  */
-$_mrw_styled_blocks = [ 'columns', 'media-text', 'latest-posts' ];
-foreach ( $_mrw_styled_blocks as $_mrw_block_name ) {
-	$_mrw_block_style_args = [
-		'handle' => "_mrw-$_mrw_block_name",
-		'src'    => get_theme_file_uri( "assets/css/blocks/$_mrw_block_name.css" ),
-	];
-	wp_enqueue_block_style( "core/$_mrw_block_name", $_mrw_block_style_args );
+/* Format: 'prefix' => [ 'block-slug', 'block-slug-2' ] */
+$_mrw_styled_blocks = [
+	'core' => [ 'columns', 'media-text', 'latest-posts'],
+];
+foreach ( $_mrw_styled_blocks as $_mrw_prefix => $_mrw_blocks ) {
+	foreach( $_mrw_blocks as $_mrw_block_name ) {
+		$_mrw_block_style_args = [
+			'handle' => "_mrw-$_mrw_block_name",
+			'src'    => get_theme_file_uri( "assets/css/blocks/$_mrw_block_name.css" ),
+		];
+		wp_enqueue_block_style( "$_mrw_prefix/$_mrw_block_name", $_mrw_block_style_args );
+	}
 }
 
 add_filter( 'mrw_hidden_blocks', __NAMESPACE__ . '\show_hide_blocks' );
