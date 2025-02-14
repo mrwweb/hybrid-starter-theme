@@ -86,7 +86,7 @@ function scripts_and_styles() {
 	wp_dequeue_script( 'jquery' );
 
 	wp_enqueue_script(
-		'theme-navigation',
+		'_mrw-theme-navigation',
 		get_theme_file_uri( 'assets/vendor/clicky-menus/clicky-menus.js' ),
 		[],
 		filemtime( get_theme_file_path( 'assets/vendor/clicky-menus/clicky-menus.js' ) ),
