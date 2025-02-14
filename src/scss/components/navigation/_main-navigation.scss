@@ -13,20 +13,20 @@
 	align-items: center;
 	line-height: 1;
 
-	.svg-icon {
+	.mrw-svg {
 		width: 1em;
 		height: 1em;
 	}
 
-	.svg-icon-close {
+	.mrw-svg-close {
 		display: none;
 	}
 
 	&[aria-expanded="true"] {
-		.svg-icon-menu {
+		.mrw-svg-menu {
 			display: none;
 		}
-		.svg-icon-close {
+		.mrw-svg-close {
 			display: inline-block;
 		}
 	}
