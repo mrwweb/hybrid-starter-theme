@@ -5,6 +5,10 @@
 	@include screen-reader-text;
 }
 
+.skip-link {
+	@include button;
+}
+
 /* Do not show the outline on the skip link target. */
 #primary[tabindex="-1"]:focus {
 	outline: 0;
