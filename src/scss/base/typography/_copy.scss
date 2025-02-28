@@ -39,3 +39,8 @@ ins {
 	background: $color__background-ins;
 	text-decoration: none;
 }
+
+q,
+blockquote {
+	hanging-punctuation: first allow-end;
+}
