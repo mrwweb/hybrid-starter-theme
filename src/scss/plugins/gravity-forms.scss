@@ -24,7 +24,7 @@
 	}
 }
 
-.gform_wrapper.gform_wrapper.gform_wrapper.gravity-theme {
+#root {
 	.gform_fields {
 		grid-row-gap: $space-3;
 	}
@@ -68,7 +68,7 @@
 		font-size: 0.85em;
 	}
 
-	select {
+	.gform_fields select {
 		padding: 10px 8px;
 	}
 
