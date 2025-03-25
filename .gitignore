@@ -4,6 +4,7 @@ composer.lock
 style.css.map
 .DS_Store
 .vscode
+*.zip
 
 # compiled code
 /assets/css
