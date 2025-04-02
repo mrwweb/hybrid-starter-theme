@@ -96,7 +96,7 @@ function scripts_and_styles() {
 	wp_enqueue_script(
 		'_mrw-toggler',
 		get_theme_file_uri( 'assets/js/toggler.js' ),
-		[ 'theme-navigation' ],
+		[ '_mrw-theme-navigation' ],
 		filemtime( get_theme_file_path( 'assets/js/toggler.js' ) ),
 		true
 	);
