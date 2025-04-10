@@ -14,7 +14,7 @@ $col4-break: 800px;
 
 /* Wrap 2- and 3-columns 600px in a container query */
 .wp-block-columns:has(.wp-block-column:nth-child(2):last-child) {
-	.wp-block-column {
+	.wp-block-column:not([style*="flex-basis"]) {
 		@include cq($col2-break, columns) {
 			flex-basis: 0 !important;
 		}
@@ -22,7 +22,7 @@ $col4-break: 800px;
 }
 
 .wp-block-columns:has(.wp-block-column:nth-child(3):last-child) {
-	.wp-block-column {
+	.wp-block-column:not([style*="flex-basis"]) {
 		@include cq($col3-break, columns) {
 			flex-basis: 0 !important;
 		}
@@ -34,7 +34,7 @@ $col4-break: 800px;
 	flex-wrap: wrap !important;
 
 	@include cq($col2-break, columns) {
-		.wp-block-column {
+		.wp-block-column:not([style*="flex-basis"]) {
 			flex-basis: calc(50% - $gap) !important;
 			margin-inline: 0 !important;
 		}
@@ -45,7 +45,7 @@ $col4-break: 800px;
 	}
 
 	@include cq($col4-break, columns) {
-		.wp-block-column {
+		.wp-block-column:not([style*="flex-basis"]) {
 			flex-basis: 0 !important;
 		}
 	}
