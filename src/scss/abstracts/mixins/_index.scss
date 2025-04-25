@@ -1,4 +1,6 @@
 @use "../variables" as *;
+@use "sass:math";
+@use "sass:string";
 
 @mixin screen-reader-text($focus: false) {
 	border: 0;
@@ -37,20 +39,46 @@
 	width: 1px;
 }
 
+/* https://stackoverflow.com/a/58638675/597678 */
+
 @mixin mq($breakpoint) {
-	@media screen and (min-width: calc( ( $breakpoint / 16 ) * 1em )) {
+	$value: $breakpoint;
+	@if math.is-unitless($breakpoint) {
+		$value: calc(($breakpoint / 16) * 1em);
+	}
+
+	@media screen and (min-width: $value) {
+		@content;
+	}
+}
+
+/* Note: I haven't been able to find any reports of this, but the string interpolation around calc() feels like a workaround to a sass bug. It may be be necessary in the future */
+@mixin cq($breakpoint, $container: null) {
+	$value: $breakpoint;
+	@if math.is-unitless($breakpoint) {
+		$value: calc(($breakpoint / 16) * 1em);
+	}
+	@container #{$container} (min-width: #{$value}) {
 		@content;
 	}
 }
 
 @mixin mq-max($breakpoint) {
-	@media screen and (max-width: calc(( ( $breakpoint - 1 ) / 16 ) * 1em )) {
+	$value: $breakpoint;
+	@if math.is-unitless($breakpoint) {
+		$value: calc((($breakpoint - 1) / 16) * 1em);
+	}
+	@media screen and (max-width: $value) {
 		@content;
 	}
 }
 
-@mixin mq-medium-blocks-only {
-	@media (min-width: calc( ( $bp--blocks / 16 ) * 1em)) and (max-width: calc( ( ( $bp--blocks--large + 1 ) / 16 ) * 1em )) {
+@mixin cq-max($breakpoint, $container: null) {
+	$value: $breakpoint;
+	@if math.is-unitless($breakpoint) {
+		$value: calc((($breakpoint - 1) / 16) * 1em);
+	}
+	@container #{$container} (max-width: #{$value}) {
 		@content;
 	}
 }

@@ -44,3 +44,9 @@ q,
 blockquote {
 	hanging-punctuation: first allow-end;
 }
+
+::selection {
+	text-shadow: none !important;
+	background: $primary;
+	color: $base;
+}

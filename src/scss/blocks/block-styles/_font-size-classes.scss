@@ -5,3 +5,9 @@
 .has-medium-font-size {
 	line-height: 1.2;
 }
+
+.has-xx-large-font-size,
+.has-x-large-font-size,
+.has-large-font-size {
+	text-wrap: balance;
+}
