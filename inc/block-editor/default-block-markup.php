@@ -23,11 +23,11 @@ add_filter( 'render_block', __NAMESPACE__ . '\add_class_to_list_block', 10, 2 );
  */
 function add_class_to_list_block( $block_content, $block ) {
 
-	if ( 'core/list' === $block['blockName'] ) {
-		$block_content = new WP_HTML_Tag_Processor( $block_content );
-		$block_content->next_tag(); /* first tag should always be ul or ol */
-		$block_content->add_class( 'wp-block-list' );
-		$block_content->get_updated_html();
+	switch ( $block['blockName'] ) {
+		case 'file':
+			$size = wp_get_attachment_metadata( $block['attrs']['id'] );
+			$block_content = str_replace( '</a></div>', "</a><div class=\"wp-block-file__size\">" . __( 'File Size: ', 'ile-kimoyo' ) . size_format( $size['filesize'], 1 ) . "</div></div>", $block_content );
+			break;
 	}
 
 	return $block_content;
