@@ -94,12 +94,14 @@ function scripts_and_styles() {
 	);
 
 	wp_enqueue_script(
-		'_mrw-toggler',
-		get_theme_file_uri( 'assets/js/toggler.js' ),
+		'_mrw-mobile-navigation',
+		get_theme_file_uri( 'assets/js/mobile-nav-drawer.js' ),
 		[ '_mrw-theme-navigation' ],
-		filemtime( get_theme_file_path( 'assets/js/toggler.js' ) ),
+		filemtime( get_theme_file_path( 'assets/js/mobile-nav-drawer.js' ) ),
 		true
 	);
+
+	/* Note, toggle script not enqueued. Enqueue it if you need it. */
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );

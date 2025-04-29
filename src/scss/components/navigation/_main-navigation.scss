@@ -1,10 +1,6 @@
 @use "../../abstracts/" as *;
 
-/* Basic toggle display logic */
-.menu-toggle[aria-expanded="false"] + .menu-container {
-	display: none;
-}
-
+/* Mobile Menu Toggle Buttons */
 .menu-toggle {
 	@include button-unset;
 
@@ -17,78 +13,25 @@
 		width: 1em;
 		height: 1em;
 	}
-
-	.mrw-svg-close {
-		display: none;
-	}
-
-	&[aria-expanded="true"] {
-		.mrw-svg-menu {
-			display: none;
-		}
-		.mrw-svg-close {
-			display: inline-block;
-		}
-	}
 }
 
-/* Basic Submenu positioning Logic */
-.main-navigation {
-	position: relative;
+/* Show appropriate menus for breakpoints */
+.main-navigation__bar {
+	display: none !important;
 }
-.menu-container {
-	position: absolute;
-	right: 0;
-	top: 100%;
-	z-index: 999;
-
-	.sub-menu {
-		position: static;
-		height: 0;
-	}
-
-	[aria-expanded="true"] + .sub-menu {
-		height: auto;
-	}
-}
-
-/* Desktop Menu */
 @include mq($bp--menu) {
-	.menu-toggle {
+	.menu-toggle,
+	.main-navigation__dialog {
 		display: none !important;
 	}
 
-	.menu-container {
-		display: block !important;
-		position: static;
-
-		.sub-menu {
-			position: absolute;
-			top: calc(100% + $space-4);
-			z-index: 999;
-		}
+	.main-navigation__bar {
+		display: flex !important;
 	}
 }
 
-/* Extra JS Fallback */
-.main-menu.no-js {
-	li:hover > .sub-menu,
-	li:focus-within > .sub-menu,
-	a:focus + .sub-menu {
-		height: auto;
-	}
-	.sub-menu {
-		margin-top: 0;
-	}
-}
-
-/* General Main Menu Styles */
-.menu-container {
-	@include mq($bp--menu) {
-	}
-}
+/* Universal Main Menu Styles */
 .main-menu {
-	position: relative;
 	align-items: stretch;
 
 	li {
@@ -143,24 +86,79 @@
 	.current-menu-item > * {
 		font-weight: 700;
 	}
+}
+
+/* Mobile Container */
+.main-navigation__dialog {
+	display: block;
+	visibility: hidden;
+	width: 90vw;
+	height: 100vh;
+	inset-block: 0;
+	inset-inline-start: auto;
+	inset-inline-end: 0;
+	transform: translateX(100%);
+	max-width: none !important;
+	max-height: none !important;
+	transition:
+		transform 0.5s ease-in-out,
+		visibility 0s 0.5s;
+	border: 0;
+	background-color: $primary;
+	z-index: 9999;
+
+	&[open] {
+		visibility: visible;
+		transform: translateX(0);
+		transition: transform 0.5s ease-in-out;
+	}
+
+	.menu-toggle {
+		float: right;
+		padding: $space-2;
+	}
 
 	.sub-menu {
 		flex: 0 0 100%;
-		background-color: $base;
-		box-shadow: $box-shadow;
-		border-radius: $border-radius;
-
-		@include mq($bp--menu) {
-			min-width: 14em;
-		}
+		position: static;
+		height: 0;
 	}
 
-	/* Large Screen Styles */
-	@include mq($bp--menu) {
+	[aria-expanded="true"] + .sub-menu {
+		height: auto;
+	}
+}
+
+/* Desktop Menu */
+.main-navigation__bar {
+	position: static;
+
+	.main-menu {
 		position: static;
 		display: flex;
 		flex-wrap: wrap;
 		align-items: center;
 		background-color: transparent;
+
+		.sub-menu {
+			top: calc(100% + $space-4);
+			z-index: 999;
+			background-color: $base;
+			box-shadow: $box-shadow;
+			border-radius: $border-radius;
+			min-width: 14em;
+		}
+	}
+}
+
+/* No-JS Fallback */
+.main-menu.no-js {
+	li:hover > .sub-menu,
+	li:focus-within > .sub-menu,
+	a:focus + .sub-menu {
+		height: auto;
+	}
+	.sub-menu {
+		margin-top: 0;
 	}
 }
