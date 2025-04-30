@@ -156,10 +156,12 @@
 
 @mixin button-unset {
 	all: unset;
-	cursor: pointer;
+	display: inline-flex;
+	align-items: center;
 	box-sizing: inherit;
 	outline-offset: -0.25rem;
 	line-height: 1;
+	cursor: pointer;
 	transition:
 		background-color 0.125s ease-in-out,
 		color 0.125s ease-in-out,

@@ -3,6 +3,8 @@
 /* Mobile Menu Toggle Buttons */
 .menu-toggle {
 	@include button-unset;
+	display: inline-flex;
+	align-items: center;
 	gap: $space-1;
 
 	.mrw-svg {
@@ -31,7 +33,6 @@
 	align-items: stretch;
 
 	li {
-		position: relative;
 		display: flex;
 		justify-content: stretch;
 		flex-wrap: wrap;
@@ -86,18 +87,16 @@
 
 /* Mobile Container */
 .main-navigation__dialog {
-	display: block;
-	visibility: hidden;
 	width: 90vw !important;
 	height: 100vh !important;
 	inset-block: 0 !important;
 	inset-inline-start: auto !important;
 	inset-inline-end: 0 !important;
-	transform: translateX(100%);
 	max-width: none !important;
 	max-height: none !important;
 	border: 0;
 	background-color: $primary;
+	transform: translateX(100%);
 	transition:
 		transform 0.5s ease-in-out,
 		display 0.5s allow-discrete,
