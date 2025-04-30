@@ -7,8 +7,8 @@
 }
 
 input.search-form__input {
-	flex: 1;
-	padding-right: 2em;
+	flex: 1 0 0;
+	min-width: 0;
 }
 
 .search-form__submit {
