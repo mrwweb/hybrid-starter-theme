@@ -1,3 +1,4 @@
 # Ignore vendor folder
 **/vendor
 /node_modules/
+/assets/css/
