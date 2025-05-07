@@ -211,7 +211,8 @@
 			"heading": {
 				"typography": {
 					"fontFamily": "var:preset|font-family|display"
-				}
+				},
+				"css": "clear: both; text-wrap: balance"
 			},
 			"h1": {
 				"typography": {
@@ -306,10 +307,15 @@
 				},
 				"typography": {
 					"fontSize": "var:preset|font-size|small"
-				}
+				},
+				"css": "display: inline-block"
 			}
 		},
-		"blocks": {}
+		"blocks": {
+			"core/paragraph": {
+				"css": "text-wrap: pretty"
+			}
+		}
 	},
 	"templateParts": [
 		{
