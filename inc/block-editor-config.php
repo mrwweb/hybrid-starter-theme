@@ -106,7 +106,7 @@ function editor_assets() {
  */
 /* Format: 'prefix' => [ 'block-slug', 'block-slug-2' ] */
 $_mrw_styled_blocks = [
-	'core' => [ 'columns', 'media-text', 'latest-posts'],
+	'core' => [ 'columns', 'media-text'],
 ];
 foreach ( $_mrw_styled_blocks as $_mrw_prefix => $_mrw_blocks ) {
 	foreach( $_mrw_blocks as $_mrw_block_name ) {
@@ -127,6 +127,8 @@ add_filter( 'mrw_hidden_blocks', __NAMESPACE__ . '\show_hide_blocks' );
 function show_hide_blocks( $blocks ) {
 
 	$blocks = array_diff( $blocks, [] );
+
+	$blocks['core/latest-posts'];
 
 	return $blocks;
 }
