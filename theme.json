@@ -146,7 +146,7 @@
 				},
 				{
 					"name": "Baseline",
-					"slug": "default",
+					"slug": "baseline",
 					"size": "1.25rem"
 				},
 				{
@@ -197,7 +197,7 @@
 	"styles": {
 		"typography": {
 			"fontFamily": "var:preset|font-family|system",
-			"fontSize": "var:preset|font-size|default",
+			"fontSize": "var:preset|font-size|baseline",
 			"lineHeight": "1.5"
 		},
 		"color": {
