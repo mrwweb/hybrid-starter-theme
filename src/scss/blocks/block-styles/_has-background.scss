@@ -10,16 +10,32 @@
 	}
 }
 
-/* Required to contain child margins by creating new block formatting context */
-.has-background:is(.wp-block-group, .wp-block-column),
+.has-background.wp-block-group,
 .wp-block-media-text.has-background > .wp-block-media-text__content {
-	display: flow-root;
+	display: flow-root; /* Required to contain child margins by creating new block formatting context */
+	padding: 0 $space-6;
 
 	> :first-child:not(.alignfull) {
 		margin-block-start: $space-6;
 	}
-	> :last-child:not(.alignfull.has-background) {
+	> :last-child:not(.alignfull.has-background),
+	> :has(+ .block-list-appender) {
 		margin-block-end: $space-6;
+	}
+}
+
+.has-background.is-block-column,
+.wp-block-media-text.has-background > .wp-block-media-text__content,
+.is-layout-grid > .wp-block-group.has-background {
+	display: flow-root;
+	padding: 0 $space-3;
+
+	> :first-child:not(.alignfull) {
+		margin-block-start: $space-3;
+	}
+	> :last-child:not(.alignfull.has-background),
+	> :has(+ .block-list-appender) {
+		margin-block-end: $space-3;
 	}
 }
 
