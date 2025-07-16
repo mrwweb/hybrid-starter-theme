@@ -95,9 +95,9 @@ function scripts_and_styles() {
 
 	wp_enqueue_script(
 		'_mrw-mobile-navigation',
-		get_theme_file_uri( 'assets/js/mobile-nav-drawer.js' ),
+		get_theme_file_uri( 'assets/js/scripts.min.js' ),
 		[ '_mrw-theme-navigation' ],
-		filemtime( get_theme_file_path( 'assets/js/mobile-nav-drawer.js' ) ),
+		filemtime( get_theme_file_path( 'assets/js/scripts.min.js' ) ),
 		true
 	);
 

@@ -4,17 +4,19 @@
 	"version": "1.0.0",
 	"description": "",
 	"devDependencies": {
-		"@wordpress/eslint-plugin": "^17.12.0",
-		"@wordpress/prettier-config": "^3.12.0",
-		"autoprefixer": "^10.4.19",
-		"cssnano": "^6.1.2",
-		"postcss": "^8.4.38",
-		"postcss-cli": "^11.0.0",
-		"sass": "^1.75.0",
-		"@wordpress/scripts": "^28.0.0"
+		"@wordpress/eslint-plugin": "^22.12.0",
+		"@wordpress/prettier-config": "^4.26.0",
+		"autoprefixer": "^10.4.21",
+		"cssnano": "^7.1.0",
+		"postcss": "^8.5.6",
+		"postcss-cli": "^11.0.1",
+		"sass": "^1.89.2",
+		"@wordpress/scripts": "^30.19.0",
+		"uglify-js": "^3.19.3"
 	},
 	"scripts": {
-		"wp-scripts": "wp-scripts start src/js/editor/index.js --output-path=assets/js/editor --output-filename=editor.js",
+		"wp-scripts": "wp-scripts start src/js/editor/index.js --output-path=assets/js/editor --output-filename=editor.min.js",
+		"js:build": "uglifyjs src/js/*.js --compress --mangle --output assets/js/scripts.min.js",
 		"sass": "sass --style=expanded src/scss:assets/css",
 		"sass:watch": "sass --watch --update --style=expanded src/scss:assets/css",
 		"sass:build": "sass --no-source-map --style=compressed src/scss:assets/css && postcss --no-map assets/css/**/*.css --replace --use autoprefixer cssnano"
