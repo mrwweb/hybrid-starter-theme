@@ -28,6 +28,7 @@ body {
 	overflow-x: clip;
 }
 
-html:has(dialog[open]) {
-	overflow: clip;
+html:has(dialog[open]),
+body:has(dialog[open]) {
+	overflow: hidden;
 }
