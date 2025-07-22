@@ -128,7 +128,7 @@ function show_hide_blocks( $blocks ) {
 
 	$blocks = array_diff( $blocks, [] );
 
-	$blocks['core/latest-posts'];
+	$blocks[] = 'core/latest-posts';
 
 	return $blocks;
 }
