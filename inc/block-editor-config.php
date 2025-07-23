@@ -87,7 +87,7 @@ function editor_assets() {
 		);
 	}
 
-	$asset_file = include get_theme_file_path( 'assets/js/editor/editor.asset.php' );
+	$asset_file = include get_theme_file_path( 'assets/js/editor/editor.min.asset.php' );
 	wp_enqueue_script(
 		'_mrw-block-editor',
 		get_theme_file_uri( 'assets/js/editor/editor.min.js' ),
