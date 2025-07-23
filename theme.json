@@ -118,23 +118,6 @@
 				"required": "var:custom|color|error",
 				"link": "navy"
 			},
-			"forms": {
-				"accent": "var:preset|color|primary",
-				"input": {
-					"border-radius": "var:custom|radius|default",
-					"border-color": "var:preset|color|gray-dark",
-					"background": "var:preset|color|base",
-					"color": "var:preset|color|base"
-				},
-				"label": {
-					"font-size": "var:preset|font-size|baseline",
-					"color": "var:preset|color|contrast"
-				},
-				"description": {
-					"font-size": "var:preset|font-size|small",
-					"color": "var:preset|color|gray-dark"
-				}
-			},
 			"spacing": {
 				"gap": "var:preset|spacing|70"
 			},
