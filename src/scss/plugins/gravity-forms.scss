@@ -8,7 +8,7 @@
 	width: 100%;
 	min-height: 25vmin;
 	padding: 5vmin;
-	background-color: lightgray;
+	background-color: $gray-light;
 
 	> * {
 		display: none;
@@ -23,30 +23,37 @@
 			center / contain no-repeat;
 	}
 }
+$form-gap: $space-6;
+#root .gform_wrapper.gform-theme.gform-theme--framework { // win specificity battles
 
-#root {
-	.gform_fields {
-		grid-row-gap: $space-3;
-	}
+	--gf-form-gap-y: #{$form-gap};
+	--gf-radius: #{$border-radius};
+	--gf-color-danger: #{$required};
+	--gf-font-size-primary: #{$font-size-default};
+	--gf-ctrl-label-font-size-primary: #{$font-size-default};
+	--gf-font-size-secondary: #{$font-size-s};
+	--gf-font-size-tertiary: #{$font-size-s};
+	--gf-ctrl-label-font-size-req: #{$font-size-s};
+	--gf-ctrl-accent-color: #{$accent};
+	--gf-color-primary: #{$primary};
 
 	.gfield_label {
-		margin-bottom: 0.25rem;
-		font-size: 1em;
+		margin-bottom: $space-3;
 	}
 
 	.gfield_required {
-		font-size: inherit;
 		font-style: normal;
-		color: $required;
 
 		.has-background & {
 			color: inherit;
 		}
 	}
 
-	.gfield_description,
+	.gfield_description {
+		padding-bottom: $space-2;
+	}
 	.gsection_description {
-		padding-bottom: 0.5rem;
+		padding-bottom: $form-gap;
 	}
 
 	.field_sublabel_above .description,
@@ -57,23 +64,17 @@
 
 	.ginput_complex {
 		align-items: flex-start;
-
-		label {
-			font-size: 0.85em;
-		}
 	}
 
-	.gfield_radio label,
-	.gfield_checkbox label {
-		font-size: 0.85em;
-	}
-
-	.gform_fields select {
+	.gform_fields select { // Cannot remember why I'm using pixel sizing for this…
 		padding: 10px 8px;
 	}
 
-	.gchoice + .gchoice {
-		margin-block-start: 0.3125em;
+	.gchoice {
+		align-items: center;
+	}
+	.gfield:not(.gfield--choice-align-horizontal) .gchoice + .gchoice {
+		margin-block-start: $space-2;
 	}
 
 	/* Hide "other" field in radios unless valid */
@@ -100,10 +101,6 @@
 		padding: 0;
 		background-color: $warning;
 		border: 0;
-	}
-
-	.gfield_error [aria-invalid="true"] {
-		border-color: $required;
 	}
 
 	.gfield_error .gfield_repeater_cell label,
