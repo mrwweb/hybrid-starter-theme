@@ -1,3 +1,13 @@
+@use "../../abstracts/" as *;
+
 table {
 	width: 100%;
+	border-collapse: collapse;
+	border: 1px solid $gray;
+}
+
+th,
+td {
+	border: 1px solid;
+	padding: 0.25em 0.5em;
 }

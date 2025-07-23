@@ -2,7 +2,8 @@
 
 html {
 	box-sizing: border-box;
-	overflow-x: clip;
+	scrollbar-gutter: stable;
+	overflow-x: hidden;
 	scroll-padding-top: 3rem;
 	scroll-behavior: smooth;
 	font-size: 0.9375em;
@@ -25,9 +26,10 @@ html {
 }
 
 body {
-	overflow-x: clip;
+	overflow-x: hidden;
 }
 
-html:has(dialog[open]) {
-	overflow: clip;
+html:has(dialog[open]),
+body:has(dialog[open]) {
+	overflow: hidden;
 }
