@@ -17,3 +17,32 @@
 ol.wp-block-list {
 	@include flow($space-2);
 }
+
+.is-style-no-markers,
+.is-style-two-col-no-markers,
+.is-style-multicol-no-markers {
+	padding: 0;
+	list-style: none !important;
+
+	ul,ol {
+		list-style: none !important;
+	}
+
+	ul,
+	ol,
+	li {
+		break-inside: avoid;
+	}
+}
+
+.is-style-two-col,
+.is-style-two-col-no-markers {
+	column-width: 18rem;
+	gap: $gap;
+}
+
+.is-style-multicol,
+.is-style-multicol-no-markers {
+	column-width: 12rem;
+	gap: $gap;
+}

@@ -80,6 +80,45 @@
 	}
 
 	/**
+	 * Editor-specific Block Styles
+	 */
+	.is-style-screen-reader-text {
+		opacity: 0.5;
+		transition: opacity 0.15s;
+	}
+
+	.is-style-screen-reader-text:hover,
+	.is-style-screen-reader-text:focus {
+		opacity: 1;
+	}
+
+	.is-style-screen-reader-text::before {
+		/* ::after is used by the block editor */
+		display: inline-block;
+		width: 32px;
+		height: 32px;
+		font-size: 32px;
+		line-height: 1;
+		margin-left: 16px;
+		color: currentColor;
+		font-family: "Dashicons";
+		content: "\f530";
+	}
+
+	@media (min-width: 1200px) {
+		.is-style-screen-reader-text {
+			/* Center align icon with text regardless of size*/
+			display: flex;
+			align-items: center;
+		}
+		.is-style-screen-reader-text::before {
+			float: none;
+			margin-right: 16px;
+			margin-left: -48px;
+		}
+	}
+
+	/**
 	 * Block Fixes
 	 */
 	/* File block doesn't match front-end styles in core??? */

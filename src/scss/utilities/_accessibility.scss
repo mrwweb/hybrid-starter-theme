@@ -1,7 +1,9 @@
 @use "../abstracts/" as *;
 
 /* Text meant only for screen readers. */
-.screen-reader-text {
+.screen-reader-text,
+.site .is-style-screen-reader-text // apply on on front-end
+{
 	@include screen-reader-text;
 }
 
