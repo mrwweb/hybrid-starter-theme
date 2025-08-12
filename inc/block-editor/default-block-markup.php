@@ -7,9 +7,7 @@
 
 namespace _MRW\Theme;
 
-use WP_HTML_Tag_Processor;
-
-add_filter( 'render_block', __NAMESPACE__ . '\add_class_to_list_block', 10, 2 );
+add_filter( 'render_block', __NAMESPACE__ . '\default_block_markup', 10, 2 );
 /**
  * Polyfill wp-block-list class on list blocks
  *
@@ -21,7 +19,7 @@ add_filter( 'render_block', __NAMESPACE__ . '\add_class_to_list_block', 10, 2 );
  * @see https://github.com/WordPress/gutenberg/issues/12420
  * @see https://github.com/WordPress/gutenberg/pull/42269
  */
-function add_class_to_list_block( $block_content, $block ) {
+function default_block_markup( $block_content, $block ) {
 
 	switch ( $block['blockName'] ) {
 		case 'file':
