@@ -44,7 +44,7 @@ $ npm audit fix
 To run build for development:
 
 ```sh
-$ npm run watch
+$ npm run sass:watch
 ```
 
 To build prefixed and minified CSS for release:
@@ -53,10 +53,16 @@ To build prefixed and minified CSS for release:
 $ npm run sass:build
 ```
 
-To compile scripts that run in the Block Editor:
+To compile scripts that run in the Block Editor with entry point of `/src/js/editor/index.js`:
 
 ```sh
 $ npm run wp-scripts
+```
+
+To concatenate and uglify JS files in `/src/js/*.js`:
+
+```sh
+$ npm run js:build
 ```
 
 ## Expected Icons in `assets/images/svg`
@@ -74,9 +80,9 @@ $ npm run wp-scripts
   - `theme.json`
   - Maps SASS variables to `theme.json` custom properties so `theme.json` is the "source of truth" (Notable downside of this technique: cannot perform SASS calculations on custom properties.)
   - Block-specific SCSS partials
-  - Stylesheets for less-used blocks are enqueued per-block
+  - Stylesheets for less-used blocks are enqueued per-block (consider potential [downsides of really tiny files](https://gomakethings.com/gzip-performance-is-wild/))
   - Uses Block Template Parts instead of widgets for the footer,  sidebar, and 404 page
-  - PHP used to set a few default block variations
+  - PHP used to set a few default variations for core WordPress blocks
   - Example of custom block style ready to go in `/inc/block-editor-config.php`
   - Uses template parts instead of most template tags
 - Uses [`clicky-menus` script](https://github.com/mrwweb/clicky-menus) for [click-triggered dropdown navigation submenus](https://css-tricks.com/in-praise-of-the-unambiguous-click-menu/)
