@@ -22,9 +22,9 @@ add_filter( 'render_block', __NAMESPACE__ . '\default_block_markup', 10, 2 );
 function default_block_markup( $block_content, $block ) {
 
 	switch ( $block['blockName'] ) {
-		case 'file':
+		case 'core/file':
 			$size = wp_get_attachment_metadata( $block['attrs']['id'] );
-			$block_content = str_replace( '</a></div>', "</a><div class=\"wp-block-file__size\">" . __( 'File Size: ', 'ile-kimoyo' ) . size_format( $size['filesize'], 1 ) . "</div></div>", $block_content );
+			$block_content = str_replace( '</a></div>', "</a><div class=\"wp-block-file__size\">" . __( 'File Size: ', '_mrw' ) . size_format( $size['filesize'], 1 ) . "</div></div>", $block_content );
 			break;
 	}
 
