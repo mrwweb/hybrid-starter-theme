@@ -106,7 +106,7 @@ function editor_assets() {
  */
 /* Format: 'prefix' => [ 'block-slug', 'block-slug-2' ] */
 $_mrw_styled_blocks = [
-	'core' => [ 'columns', 'media-text'],
+	'core' => [ 'file' ],
 ];
 foreach ( $_mrw_styled_blocks as $_mrw_prefix => $_mrw_blocks ) {
 	foreach( $_mrw_blocks as $_mrw_block_name ) {
