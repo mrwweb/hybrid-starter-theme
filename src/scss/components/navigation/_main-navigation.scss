@@ -7,7 +7,7 @@
 	align-items: center;
 	gap: $space-1;
 
-	.mrw-svg {
+	.svg-icon {
 		width: 1em;
 		height: 1em;
 	}
@@ -89,7 +89,8 @@
 .main-navigation__dialog {
 	width: 90vw !important;
 	height: 100vh !important;
-	inset-block: 0 !important;
+	inset-block-start: var(--wp-admin--admin-bar--height, 0) !important;
+	inset-block-end: 0 !important;
 	inset-inline-start: auto !important;
 	inset-inline-end: 0 !important;
 	max-width: none !important;
