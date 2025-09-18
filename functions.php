@@ -70,7 +70,7 @@ function scripts_and_styles() {
 	);
 
 	/* Defined in mu-plugins */
-	if ( function_exists( '\MRW\TEC\is_tribe_view' ) && \MRW\TEC\is_tribe_view() ) {
+	if ( function_exists( '\MRW\TEC\is_tec_view' ) && \MRW\TEC\is_tec_view() ) {
 		wp_enqueue_style(
 			'_mrw-the-events-calendar',
 			get_theme_file_uri( 'assets/css/plugins/the-events-calendar.css' ),
