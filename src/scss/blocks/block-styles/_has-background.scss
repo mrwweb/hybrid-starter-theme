@@ -39,11 +39,6 @@
 	}
 }
 
-/* When alignfull doesn't have a background, it still needs padding in these cases */
-.alignfull:not(.has-background):where(.wp-block-group, .wp-block-columns) {
-	padding-inline: 5%;
-}
-
 /* name, color, contrasting text */
 /* prettier-ignore */
 $colors:
