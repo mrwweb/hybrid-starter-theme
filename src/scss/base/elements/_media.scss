@@ -3,12 +3,14 @@ embed,
 iframe,
 object {
 	display: block;
-	max-width: 100%;
+	max-block-size: 100%;
+	max-inline-size: 100%;
 }
 
 img {
 	height: auto; // Make sure images are scaled correctly.
-	max-width: 100%; // Adhere to container width.
+	max-block-size: 100%; // Adhere to container width.
+	max-inline-size: 100%; // Adhere to container width.
 }
 
 figure {

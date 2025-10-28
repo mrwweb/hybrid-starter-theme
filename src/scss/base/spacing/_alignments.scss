@@ -35,24 +35,24 @@
 
 	.alignleft {
 		float: left !important;
-		margin-inline-end: var(--wp--style--block-gap) !important;
-		margin-block-end: var(--wp--style--block-gap);
+		margin-inline-end: $gap !important;
+		margin-block-end: $gap;
 
 		.is-layout-constrained > & {
 			margin-inline-start: calc(
-				(100% - var(--wp--style--global--content-size)) / 2
+				(100% - $width--content) / 2
 			) !important;
 		}
 	}
 
 	.alignright {
 		float: right !important;
-		margin-inline-start: var(--wp--style--block-gap) !important;
-		margin-block-end: var(--wp--style--block-gap);
+		margin-inline-start: $gap !important;
+		margin-block-end: $gap;
 
 		.is-layout-constrained > & {
 			margin-inline-end: calc(
-				(100% - var(--wp--style--global--content-size)) / 2
+				(100% - $width--content) / 2
 			) !important;
 		}
 	}

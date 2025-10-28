@@ -87,7 +87,7 @@ function editor_assets() {
 		);
 	}
 
-	$asset_file = include get_theme_file_path( 'assets/js/editor/editor.asset.php' );
+	$asset_file = include get_theme_file_path( 'assets/js/editor/editor.min.asset.php' );
 	wp_enqueue_script(
 		'_mrw-block-editor',
 		get_theme_file_uri( 'assets/js/editor/editor.min.js' ),
@@ -106,7 +106,7 @@ function editor_assets() {
  */
 /* Format: 'prefix' => [ 'block-slug', 'block-slug-2' ] */
 $_mrw_styled_blocks = [
-	'core' => [ 'columns', 'media-text'],
+	'core' => [ 'file' ],
 ];
 foreach ( $_mrw_styled_blocks as $_mrw_prefix => $_mrw_blocks ) {
 	foreach( $_mrw_blocks as $_mrw_block_name ) {
@@ -128,7 +128,7 @@ function show_hide_blocks( $blocks ) {
 
 	$blocks = array_diff( $blocks, [] );
 
-	$blocks['core/latest-posts'];
+	$blocks[] = 'core/latest-posts';
 
 	return $blocks;
 }
