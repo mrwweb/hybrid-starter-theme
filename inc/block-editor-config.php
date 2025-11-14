@@ -67,26 +67,11 @@ function template_part_areas( $areas ) {
 
 add_action( 'enqueue_block_editor_assets', __NAMESPACE__ . '\editor_assets' );
 /**
- * Enqueue the styles and scripts that customize the block editor
+ * Enqueue scripts that customize the block editor
+ * 
+ * @return void
  */
 function editor_assets() {
-
-	wp_enqueue_style(
-		'_mrw-block-editor',
-		get_theme_file_uri( 'assets/css/editor-styles.css' ),
-		[],
-		filemtime( get_theme_file_path( 'assets/css/editor-styles.css' ) )
-	);
-
-	if ( get_post_type() === 'tribe_events' ) {
-		wp_enqueue_style(
-			'_mrw-tec-block-editor',
-			get_theme_file_uri( 'assets/css/plugins/the-events-calendar-editor.css' ),
-			[],
-			filemtime( get_theme_file_path( 'assets/css/plugins/the-events-calendar-editor.css' ) )
-		);
-	}
-
 	$asset_file = include get_theme_file_path( 'assets/js/editor/editor.min.asset.php' );
 	wp_enqueue_script(
 		'_mrw-block-editor',
@@ -95,6 +80,32 @@ function editor_assets() {
 		$asset_file['version'],
 		true
 	);
+}
+
+add_action( 'enqueue_block_assets', __NAMESPACE__ . '\editor_styles' );
+/**
+ * Enqueue block styles only for the editor
+ *
+ * @return void
+ */
+function editor_styles() {
+	if( is_admin() ) {
+		wp_enqueue_style(
+			'_mrw-block-editor',
+			get_theme_file_uri( 'assets/css/editor-styles.css' ),
+			[],
+			filemtime( get_theme_file_path( 'assets/css/editor-styles.css' ) )
+		);
+
+		if ( get_post_type() === 'tribe_events' ) {
+			wp_enqueue_style(
+				'_mrw-tec-block-editor',
+				get_theme_file_uri( 'assets/css/plugins/the-events-calendar-editor.css' ),
+				[],
+				filemtime( get_theme_file_path( 'assets/css/plugins/the-events-calendar-editor.css' ) )
+			);
+		}
+	}
 }
 
 /**
