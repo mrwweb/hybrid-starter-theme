@@ -4,7 +4,7 @@ html {
 	box-sizing: border-box;
 	scrollbar-gutter: stable;
 	overflow-x: hidden;
-	scroll-padding-top: 3rem;
+	scroll-padding-block-start: calc( $space-7 + var(--wp-admin--admin-bar--height, 0)) !important;
 	scroll-behavior: smooth;
 	font-size: 0.9375em;
 
