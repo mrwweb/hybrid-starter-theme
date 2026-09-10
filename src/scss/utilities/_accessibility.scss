@@ -11,6 +11,11 @@
 	@include button;
 }
 
+/* Windows Forced Colors Mode */
+.has-background.alignfull {
+	outline: 2px solid transparent; // add demarcation between full-width sections that are distinguished by colors
+}
+
 /* Do not show the outline on the skip link target. */
 #primary[tabindex="-1"]:focus {
 	outline: 0;
