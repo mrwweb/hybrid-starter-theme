@@ -67,43 +67,33 @@
 			"palette": [
 				{
 					"name": "Primary",
-					"slug": "primary",
+					"slug": "color-1",
 					"color": "#066"
 				},
 				{
 					"name": "Secondary",
-					"slug": "secondary",
+					"slug": "color-2",
 					"color": "indigo"
 				},
 				{
 					"name": "Accent",
-					"slug": "accent",
+					"slug": "accent-1",
 					"color": "aquamarine"
 				},
 				{
-					"name": "Black",
-					"slug": "contrast",
-					"color": "#000"
-				},
-				{
-					"name": "Dark Gray",
-					"slug": "gray-dark",
-					"color": "#444"
-				},
-				{
-					"name": "Gray",
-					"slug": "gray",
-					"color": "#777"
-				},
-				{
 					"name": "Light Gray",
-					"slug": "gray-light",
+					"slug": "tint-1",
 					"color": "#EFEFEF"
 				},
 				{
 					"name": "White",
 					"slug": "base",
 					"color": "#fff"
+				},
+				{
+					"name": "Black",
+					"slug": "contrast",
+					"color": "#000"
 				}
 			],
 			"gradients": [],
