@@ -15,7 +15,7 @@ if (
 	)
 ) {
 	echo '<span class="byline"> by';
-	do_action( 'pp_multiple_authors_show_author_box', false, 'inline', false, true ); //phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound
+	do_action( 'pp_multiple_authors_show_author_box', false, 'author-byline', false, true ); //phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound
 	echo '</span>';
 } else {
 	$_mrw_byline = sprintf(

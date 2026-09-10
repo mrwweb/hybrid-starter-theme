@@ -125,4 +125,26 @@
 	.wp-block-file__content-wrapper > * + * {
 		margin-left: 0.75em;
 	}
+
+	/* PublishPress styles */
+	.pp-multiple-authors-boxes-wrapper {
+		ul {
+			margin: 0;
+			padding: 0; // only required in some contexts
+		}
+
+		li {
+			display: flex;
+			align-items: center;
+			gap: $space-1;
+
+			+ li {
+				margin-inline-start: $space-3;
+			}
+		}
+
+		img {
+			border-radius: 50% 50% 0 0 !important;
+		}
+	}
 }

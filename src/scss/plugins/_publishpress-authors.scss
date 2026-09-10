@@ -1,5 +1,46 @@
+@use "../abstracts" as *;
+
 .pp-multiple-authors-layout-inline,
 .pp-multiple-authors-layout-inline * {
 	display: inline-block;
 	margin: 0;
+}
+
+.pp-multiple-authors-layout-inline * {
+	margin: 0;
+}
+
+.pp-author-boxes-avatar img {
+	border-radius: 50% 50% 0 0 !important;
+}
+
+:root .pp-multiple-authors-boxes-wrapper.pp-multiple-authors-layout-inline.multiple-authors-target-shortcode .pp-multiple-authors-boxes-li {
+	color: inherit !important;
+}
+
+.pp-multiple-authors-boxes-li {
+	position: relative;
+	margin-inline-end: 0 !important;
+	
+	+ li {
+		margin-inline-start: $space-3;
+	}
+	
+	a {
+		text-decoration: none;
+
+		&:hover {
+			text-decoration: underline;
+		}
+
+		/* Cover avatar image with link for single accessible link with text */
+		&::before {
+			display: block;
+			content: '';
+			position: absolute;
+			inset: 0;
+			z-index: 1;
+		}
+	}
+
 }
