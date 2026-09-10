@@ -12,13 +12,14 @@ $warning: var(--wp--custom--color--warning);
 $message: var(--wp--custom--color--message);
 $success: var(--wp--custom--color--success);
 $required: var(--wp--custom--color--required);
+$border: var(--wp--custom--color--border);
 
 /* Functional Color Palette */
 $color__text-main: $primary;
-$color__background-hr: $gray-light;
+$color__background-hr: $border;
 $color__background-button: $gray-light;
 $color__background-pre: $gray-light;
 $color__background-ins: $message;
 
-$color__border-input: $gray;
-$color__border-abbr: $gray;
+$color__border-input: $border;
+$color__border-abbr: $border;

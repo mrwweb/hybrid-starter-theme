@@ -106,7 +106,8 @@
 				"warning": "lemonchiffon",
 				"error": "crimson",
 				"required": "var:custom|color|error",
-				"link": "navy"
+				"link": "navy",
+				"border": "var:preset|color|contrast"
 			},
 			"spacing": {
 				"gap": "var:preset|spacing|70"
@@ -285,7 +286,7 @@
 			},
 			"caption": {
 				"color": {
-					"text": "var:preset|color|gray-dark"
+					"text": "var:preset|color|contrast"
 				},
 				"typography": {
 					"fontSize": "var:preset|font-size|small"
@@ -293,7 +294,7 @@
 			},
 			"cite": {
 				"color": {
-					"text": "var:preset|color|gray-dark"
+					"text": "var:preset|color|contrast"
 				},
 				"typography": {
 					"fontSize": "var:preset|font-size|small"
