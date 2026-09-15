@@ -19,7 +19,7 @@ Update theme details in `style.css` and set new 1200x900 `screenshot.png`.
 
 Finally, do a six-step find and replace on the name in all the templates.
 
-1. Search for `'_MRW\` (uppercase) to capture namespaces replace with: `THEME_PREFIX_`.
+1. Search for `_MRW\` (uppercase) to capture namespaces replace with: `THEME_PREFIX_`.
 1. Search for `'_mrw'` (inside single quotations) to capture the text domain and replace with: `'theme-prefix'`.
 1. Search for `"_mrw"` (double quotes) to capture phpcs ruleset and replace with `"theme-prefix"`
 1. Search for `_mrw_` (lowercase) to capture all the functions names and replace with: `theme_prefix_`.
