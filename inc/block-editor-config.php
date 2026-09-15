@@ -68,7 +68,7 @@ function template_part_areas( $areas ) {
 add_action( 'enqueue_block_editor_assets', __NAMESPACE__ . '\editor_assets' );
 /**
  * Enqueue scripts that customize the block editor
- * 
+ *
  * @return void
  */
 function editor_assets() {
@@ -89,7 +89,7 @@ add_action( 'enqueue_block_assets', __NAMESPACE__ . '\editor_styles' );
  * @return void
  */
 function editor_styles() {
-	if( is_admin() ) {
+	if ( is_admin() ) {
 		wp_enqueue_style(
 			'_mrw-block-editor',
 			get_theme_file_uri( 'assets/css/editor-styles.css' ),
@@ -120,7 +120,7 @@ $_mrw_styled_blocks = [
 	'core' => [ 'file' ],
 ];
 foreach ( $_mrw_styled_blocks as $_mrw_prefix => $_mrw_blocks ) {
-	foreach( $_mrw_blocks as $_mrw_block_name ) {
+	foreach ( $_mrw_blocks as $_mrw_block_name ) {
 		$_mrw_block_style_args = [
 			'handle' => "_mrw-$_mrw_block_name",
 			'src'    => get_theme_file_uri( "assets/css/blocks/$_mrw_block_name.css" ),

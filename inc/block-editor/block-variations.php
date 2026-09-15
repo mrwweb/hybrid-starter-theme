@@ -11,7 +11,7 @@ add_filter( 'get_block_type_variations', __NAMESPACE__ . '\block_variations', 10
 /**
  * Register block variations in PHP for the block editor
  *
- * @param array $variations array of arrays for each block's variations
+ * @param array  $variations array of arrays for each block's variations
  * @param object $block block meta for each block, useful for checking $block->name to target a specific block
  * @return array $variations updated array containing variations to register
  */

@@ -18,14 +18,14 @@ function register_block_styles() {
 	register_block_style(
 		'core/heading',
 		[
-			'name'  => 'screen-reader-text',
-			'label' => __( 'Screen Reader', '_mrw' ),
+			'name'         => 'screen-reader-text',
+			'label'        => __( 'Screen Reader', '_mrw' ),
 			'inline_style' => '.is-style-logos .wp-block-image{max-width:12rem!important;margin:auto!important;padding:var(--wp--preset--spacing--30)!important;}',
 		]
 	);
 
 	/* Lists */
-	register_block_style( 
+	register_block_style(
 		'core/list',
 		[
 			'name'  => 'no-markers',
@@ -33,7 +33,7 @@ function register_block_styles() {
 		]
 	);
 
-	register_block_style( 
+	register_block_style(
 		'core/list',
 		[
 			'name'  => 'two-col',
@@ -41,7 +41,7 @@ function register_block_styles() {
 		]
 	);
 
-	register_block_style( 
+	register_block_style(
 		'core/list',
 		[
 			'name'  => 'two-col-no-markers',
@@ -49,7 +49,7 @@ function register_block_styles() {
 		]
 	);
 
-	register_block_style( 
+	register_block_style(
 		'core/list',
 		[
 			'name'  => 'multicol',
@@ -57,7 +57,7 @@ function register_block_styles() {
 		]
 	);
 
-	register_block_style( 
+	register_block_style(
 		'core/list',
 		[
 			'name'  => 'multicol-no-markers',
@@ -69,24 +69,24 @@ function register_block_styles() {
 	register_block_style(
 		'core/gallery',
 		[
-			'name'  => 'not-stretched',
-			'label' => __( 'Not Stretched', '_mrw' ),
+			'name'         => 'not-stretched',
+			'label'        => __( 'Not Stretched', '_mrw' ),
 			'inline_style' => 'is-style-not-stretched .wp-block-image{flex-grow:0!important; margin:auto!important;}',
 		]
 	);
 	register_block_style(
 		'core/gallery',
 		[
-			'name'  => 'logos',
-			'label' => __( 'Logos', '_mrw' ),
+			'name'         => 'logos',
+			'label'        => __( 'Logos', '_mrw' ),
 			'inline_style' => '.is-style-logos .wp-block-image{max-width:12rem!important;margin:auto!important;padding:var(--wp--preset--spacing--30)!important;}',
 		]
 	);
 	register_block_style(
 		'core/gallery',
 		[
-			'name'  => 'logos-grayscale',
-			'label' => __( 'Logos Grayscale', '_mrw' ),
+			'name'         => 'logos-grayscale',
+			'label'        => __( 'Logos Grayscale', '_mrw' ),
 			'inline_style' => '.is-style-logos-grayscale .wp-block-image{max-width:12rem!important;margin:auto!important;padding:var(--wp--preset--spacing--30)!important;img{filter:grayscale(1) contrast(1.2);transition:filter 0.25s;}a:hover img,.is-style-logos-grayscale a:focus img{filter:grayscale(0) contrast(1);}',
 		]
 	);
