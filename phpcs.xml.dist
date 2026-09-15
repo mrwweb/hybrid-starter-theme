@@ -26,8 +26,10 @@
     <!-- Check all files in this directory and the directories below it. -->
     <file>.</file>
     <!-- Exclude patterns. -->
-    <exclude-pattern>/vendor/*</exclude-pattern>
+    <exclude-pattern>/assets/*</exclude-pattern>
+    <exclude-pattern>/publishpress-authors/*</exclude-pattern>
     <exclude-pattern>/node_modules/*</exclude-pattern>
+    <exclude-pattern>/vendor/*</exclude-pattern>
     <!-- #############################################################################
 	USE THE WordPress AND THE Theme Review RULESET
 	############################################################################# -->
@@ -47,9 +49,9 @@
 		 Multiple valid text domains can be provided as a comma-delimited list. -->
     <rule ref="WordPress.WP.I18n">
         <properties>
-            <property name="text_domain"
-                      type="array"
-                      value="_mrw" />
+            <property name="text_domain">
+                <element value="_mrw" />
+            </property>
         </properties>
     </rule>
     <!-- Allow for theme specific exceptions to the file name rules based
@@ -82,9 +84,9 @@
 		 Multiple valid prefixes can be provided as a comma-delimited list. -->
     <rule ref="WordPress.NamingConventions.PrefixAllGlobals">
         <properties>
-            <property name="prefixes"
-                      type="array"
-                      value="_mrw" />
+            <property name="prefixes">
+                <element value="_mrw" />
+            </property>          
         </properties>
     </rule>
     <!-- #############################################################################
